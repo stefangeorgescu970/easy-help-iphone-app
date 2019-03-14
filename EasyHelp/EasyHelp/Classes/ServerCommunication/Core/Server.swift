@@ -11,13 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class Server {
-    fileprivate struct Holder {
-        static let instance = Server()
-    }
-    
-    class var sharedInstance: Server {
-        return Holder.instance
-    }
+    static let sharedInstance = Server()
     
     private struct Constants {
         static let backgroundSessionIdentifier: String = "easyHelp - backgroundTask"
@@ -30,18 +24,23 @@ class Server {
         return manager
     }()
     
-    func send(_ request: ServerRequest, parser: ServerResponseParser?, callback: SimpleServerCallback?) {
-        self.networkManager.request(request.getEndpoint(), method: .post,  parameters: request.getParameters(), encoding: JSONEncoding.default).responseString { response in
+    func send(_ request: ServerRequest, parser: ServerResponseParser?, callback: SimpleServerCallback?, method: HTTPMethod = .post, encoding: ParameterEncoding = URLEncoding.default) {
+        self.networkManager.request(request.getEndpoint(), method: method,  parameters: request.getParameters(), encoding: encoding).responseString { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(parseJSON: value)
                 if let parsedData = parser?.parse(json) {
-                    callback?.onSuccess(parsedData)
+                    if let error = parsedData as? NSError {
+                        callback?.onError(error)
+                    } else {
+                        callback?.onSuccess(parsedData)
+                    }
                 } else {
-                    callback?.onError(nil)
+                    callback?.onError(ErrorUtils.getDefaultServerError())
                 }
             case .failure(let error):
-                callback?.onError(error)
+                let myError = NSError(domain: "EasyHelp", code: 500, userInfo: ["description": error.localizedDescription])
+                callback?.onError(myError)
             }
         }
     }

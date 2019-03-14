@@ -9,18 +9,33 @@
 import Foundation
 
 class ServerRequest {
-    private let apiEndpoint: String = "https://easy-help-backend.herokuapp.com/api"
-    private var parameters = [String : AnyObject]()
+    private var apiEndpoint: String
+    private var parameters = [String:Any]()
+    
+    init(endpoint: String, controller: String? = nil, parameters: [String : AnyObject]? = nil) {
+        apiEndpoint = ServerUtils.getEndpointAddress(withEndpointPath: endpoint, onController: controller)
+        if let parameters = parameters {
+            self.parameters = parameters
+        }
+    }
     
     func getEndpoint() -> String {
         return apiEndpoint
     }
     
-    func addParameter(key: String, value: AnyObject) {
+    func addParameter(key: String, value: Int) {
         parameters[key] = value
     }
     
-    func getParameters() -> [String : AnyObject] {
+    func addParameter(key: String, value: String) {
+        parameters[key] = value
+    }
+    
+    func addParameter(key: String, value: Any) {
+        parameters[key] = value
+    }
+    
+    func getParameters() -> [String : Any] {
         return parameters
     }
 }

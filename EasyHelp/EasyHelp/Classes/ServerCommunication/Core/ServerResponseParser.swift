@@ -19,17 +19,32 @@ class ServerResponseParser {
     }
     
     func parseError(content: JSON) -> AnyObject? {
-        return NSError()
+        if let description = content.string {
+            return NSError(domain: "EasyHelp", code: 500, userInfo: ["description": description])
+        }
+        return NSError(domain: "EasyHelp", code: 500, userInfo: nil)
     }
     
     func parse(_ body: JSON) -> AnyObject? {
-        let response = body["model"]
-        if response.exists(){
-            doParse(content: response)
+        if body["status"].int ?? 0 == 500 {
+            return parseError(content: body)
+        }
+        
+        let success = body["status"].boolValue
+        
+        if success {
+            let response = body["object"]
+            if response.exists(){
+                doParse(content: response)
+            } else {
+                return success as AnyObject
+            }
         } else {
-            let error = body["error"]
+            let error = body["exception"]
             if error.exists() {
                 return parseError(content: error)
+            } else {
+                return success as AnyObject
             }
         }
         return getResult()
