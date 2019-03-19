@@ -30,7 +30,7 @@ class LoginView: UIView {
     // MARK: - View Properties Declaration
     
     private let ubbImageView: UIImageView = {
-        let image = UIImage(named: "siglaUBB")
+        let image = UIImage(named: "blood_drop")
         let imageView = UIImageView(image: image)
         return imageView
     }()
@@ -267,10 +267,10 @@ class LoginView: UIView {
             return
         }
         
-        guard EmailUtils.isValidEmailFormat(email) else {
-            showError(withText: Strings.Errors.Login.invalidEmail())
-            return
-        }
+//        guard EmailUtils.isValidEmailFormat(email) else {
+//            showError(withText: Strings.Errors.Login.invalidEmail())
+//            return
+//        }
         
         loginButton.showLoading()
         DispatchQueue.main.async {

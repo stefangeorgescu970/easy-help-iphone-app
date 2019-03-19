@@ -9,26 +9,32 @@
 /* Begin PBXBuildFile section */
 		0A23C16B03CD7FC816C7700E /* Pods_EasyHelpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DEA249C1E1D057DFF56070 /* Pods_EasyHelpUITests.framework */; };
 		198B50B66257978B72D8AE43 /* Pods_EasyHelpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E4B99E02507BF7E3CBBF88 /* Pods_EasyHelpTests.framework */; };
+		4F62B3FD2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
+		4F62B3FE2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
+		4F62B3FF2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
+		4F62B4012240EC76006D1B55 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4002240EC76006D1B55 /* LoginService.swift */; };
+		4F62B4022240EC76006D1B55 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4002240EC76006D1B55 /* LoginService.swift */; };
+		4F62B4032240EC76006D1B55 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4002240EC76006D1B55 /* LoginService.swift */; };
+		4F62B4052240EC91006D1B55 /* MockLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4042240EC91006D1B55 /* MockLoginService.swift */; };
+		4F62B4072240ECAE006D1B55 /* DefaultLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4062240ECAE006D1B55 /* DefaultLoginService.swift */; };
+		4F62B4082240ECAE006D1B55 /* DefaultLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4062240ECAE006D1B55 /* DefaultLoginService.swift */; };
+		4F62B40A2240ED2E006D1B55 /* DonorProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */; };
+		4F62B40B2240ED2E006D1B55 /* DonorProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */; };
+		4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */; };
+		4F62B40E2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */; };
+		4F62B40F2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */; };
 		4FEF9915223A884A00351500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814AFD62148393400C36BDA /* AppDelegate.swift */; };
 		4FEF9916223A884A00351500 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C33214E7F8800828144 /* ServerRequest.swift */; };
 		4FEF9917223A884A00351500 /* SimpleServerCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C39214E86BB00828144 /* SimpleServerCallback.swift */; };
 		4FEF9919223A884A00351500 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85B5E8F214E75F90098BE65 /* Server.swift */; };
-		4FEF991A223A884A00351500 /* DefaultDoctorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C45214E908200828144 /* DefaultDoctorService.swift */; };
 		4FEF991B223A884A00351500 /* ServerResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C35214E7FCE00828144 /* ServerResponseParser.swift */; };
-		4FEF991C223A884A00351500 /* DoctorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C42214E905200828144 /* DoctorService.swift */; };
-		4FEF991D223A884A00351500 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85B5E8B214E75BA0098BE65 /* Doctor.swift */; };
-		4FEF991E223A884A00351500 /* DoctorsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C37214E845100828144 /* DoctorsParser.swift */; };
 		4FEF9922223A884A00351500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F814AFDF2148393900C36BDA /* LaunchScreen.storyboard */; };
 		4FEF9923223A884A00351500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F814AFDD2148393900C36BDA /* Assets.xcassets */; };
 		4FEF992D223A888E00351500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814AFD62148393400C36BDA /* AppDelegate.swift */; };
 		4FEF992E223A888E00351500 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C33214E7F8800828144 /* ServerRequest.swift */; };
 		4FEF992F223A888E00351500 /* SimpleServerCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C39214E86BB00828144 /* SimpleServerCallback.swift */; };
 		4FEF9931223A888E00351500 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85B5E8F214E75F90098BE65 /* Server.swift */; };
-		4FEF9932223A888E00351500 /* DefaultDoctorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C45214E908200828144 /* DefaultDoctorService.swift */; };
 		4FEF9933223A888E00351500 /* ServerResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C35214E7FCE00828144 /* ServerResponseParser.swift */; };
-		4FEF9934223A888E00351500 /* DoctorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C42214E905200828144 /* DoctorService.swift */; };
-		4FEF9935223A888E00351500 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85B5E8B214E75BA0098BE65 /* Doctor.swift */; };
-		4FEF9936223A888E00351500 /* DoctorsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C37214E845100828144 /* DoctorsParser.swift */; };
 		4FEF993A223A888E00351500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F814AFDF2148393900C36BDA /* LaunchScreen.storyboard */; };
 		4FEF993B223A888E00351500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F814AFDD2148393900C36BDA /* Assets.xcassets */; };
 		4FEF9944223A8A7C00351500 /* Settings-Dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF9943223A8A7C00351500 /* Settings-Dev.plist */; };
@@ -85,11 +91,7 @@
 		F814AFF72148393900C36BDA /* EasyHelpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814AFF62148393900C36BDA /* EasyHelpUITests.swift */; };
 		F83C0C34214E7F8800828144 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C33214E7F8800828144 /* ServerRequest.swift */; };
 		F83C0C36214E7FCE00828144 /* ServerResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C35214E7FCE00828144 /* ServerResponseParser.swift */; };
-		F83C0C38214E845100828144 /* DoctorsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C37214E845100828144 /* DoctorsParser.swift */; };
 		F83C0C3A214E86BB00828144 /* SimpleServerCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C39214E86BB00828144 /* SimpleServerCallback.swift */; };
-		F83C0C43214E905200828144 /* DoctorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C42214E905200828144 /* DoctorService.swift */; };
-		F83C0C46214E908200828144 /* DefaultDoctorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C45214E908200828144 /* DefaultDoctorService.swift */; };
-		F85B5E8C214E75BA0098BE65 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85B5E8B214E75BA0098BE65 /* Doctor.swift */; };
 		F85B5E90214E75F90098BE65 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85B5E8F214E75F90098BE65 /* Server.swift */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +115,12 @@
 /* Begin PBXFileReference section */
 		1FC62837C7761277D2572382 /* Pods-EasyHelp Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyHelp Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyHelp Dev/Pods-EasyHelp Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		475B9790CE1462D354F14F67 /* Pods-EasyHelpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyHelpUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyHelpUITests/Pods-EasyHelpUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F62B3FC2240EC31006D1B55 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		4F62B4002240EC76006D1B55 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		4F62B4042240EC91006D1B55 /* MockLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginService.swift; sourceTree = "<group>"; };
+		4F62B4062240ECAE006D1B55 /* DefaultLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginService.swift; sourceTree = "<group>"; };
+		4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorProfileData.swift; sourceTree = "<group>"; };
+		4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorProfileDataParser.swift; sourceTree = "<group>"; };
 		4FEF9928223A884A00351500 /* EasyHelp Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyHelp Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEF9940223A888E00351500 /* EasyHelp Mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyHelp Mock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEF9943223A8A7C00351500 /* Settings-Dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Settings-Dev.plist"; sourceTree = "<group>"; };
@@ -157,11 +165,7 @@
 		F814AFF82148393900C36BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F83C0C33214E7F8800828144 /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
 		F83C0C35214E7FCE00828144 /* ServerResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseParser.swift; sourceTree = "<group>"; };
-		F83C0C37214E845100828144 /* DoctorsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsParser.swift; sourceTree = "<group>"; };
 		F83C0C39214E86BB00828144 /* SimpleServerCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleServerCallback.swift; sourceTree = "<group>"; };
-		F83C0C42214E905200828144 /* DoctorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorService.swift; sourceTree = "<group>"; };
-		F83C0C45214E908200828144 /* DefaultDoctorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDoctorService.swift; sourceTree = "<group>"; };
-		F85B5E8B214E75BA0098BE65 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		F85B5E8F214E75F90098BE65 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +240,22 @@
 				90DEA249C1E1D057DFF56070 /* Pods_EasyHelpUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F62B3FA2240EC0A006D1B55 /* Definition */ = {
+			isa = PBXGroup;
+			children = (
+				4F62B4002240EC76006D1B55 /* LoginService.swift */,
+			);
+			path = Definition;
+			sourceTree = "<group>";
+		};
+		4F62B3FB2240EC16006D1B55 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				4F62B4042240EC91006D1B55 /* MockLoginService.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		4FEF9942223A8A4E00351500 /* Resources */ = {
@@ -346,18 +366,20 @@
 		F83C0C41214E903C00828144 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F83C0C44214E907300828144 /* Support */,
-				F83C0C42214E905200828144 /* DoctorService.swift */,
+				4F62B3FC2240EC31006D1B55 /* AppServices.swift */,
+				4F62B3FB2240EC16006D1B55 /* Mock */,
+				4F62B3FA2240EC0A006D1B55 /* Definition */,
+				F83C0C44214E907300828144 /* Default */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		F83C0C44214E907300828144 /* Support */ = {
+		F83C0C44214E907300828144 /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				F83C0C45214E908200828144 /* DefaultDoctorService.swift */,
+				4F62B4062240ECAE006D1B55 /* DefaultLoginService.swift */,
 			);
-			path = Support;
+			path = Default;
 			sourceTree = "<group>";
 		};
 		F85B5E87214E748B0098BE65 /* Classes */ = {
@@ -366,7 +388,7 @@
 				4FEF994B223A8B7500351500 /* Utils */,
 				F85B5E8A214E75750098BE65 /* UI */,
 				F83C0C41214E903C00828144 /* Services */,
-				F85B5E89214E756D0098BE65 /* Model */,
+				F85B5E89214E756D0098BE65 /* Domain */,
 				F85B5E88214E75650098BE65 /* ServerCommunication */,
 			);
 			path = Classes;
@@ -381,12 +403,12 @@
 			path = ServerCommunication;
 			sourceTree = "<group>";
 		};
-		F85B5E89214E756D0098BE65 /* Model */ = {
+		F85B5E89214E756D0098BE65 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				F85B5E8B214E75BA0098BE65 /* Doctor.swift */,
+				4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */,
 			);
-			path = Model;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		F85B5E8A214E75750098BE65 /* UI */ = {
@@ -414,7 +436,7 @@
 		F85B5E8E214E75E70098BE65 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				F83C0C37214E845100828144 /* DoctorsParser.swift */,
+				4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -819,19 +841,20 @@
 				4FEF9916223A884A00351500 /* ServerRequest.swift in Sources */,
 				4FEF9956223A904C00351500 /* LandingPageViewController.swift in Sources */,
 				4FEF9978223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,
+				4F62B3FD2240EC31006D1B55 /* AppServices.swift in Sources */,
 				4FEF9917223A884A00351500 /* SimpleServerCallback.swift in Sources */,
 				4FEF9919223A884A00351500 /* Server.swift in Sources */,
 				4FEF9970223A91BF00351500 /* AppColors.swift in Sources */,
-				4FEF991A223A884A00351500 /* DefaultDoctorService.swift in Sources */,
 				4FEF996C223A919B00351500 /* LoginTextField.swift in Sources */,
 				4FEF995D223A914C00351500 /* LoginView.swift in Sources */,
 				4FEF991B223A884A00351500 /* ServerResponseParser.swift in Sources */,
-				4FEF991C223A884A00351500 /* DoctorService.swift in Sources */,
 				4FEF9967223A917600351500 /* Strings.swift in Sources */,
+				4F62B40E2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */,
 				4FEF9963223A914C00351500 /* SignupView.swift in Sources */,
 				4FEF9974223A91CC00351500 /* AppFonts.swift in Sources */,
-				4FEF991D223A884A00351500 /* Doctor.swift in Sources */,
-				4FEF991E223A884A00351500 /* DoctorsParser.swift in Sources */,
+				4F62B4072240ECAE006D1B55 /* DefaultLoginService.swift in Sources */,
+				4F62B4012240EC76006D1B55 /* LoginService.swift in Sources */,
+				4F62B40A2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4FEF9951223A8EB100351500 /* ErrorUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -849,19 +872,19 @@
 				4FEF992E223A888E00351500 /* ServerRequest.swift in Sources */,
 				4FEF9958223A904C00351500 /* LandingPageViewController.swift in Sources */,
 				4FEF997A223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,
+				4F62B3FF2240EC31006D1B55 /* AppServices.swift in Sources */,
 				4FEF992F223A888E00351500 /* SimpleServerCallback.swift in Sources */,
 				4FEF9931223A888E00351500 /* Server.swift in Sources */,
 				4FEF9972223A91BF00351500 /* AppColors.swift in Sources */,
-				4FEF9932223A888E00351500 /* DefaultDoctorService.swift in Sources */,
 				4FEF996E223A919B00351500 /* LoginTextField.swift in Sources */,
 				4FEF995F223A914C00351500 /* LoginView.swift in Sources */,
 				4FEF9933223A888E00351500 /* ServerResponseParser.swift in Sources */,
-				4FEF9934223A888E00351500 /* DoctorService.swift in Sources */,
+				4F62B4052240EC91006D1B55 /* MockLoginService.swift in Sources */,
 				4FEF9969223A917600351500 /* Strings.swift in Sources */,
 				4FEF9965223A914C00351500 /* SignupView.swift in Sources */,
 				4FEF9976223A91CC00351500 /* AppFonts.swift in Sources */,
-				4FEF9935223A888E00351500 /* Doctor.swift in Sources */,
-				4FEF9936223A888E00351500 /* DoctorsParser.swift in Sources */,
+				4F62B4032240EC76006D1B55 /* LoginService.swift in Sources */,
+				4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4FEF9953223A8EB100351500 /* ErrorUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -879,19 +902,20 @@
 				F83C0C34214E7F8800828144 /* ServerRequest.swift in Sources */,
 				4FEF9957223A904C00351500 /* LandingPageViewController.swift in Sources */,
 				4FEF9979223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,
+				4F62B3FE2240EC31006D1B55 /* AppServices.swift in Sources */,
 				F83C0C3A214E86BB00828144 /* SimpleServerCallback.swift in Sources */,
 				F85B5E90214E75F90098BE65 /* Server.swift in Sources */,
 				4FEF9971223A91BF00351500 /* AppColors.swift in Sources */,
-				F83C0C46214E908200828144 /* DefaultDoctorService.swift in Sources */,
 				4FEF996D223A919B00351500 /* LoginTextField.swift in Sources */,
 				4FEF995E223A914C00351500 /* LoginView.swift in Sources */,
 				F83C0C36214E7FCE00828144 /* ServerResponseParser.swift in Sources */,
-				F83C0C43214E905200828144 /* DoctorService.swift in Sources */,
 				4FEF9968223A917600351500 /* Strings.swift in Sources */,
+				4F62B40F2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */,
 				4FEF9964223A914C00351500 /* SignupView.swift in Sources */,
 				4FEF9975223A91CC00351500 /* AppFonts.swift in Sources */,
-				F85B5E8C214E75BA0098BE65 /* Doctor.swift in Sources */,
-				F83C0C38214E845100828144 /* DoctorsParser.swift in Sources */,
+				4F62B4082240ECAE006D1B55 /* DefaultLoginService.swift in Sources */,
+				4F62B4022240EC76006D1B55 /* LoginService.swift in Sources */,
+				4F62B40B2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4FEF9952223A8EB100351500 /* ErrorUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
