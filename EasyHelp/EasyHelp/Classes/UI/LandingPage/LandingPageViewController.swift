@@ -12,7 +12,7 @@ class LandingPageViewController: UIViewController {
     
     override func viewDidLoad() {
         let container = UIView(frame: UIScreen.main.bounds)
-        view.backgroundColor = .red
+        container.backgroundColor = .red
         self.view = container
     }
     
