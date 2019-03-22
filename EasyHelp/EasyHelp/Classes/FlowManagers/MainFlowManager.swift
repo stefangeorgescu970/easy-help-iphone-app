@@ -14,7 +14,7 @@ class MainFlowManager: NSObject {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let window = appDelegate.window!
         
-        let newRootVC: UIViewController = LandingPageViewController()
+        let newRootVC: UIViewController = LandingPageTabBarViewController()
         
         UIView.transition(with: window, duration: 0.3, options: [.transitionFlipFromLeft, .preferredFramesPerSecond60], animations: {
             window.rootViewController = newRootVC

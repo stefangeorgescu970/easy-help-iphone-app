@@ -48,9 +48,9 @@
 		4FEF9951223A8EB100351500 /* ErrorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9950223A8EB100351500 /* ErrorUtils.swift */; };
 		4FEF9952223A8EB100351500 /* ErrorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9950223A8EB100351500 /* ErrorUtils.swift */; };
 		4FEF9953223A8EB100351500 /* ErrorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9950223A8EB100351500 /* ErrorUtils.swift */; };
-		4FEF9956223A904C00351500 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9955223A904C00351500 /* LandingPageViewController.swift */; };
-		4FEF9957223A904C00351500 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9955223A904C00351500 /* LandingPageViewController.swift */; };
-		4FEF9958223A904C00351500 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9955223A904C00351500 /* LandingPageViewController.swift */; };
+		4FEF9956223A904C00351500 /* LandingPageTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9955223A904C00351500 /* LandingPageTabBarViewController.swift */; };
+		4FEF9957223A904C00351500 /* LandingPageTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9955223A904C00351500 /* LandingPageTabBarViewController.swift */; };
+		4FEF9958223A904C00351500 /* LandingPageTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9955223A904C00351500 /* LandingPageTabBarViewController.swift */; };
 		4FEF995D223A914C00351500 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF995A223A914C00351500 /* LoginView.swift */; };
 		4FEF995E223A914C00351500 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF995A223A914C00351500 /* LoginView.swift */; };
 		4FEF995F223A914C00351500 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF995A223A914C00351500 /* LoginView.swift */; };
@@ -90,6 +90,15 @@
 		4FF8C47C2245149200F1AE98 /* MainFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */; };
 		4FF8C47D2245149200F1AE98 /* MainFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */; };
 		4FF8C47E2245149200F1AE98 /* MainFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */; };
+		4FF8C483224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C482224520D000F1AE98 /* ProfileDetailsViewController.swift */; };
+		4FF8C484224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C482224520D000F1AE98 /* ProfileDetailsViewController.swift */; };
+		4FF8C485224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C482224520D000F1AE98 /* ProfileDetailsViewController.swift */; };
+		4FF8C487224520E400F1AE98 /* BookDonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C486224520E400F1AE98 /* BookDonationViewController.swift */; };
+		4FF8C488224520E500F1AE98 /* BookDonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C486224520E400F1AE98 /* BookDonationViewController.swift */; };
+		4FF8C489224520E500F1AE98 /* BookDonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C486224520E400F1AE98 /* BookDonationViewController.swift */; };
+		4FF8C48B224520FC00F1AE98 /* DonationHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C48A224520FC00F1AE98 /* DonationHistoryViewController.swift */; };
+		4FF8C48C224520FC00F1AE98 /* DonationHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C48A224520FC00F1AE98 /* DonationHistoryViewController.swift */; };
+		4FF8C48D224520FC00F1AE98 /* DonationHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C48A224520FC00F1AE98 /* DonationHistoryViewController.swift */; };
 		60CD11ED9E892E9ACF569432 /* Pods_EasyHelp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA953CD07B84D5B5A1EC34AE /* Pods_EasyHelp_Dev.framework */; };
 		857F02F642A4573F89D8723B /* Pods_EasyHelp_Dev_EasyHelp_Local.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA40A7CAA9DF8743BBD937FE /* Pods_EasyHelp_Dev_EasyHelp_Local.framework */; };
 		B59CD14E0B4678FBE6263EA8 /* Pods_EasyHelp_Dev_EasyHelp_Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63278C47CFE5FA91535EC3FA /* Pods_EasyHelp_Dev_EasyHelp_Mock.framework */; };
@@ -137,7 +146,7 @@
 		4FEF9947223A8B5600351500 /* ServerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerUtils.swift; sourceTree = "<group>"; };
 		4FEF994C223A8B8A00351500 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		4FEF9950223A8EB100351500 /* ErrorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorUtils.swift; sourceTree = "<group>"; };
-		4FEF9955223A904C00351500 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
+		4FEF9955223A904C00351500 /* LandingPageTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageTabBarViewController.swift; sourceTree = "<group>"; };
 		4FEF995A223A914C00351500 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4FEF995B223A914C00351500 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4FEF995C223A914C00351500 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -151,6 +160,9 @@
 		4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+UserInfo.swift"; sourceTree = "<group>"; };
 		4FF8C47622450C3700F1AE98 /* DonationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationForm.swift; sourceTree = "<group>"; };
 		4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowManager.swift; sourceTree = "<group>"; };
+		4FF8C482224520D000F1AE98 /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
+		4FF8C486224520E400F1AE98 /* BookDonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDonationViewController.swift; sourceTree = "<group>"; };
+		4FF8C48A224520FC00F1AE98 /* DonationHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationHistoryViewController.swift; sourceTree = "<group>"; };
 		60E4B99E02507BF7E3CBBF88 /* Pods_EasyHelpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyHelpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63278C47CFE5FA91535EC3FA /* Pods_EasyHelp_Dev_EasyHelp_Mock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyHelp_Dev_EasyHelp_Mock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BDDC6AEFAC400DDFBA32E4 /* Pods-EasyHelpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyHelpTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyHelpTests/Pods-EasyHelpTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -296,7 +308,7 @@
 		4FEF9954223A903B00351500 /* LandingPage */ = {
 			isa = PBXGroup;
 			children = (
-				4FEF9955223A904C00351500 /* LandingPageViewController.swift */,
+				4FEF9955223A904C00351500 /* LandingPageTabBarViewController.swift */,
 			);
 			path = LandingPage;
 			sourceTree = "<group>";
@@ -343,6 +355,30 @@
 				4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */,
 			);
 			path = FlowManagers;
+			sourceTree = "<group>";
+		};
+		4FF8C47F2245209F00F1AE98 /* ProfileDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4FF8C482224520D000F1AE98 /* ProfileDetailsViewController.swift */,
+			);
+			path = ProfileDetails;
+			sourceTree = "<group>";
+		};
+		4FF8C480224520B600F1AE98 /* BookDonation */ = {
+			isa = PBXGroup;
+			children = (
+				4FF8C486224520E400F1AE98 /* BookDonationViewController.swift */,
+			);
+			path = BookDonation;
+			sourceTree = "<group>";
+		};
+		4FF8C481224520BF00F1AE98 /* DonationHistory */ = {
+			isa = PBXGroup;
+			children = (
+				4FF8C48A224520FC00F1AE98 /* DonationHistoryViewController.swift */,
+			);
+			path = DonationHistory;
 			sourceTree = "<group>";
 		};
 		F814AFCA2148393400C36BDA = {
@@ -453,6 +489,9 @@
 		F85B5E8A214E75750098BE65 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4FF8C481224520BF00F1AE98 /* DonationHistory */,
+				4FF8C480224520B600F1AE98 /* BookDonation */,
+				4FF8C47F2245209F00F1AE98 /* ProfileDetails */,
 				4FEF996A223A918B00351500 /* Misc */,
 				4FEF9959223A911600351500 /* Login */,
 				4FEF9954223A903B00351500 /* LandingPage */,
@@ -878,7 +917,9 @@
 				4FEF994D223A8B8A00351500 /* AppSettings.swift in Sources */,
 				4FEF9960223A914C00351500 /* LoginViewController.swift in Sources */,
 				4FEF9916223A884A00351500 /* ServerRequest.swift in Sources */,
-				4FEF9956223A904C00351500 /* LandingPageViewController.swift in Sources */,
+				4FEF9956223A904C00351500 /* LandingPageTabBarViewController.swift in Sources */,
+				4FF8C487224520E400F1AE98 /* BookDonationViewController.swift in Sources */,
+				4FF8C48B224520FC00F1AE98 /* DonationHistoryViewController.swift in Sources */,
 				4FEF9978223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,
 				4F62B3FD2240EC31006D1B55 /* AppServices.swift in Sources */,
 				4FEF9917223A884A00351500 /* SimpleServerCallback.swift in Sources */,
@@ -894,6 +935,7 @@
 				4F62B40E2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */,
 				4FEF9963223A914C00351500 /* SignupView.swift in Sources */,
 				4FEF9974223A91CC00351500 /* AppFonts.swift in Sources */,
+				4FF8C483224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
 				4F62B4072240ECAE006D1B55 /* DefaultProfileService.swift in Sources */,
 				4F62B4012240EC76006D1B55 /* ProfileService.swift in Sources */,
 				4F62B40A2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
@@ -909,12 +951,14 @@
 				4FEF992D223A888E00351500 /* AppDelegate.swift in Sources */,
 				4FEF9982223A926100351500 /* EmailUtils.swift in Sources */,
 				4FF8C47922450C3700F1AE98 /* DonationForm.swift in Sources */,
+				4FF8C48D224520FC00F1AE98 /* DonationHistoryViewController.swift in Sources */,
 				4FEF997E223A923600351500 /* ButtonWithActivity.swift in Sources */,
 				4FEF994F223A8B8A00351500 /* AppSettings.swift in Sources */,
 				4FEF9962223A914C00351500 /* LoginViewController.swift in Sources */,
 				4FEF992E223A888E00351500 /* ServerRequest.swift in Sources */,
-				4FEF9958223A904C00351500 /* LandingPageViewController.swift in Sources */,
+				4FEF9958223A904C00351500 /* LandingPageTabBarViewController.swift in Sources */,
 				4FEF997A223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,
+				4FF8C489224520E500F1AE98 /* BookDonationViewController.swift in Sources */,
 				4F62B3FF2240EC31006D1B55 /* AppServices.swift in Sources */,
 				4FF8C47422450B5700F1AE98 /* NSError+UserInfo.swift in Sources */,
 				4FEF992F223A888E00351500 /* SimpleServerCallback.swift in Sources */,
@@ -931,6 +975,7 @@
 				4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4FF8C47E2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4FEF9953223A8EB100351500 /* ErrorUtils.swift in Sources */,
+				4FF8C485224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -945,7 +990,9 @@
 				4FEF994E223A8B8A00351500 /* AppSettings.swift in Sources */,
 				4FEF9961223A914C00351500 /* LoginViewController.swift in Sources */,
 				F83C0C34214E7F8800828144 /* ServerRequest.swift in Sources */,
-				4FEF9957223A904C00351500 /* LandingPageViewController.swift in Sources */,
+				4FEF9957223A904C00351500 /* LandingPageTabBarViewController.swift in Sources */,
+				4FF8C488224520E500F1AE98 /* BookDonationViewController.swift in Sources */,
+				4FF8C48C224520FC00F1AE98 /* DonationHistoryViewController.swift in Sources */,
 				4FEF9979223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,
 				4F62B3FE2240EC31006D1B55 /* AppServices.swift in Sources */,
 				F83C0C3A214E86BB00828144 /* SimpleServerCallback.swift in Sources */,
@@ -961,6 +1008,7 @@
 				4F62B40F2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */,
 				4FEF9964223A914C00351500 /* SignupView.swift in Sources */,
 				4FEF9975223A91CC00351500 /* AppFonts.swift in Sources */,
+				4FF8C484224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
 				4F62B4082240ECAE006D1B55 /* DefaultProfileService.swift in Sources */,
 				4F62B4022240EC76006D1B55 /* ProfileService.swift in Sources */,
 				4F62B40B2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,

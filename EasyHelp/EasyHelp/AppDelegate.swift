@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var vc: UIViewController
         
         if let profileData = AppServices.profileService.getCurrentUser() {
-            vc = LandingPageViewController()
+            vc = LandingPageTabBarViewController()
         } else {
             vc = LoginViewController(frame: UIScreen.main.bounds)
         }
