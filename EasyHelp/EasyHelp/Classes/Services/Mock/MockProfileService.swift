@@ -1,5 +1,5 @@
 //
-//  MockLoginService.swift
+//  MockProfileService.swift
 //  EasyHelp Mock
 //
 //  Created by Stefan Georgescu on 19/03/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MockLoginService: LoginService {
+class MockProfileService: LoginService {
     
     private let acceptedAccounts = MockGlobalData.acceptedAccounts()
     

@@ -49,19 +49,19 @@ class LoginViewController: UIViewController {
 extension LoginViewController: LoginViewDelegate {
     func loginView(_ loginView: LoginView, didRequestLogin withEmail: String, withPassword: String) {
         
-        AppServices.loginService.loginUser(withEmail: withEmail, andPassword: withPassword) { (profileData: DonorProfileData?, error: NSError?) in
+        AppServices.profileService.loginUser(withEmail: withEmail, andPassword: withPassword) { (profileData: DonorProfileData?, error: NSError?) in
             if let profileData = profileData {
                 loginView.setButtonLoading(isLoading: false)
                 loginView.stopShowingError()
-//                AppServices.profileService.saveUserLoginData(username: withEmail, password: withPassword)
-//                AppServices.profileService.setUser(profileData: profileData)
-//                LoginFlowManager.redirectAfterLogin(toProffesorPage: profileData.isProfessorAccount())
+                AppServices.profileService.saveCurrentUser(profileData)
+                MainFlowManager.redirectAfterLogin()
             } else {
                 loginView.setButtonLoading(isLoading: false)
-//                if let errorDescription = error?.myErrorInfo {
-//                    loginView.showError(withText: errorDescription)
-//                }
-                loginView.showError(withText: Strings.Errors.generic())
+                if let errorDescription = error?.myErrorInfo {
+                    loginView.showError(withText: errorDescription)
+                } else {
+                    loginView.showError(withText: Strings.Errors.generic())
+                }
             }
         }
     }
@@ -73,10 +73,10 @@ extension LoginViewController: LoginViewDelegate {
 
 extension LoginViewController: SignupViewDelegate {
     func signupViewDidRequestSignUp(_ signupView: SignupView, withName name: String, withEmail email: String, withPassword password: String) {
-        AppServices.loginService.signupUser(withName: name, withEmail: email, withPassword: password) { [unowned self] (error: NSError?) in
+        AppServices.profileService.signupUser(withName: name, withEmail: email, withPassword: password) { [unowned self] (error: NSError?) in
             if let error = error {
                 signupView.setButtonLoading(isLoading: false)
-//                signupView.showError(withText: error.myErrorInfo)
+                signupView.showError(withText: error.myErrorInfo)
             } else {
                 signupView.setButtonLoading(isLoading: false)
                 self.signupView.stopShowingError()

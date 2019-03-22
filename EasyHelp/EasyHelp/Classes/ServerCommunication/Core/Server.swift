@@ -28,15 +28,21 @@ class Server {
         self.networkManager.request(request.getEndpoint(), method: method,  parameters: request.getParameters(), encoding: encoding).responseString { response in
             switch response.result {
             case .success(let value):
-                let json = JSON(parseJSON: value)
-                if let parsedData = parser?.parse(json) {
-                    if let error = parsedData as? NSError {
-                        callback?.onError(error)
-                    } else {
-                        callback?.onSuccess(parsedData)
-                    }
+                if response.response?.statusCode ?? 0 == 403 {
+                    callback?.onError(ErrorUtils.getInvalidCredentialsError())
+                } else if response.response?.statusCode ?? 0 == 401 {
+                    // handle token expiration
                 } else {
-                    callback?.onError(ErrorUtils.getDefaultServerError())
+                    let json = JSON(parseJSON: value)
+                    if let parsedData = parser?.parse(json) {
+                        if let error = parsedData as? NSError {
+                            callback?.onError(error)
+                        } else {
+                            callback?.onSuccess(parsedData)
+                        }
+                    } else {
+                        callback?.onError(ErrorUtils.getDefaultServerError())
+                    }
                 }
             case .failure(let error):
                 let myError = NSError(domain: "EasyHelp", code: 500, userInfo: ["description": error.localizedDescription])

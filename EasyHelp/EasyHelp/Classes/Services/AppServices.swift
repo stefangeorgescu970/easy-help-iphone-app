@@ -9,11 +9,11 @@
 import Foundation
 
 class AppServices {
-    static var loginService: LoginService = {
+    static var profileService: ProfileService = {
         #if MOCK
-        return MockLoginService()
+        return MockProfileService()
         #else
-        return DefaultLoginService()
+        return DefaultProfileService()
         #endif
     }()
 }

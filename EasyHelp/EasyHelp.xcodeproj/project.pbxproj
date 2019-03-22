@@ -12,12 +12,12 @@
 		4F62B3FD2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
 		4F62B3FE2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
 		4F62B3FF2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
-		4F62B4012240EC76006D1B55 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4002240EC76006D1B55 /* LoginService.swift */; };
-		4F62B4022240EC76006D1B55 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4002240EC76006D1B55 /* LoginService.swift */; };
-		4F62B4032240EC76006D1B55 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4002240EC76006D1B55 /* LoginService.swift */; };
-		4F62B4052240EC91006D1B55 /* MockLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4042240EC91006D1B55 /* MockLoginService.swift */; };
-		4F62B4072240ECAE006D1B55 /* DefaultLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4062240ECAE006D1B55 /* DefaultLoginService.swift */; };
-		4F62B4082240ECAE006D1B55 /* DefaultLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4062240ECAE006D1B55 /* DefaultLoginService.swift */; };
+		4F62B4012240EC76006D1B55 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4002240EC76006D1B55 /* ProfileService.swift */; };
+		4F62B4022240EC76006D1B55 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4002240EC76006D1B55 /* ProfileService.swift */; };
+		4F62B4032240EC76006D1B55 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4002240EC76006D1B55 /* ProfileService.swift */; };
+		4F62B4052240EC91006D1B55 /* MockProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4042240EC91006D1B55 /* MockProfileService.swift */; };
+		4F62B4072240ECAE006D1B55 /* DefaultProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4062240ECAE006D1B55 /* DefaultProfileService.swift */; };
+		4F62B4082240ECAE006D1B55 /* DefaultProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4062240ECAE006D1B55 /* DefaultProfileService.swift */; };
 		4F62B40A2240ED2E006D1B55 /* DonorProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */; };
 		4F62B40B2240ED2E006D1B55 /* DonorProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */; };
 		4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */; };
@@ -81,6 +81,15 @@
 		4FEF9980223A926100351500 /* EmailUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF997F223A926100351500 /* EmailUtils.swift */; };
 		4FEF9981223A926100351500 /* EmailUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF997F223A926100351500 /* EmailUtils.swift */; };
 		4FEF9982223A926100351500 /* EmailUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF997F223A926100351500 /* EmailUtils.swift */; };
+		4FF8C47222450B5700F1AE98 /* NSError+UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */; };
+		4FF8C47322450B5700F1AE98 /* NSError+UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */; };
+		4FF8C47422450B5700F1AE98 /* NSError+UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */; };
+		4FF8C47722450C3700F1AE98 /* DonationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47622450C3700F1AE98 /* DonationForm.swift */; };
+		4FF8C47822450C3700F1AE98 /* DonationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47622450C3700F1AE98 /* DonationForm.swift */; };
+		4FF8C47922450C3700F1AE98 /* DonationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47622450C3700F1AE98 /* DonationForm.swift */; };
+		4FF8C47C2245149200F1AE98 /* MainFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */; };
+		4FF8C47D2245149200F1AE98 /* MainFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */; };
+		4FF8C47E2245149200F1AE98 /* MainFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */; };
 		60CD11ED9E892E9ACF569432 /* Pods_EasyHelp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA953CD07B84D5B5A1EC34AE /* Pods_EasyHelp_Dev.framework */; };
 		857F02F642A4573F89D8723B /* Pods_EasyHelp_Dev_EasyHelp_Local.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA40A7CAA9DF8743BBD937FE /* Pods_EasyHelp_Dev_EasyHelp_Local.framework */; };
 		B59CD14E0B4678FBE6263EA8 /* Pods_EasyHelp_Dev_EasyHelp_Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63278C47CFE5FA91535EC3FA /* Pods_EasyHelp_Dev_EasyHelp_Mock.framework */; };
@@ -116,9 +125,9 @@
 		1FC62837C7761277D2572382 /* Pods-EasyHelp Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyHelp Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyHelp Dev/Pods-EasyHelp Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		475B9790CE1462D354F14F67 /* Pods-EasyHelpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyHelpUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyHelpUITests/Pods-EasyHelpUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F62B3FC2240EC31006D1B55 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
-		4F62B4002240EC76006D1B55 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		4F62B4042240EC91006D1B55 /* MockLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginService.swift; sourceTree = "<group>"; };
-		4F62B4062240ECAE006D1B55 /* DefaultLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginService.swift; sourceTree = "<group>"; };
+		4F62B4002240EC76006D1B55 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		4F62B4042240EC91006D1B55 /* MockProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProfileService.swift; sourceTree = "<group>"; };
+		4F62B4062240ECAE006D1B55 /* DefaultProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProfileService.swift; sourceTree = "<group>"; };
 		4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorProfileData.swift; sourceTree = "<group>"; };
 		4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorProfileDataParser.swift; sourceTree = "<group>"; };
 		4FEF9928223A884A00351500 /* EasyHelp Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyHelp Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +148,9 @@
 		4FEF9977223A91EE00351500 /* AppInterfaceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInterfaceFormatter.swift; sourceTree = "<group>"; };
 		4FEF997B223A923600351500 /* ButtonWithActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithActivity.swift; sourceTree = "<group>"; };
 		4FEF997F223A926100351500 /* EmailUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUtils.swift; sourceTree = "<group>"; };
+		4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+UserInfo.swift"; sourceTree = "<group>"; };
+		4FF8C47622450C3700F1AE98 /* DonationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationForm.swift; sourceTree = "<group>"; };
+		4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowManager.swift; sourceTree = "<group>"; };
 		60E4B99E02507BF7E3CBBF88 /* Pods_EasyHelpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyHelpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63278C47CFE5FA91535EC3FA /* Pods_EasyHelp_Dev_EasyHelp_Mock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyHelp_Dev_EasyHelp_Mock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BDDC6AEFAC400DDFBA32E4 /* Pods-EasyHelpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyHelpTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyHelpTests/Pods-EasyHelpTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -245,7 +257,7 @@
 		4F62B3FA2240EC0A006D1B55 /* Definition */ = {
 			isa = PBXGroup;
 			children = (
-				4F62B4002240EC76006D1B55 /* LoginService.swift */,
+				4F62B4002240EC76006D1B55 /* ProfileService.swift */,
 			);
 			path = Definition;
 			sourceTree = "<group>";
@@ -253,7 +265,7 @@
 		4F62B3FB2240EC16006D1B55 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				4F62B4042240EC91006D1B55 /* MockLoginService.swift */,
+				4F62B4042240EC91006D1B55 /* MockProfileService.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -306,6 +318,31 @@
 				4FEF997B223A923600351500 /* ButtonWithActivity.swift */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		4FF8C47022450B3800F1AE98 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4FF8C47522450C2600F1AE98 /* Donor */ = {
+			isa = PBXGroup;
+			children = (
+				4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */,
+				4FF8C47622450C3700F1AE98 /* DonationForm.swift */,
+			);
+			path = Donor;
+			sourceTree = "<group>";
+		};
+		4FF8C47A2245148200F1AE98 /* FlowManagers */ = {
+			isa = PBXGroup;
+			children = (
+				4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */,
+			);
+			path = FlowManagers;
 			sourceTree = "<group>";
 		};
 		F814AFCA2148393400C36BDA = {
@@ -377,7 +414,7 @@
 		F83C0C44214E907300828144 /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				4F62B4062240ECAE006D1B55 /* DefaultLoginService.swift */,
+				4F62B4062240ECAE006D1B55 /* DefaultProfileService.swift */,
 			);
 			path = Default;
 			sourceTree = "<group>";
@@ -385,6 +422,8 @@
 		F85B5E87214E748B0098BE65 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4FF8C47A2245148200F1AE98 /* FlowManagers */,
+				4FF8C47022450B3800F1AE98 /* Extensions */,
 				4FEF994B223A8B7500351500 /* Utils */,
 				F85B5E8A214E75750098BE65 /* UI */,
 				F83C0C41214E903C00828144 /* Services */,
@@ -406,7 +445,7 @@
 		F85B5E89214E756D0098BE65 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */,
+				4FF8C47522450C2600F1AE98 /* Donor */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -845,15 +884,18 @@
 				4FEF9917223A884A00351500 /* SimpleServerCallback.swift in Sources */,
 				4FEF9919223A884A00351500 /* Server.swift in Sources */,
 				4FEF9970223A91BF00351500 /* AppColors.swift in Sources */,
+				4FF8C47722450C3700F1AE98 /* DonationForm.swift in Sources */,
 				4FEF996C223A919B00351500 /* LoginTextField.swift in Sources */,
 				4FEF995D223A914C00351500 /* LoginView.swift in Sources */,
+				4FF8C47222450B5700F1AE98 /* NSError+UserInfo.swift in Sources */,
 				4FEF991B223A884A00351500 /* ServerResponseParser.swift in Sources */,
 				4FEF9967223A917600351500 /* Strings.swift in Sources */,
+				4FF8C47C2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4F62B40E2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */,
 				4FEF9963223A914C00351500 /* SignupView.swift in Sources */,
 				4FEF9974223A91CC00351500 /* AppFonts.swift in Sources */,
-				4F62B4072240ECAE006D1B55 /* DefaultLoginService.swift in Sources */,
-				4F62B4012240EC76006D1B55 /* LoginService.swift in Sources */,
+				4F62B4072240ECAE006D1B55 /* DefaultProfileService.swift in Sources */,
+				4F62B4012240EC76006D1B55 /* ProfileService.swift in Sources */,
 				4F62B40A2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4FEF9951223A8EB100351500 /* ErrorUtils.swift in Sources */,
 			);
@@ -866,6 +908,7 @@
 				4FEF994A223A8B5600351500 /* ServerUtils.swift in Sources */,
 				4FEF992D223A888E00351500 /* AppDelegate.swift in Sources */,
 				4FEF9982223A926100351500 /* EmailUtils.swift in Sources */,
+				4FF8C47922450C3700F1AE98 /* DonationForm.swift in Sources */,
 				4FEF997E223A923600351500 /* ButtonWithActivity.swift in Sources */,
 				4FEF994F223A8B8A00351500 /* AppSettings.swift in Sources */,
 				4FEF9962223A914C00351500 /* LoginViewController.swift in Sources */,
@@ -873,18 +916,20 @@
 				4FEF9958223A904C00351500 /* LandingPageViewController.swift in Sources */,
 				4FEF997A223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,
 				4F62B3FF2240EC31006D1B55 /* AppServices.swift in Sources */,
+				4FF8C47422450B5700F1AE98 /* NSError+UserInfo.swift in Sources */,
 				4FEF992F223A888E00351500 /* SimpleServerCallback.swift in Sources */,
 				4FEF9931223A888E00351500 /* Server.swift in Sources */,
 				4FEF9972223A91BF00351500 /* AppColors.swift in Sources */,
 				4FEF996E223A919B00351500 /* LoginTextField.swift in Sources */,
 				4FEF995F223A914C00351500 /* LoginView.swift in Sources */,
 				4FEF9933223A888E00351500 /* ServerResponseParser.swift in Sources */,
-				4F62B4052240EC91006D1B55 /* MockLoginService.swift in Sources */,
+				4F62B4052240EC91006D1B55 /* MockProfileService.swift in Sources */,
 				4FEF9969223A917600351500 /* Strings.swift in Sources */,
 				4FEF9965223A914C00351500 /* SignupView.swift in Sources */,
 				4FEF9976223A91CC00351500 /* AppFonts.swift in Sources */,
-				4F62B4032240EC76006D1B55 /* LoginService.swift in Sources */,
+				4F62B4032240EC76006D1B55 /* ProfileService.swift in Sources */,
 				4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
+				4FF8C47E2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4FEF9953223A8EB100351500 /* ErrorUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -906,15 +951,18 @@
 				F83C0C3A214E86BB00828144 /* SimpleServerCallback.swift in Sources */,
 				F85B5E90214E75F90098BE65 /* Server.swift in Sources */,
 				4FEF9971223A91BF00351500 /* AppColors.swift in Sources */,
+				4FF8C47822450C3700F1AE98 /* DonationForm.swift in Sources */,
 				4FEF996D223A919B00351500 /* LoginTextField.swift in Sources */,
 				4FEF995E223A914C00351500 /* LoginView.swift in Sources */,
+				4FF8C47322450B5700F1AE98 /* NSError+UserInfo.swift in Sources */,
 				F83C0C36214E7FCE00828144 /* ServerResponseParser.swift in Sources */,
 				4FEF9968223A917600351500 /* Strings.swift in Sources */,
+				4FF8C47D2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4F62B40F2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */,
 				4FEF9964223A914C00351500 /* SignupView.swift in Sources */,
 				4FEF9975223A91CC00351500 /* AppFonts.swift in Sources */,
-				4F62B4082240ECAE006D1B55 /* DefaultLoginService.swift in Sources */,
-				4F62B4022240EC76006D1B55 /* LoginService.swift in Sources */,
+				4F62B4082240ECAE006D1B55 /* DefaultProfileService.swift in Sources */,
+				4F62B4022240EC76006D1B55 /* ProfileService.swift in Sources */,
 				4F62B40B2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4FEF9952223A8EB100351500 /* ErrorUtils.swift in Sources */,
 			);

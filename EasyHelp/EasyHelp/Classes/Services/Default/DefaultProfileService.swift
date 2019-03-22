@@ -9,7 +9,20 @@
 import Foundation
 import Alamofire
 
-class DefaultLoginService: LoginService {
+class DefaultProfileService: ProfileService {
+    
+    private let myUserDefaults = UserDefaults.standard
+    private let userDefaultsKey = "currentUser"
+    
+    func getCurrentUser() -> DonorProfileData? {
+        let data = myUserDefaults.object(forKey: userDefaultsKey) as? Data
+        return NSKeyedUnarchiver.unarchiveObject(with: data ?? Data()) as? DonorProfileData
+    }
+    
+    func saveCurrentUser(_ user: DonorProfileData) {
+        let data = NSKeyedArchiver.archivedData(withRootObject: user)
+        myUserDefaults.set(data, forKey: userDefaultsKey)
+    }
     
     func loginUser(withEmail email: String, andPassword password: String, callback: @escaping (DonorProfileData?, NSError?) -> ()) {
         let request = ServerRequest(endpoint: "login")
@@ -17,6 +30,8 @@ class DefaultLoginService: LoginService {
         request.addParameter(key: "password", value: password)
         
         let callback = SimpleServerCallback(successBlock: { (data) in
+            
+            
             callback(data as? DonorProfileData, nil)
         }, errorBlock: { (error) in
             let error = error as! NSError

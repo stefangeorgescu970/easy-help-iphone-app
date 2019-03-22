@@ -26,32 +26,32 @@ class ServerResponseParser {
     }
     
     func parse(_ body: JSON) -> AnyObject? {
+        var body = body
+        
         if self is DonorProfileDataParser {
-            doParse(content: body)
-            return getResult()
-        } else {
-            if body["status"].int ?? 0 == 500 {
-                return parseError(content: body)
-            }
-            
-            let success = body["status"].boolValue
-            
-            if success {
-                let response = body["object"]
-                if response.exists(){
-                    doParse(content: response)
-                } else {
-                    return success as AnyObject
-                }
-            } else {
-                let error = body["exception"]
-                if error.exists() {
-                    return parseError(content: error)
-                } else {
-                    return success as AnyObject
-                }
-            }
-            return getResult()
+            body = body["body"]
         }
+        if body["status"].int ?? 0 == 500 {
+            return parseError(content: body)
+        }
+            
+        let success = body["status"].boolValue
+        
+        if success {
+            let response = body["object"]
+            if response.exists(){
+                doParse(content: response)
+            } else {
+                return success as AnyObject
+            }
+        } else {
+            let error = body["exception"]
+            if error.exists() {
+                return parseError(content: error)
+            } else {
+                return success as AnyObject
+            }
+        }
+        return getResult()
     }
 }

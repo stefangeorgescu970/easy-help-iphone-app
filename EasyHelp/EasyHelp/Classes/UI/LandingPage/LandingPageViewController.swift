@@ -15,5 +15,4 @@ class LandingPageViewController: UIViewController {
         container.backgroundColor = .red
         self.view = container
     }
-    
 }

@@ -12,4 +12,8 @@ class ErrorUtils {
     static func getDefaultServerError() -> NSError {
         return NSError(domain: "EasyHelp", code: 404, userInfo: ["description": "Bush is in Iraq"])
     }
+    
+    static func getInvalidCredentialsError() -> NSError {
+        return NSError(domain: "EasyHelp", code: 403, userInfo: ["description": "Provided credentials are not valid."])
+    }
 }
