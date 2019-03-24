@@ -13,18 +13,30 @@ class LandingPageTabBarViewController: UITabBarController {
     private let bookDonationController: BookDonationViewController
     private let profileDetailsController: ProfileDetailsViewController
     
+    private let dhcNav: UINavigationController
+    private let bdcNav: UINavigationController
+    private let pdcNav: UINavigationController
+    
+    private var navControllers: [UINavigationController]!
+    
     init() {
         donationHistoryController = DonationHistoryViewController()
         bookDonationController = BookDonationViewController()
         profileDetailsController = ProfileDetailsViewController()
         
-        donationHistoryController.tabBarItem = UITabBarItem(title: "History", image: nil, tag: 0)
-        bookDonationController.tabBarItem = UITabBarItem(title: "Book", image: nil, tag: 1)
-        profileDetailsController.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 2)
+        dhcNav = UINavigationController(rootViewController: donationHistoryController)
+        bdcNav = UINavigationController(rootViewController: bookDonationController)
+        pdcNav = UINavigationController(rootViewController: profileDetailsController)
+        
+        dhcNav.tabBarItem = UITabBarItem(title: "History", image: nil, tag: 0)
+        bdcNav.tabBarItem = UITabBarItem(title: "Book", image: nil, tag: 1)
+        pdcNav.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 2)
         
         super.init(nibName: nil, bundle: nil)
         
-        self.viewControllers = [donationHistoryController, bookDonationController, profileDetailsController]
+        let viewControllers = [dhcNav, bdcNav, pdcNav]
+        
+        self.viewControllers = viewControllers
         
         self.tabBar.tintColor = .red
         self.view.backgroundColor = .white
@@ -36,7 +48,5 @@ class LandingPageTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         self.edgesForExtendedLayout = []
-        
-        
     }
 }
