@@ -36,5 +36,7 @@ class LandingPageTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         self.edgesForExtendedLayout = []
+        
+        
     }
 }

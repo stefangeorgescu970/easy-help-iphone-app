@@ -16,7 +16,7 @@ class DonorProfileData: NSObject, NSCoding {
         static let email = "e"
         static let dateOfBirth = "dob"
         static let city = "ci"
-        static let country = "co"
+        static let county = "co"
         static let ssn = "s"
         static let token = "t"
     }
@@ -29,7 +29,7 @@ class DonorProfileData: NSObject, NSCoding {
         aCoder.encode(email, forKey: Keys.email)
         aCoder.encode(dateOfBirth, forKey: Keys.dateOfBirth)
         aCoder.encode(city, forKey: Keys.city)
-        aCoder.encode(country, forKey: Keys.country)
+        aCoder.encode(county, forKey: Keys.county)
         aCoder.encode(ssn, forKey: Keys.ssn)
         aCoder.encode(token, forKey: Keys.token)
     }
@@ -41,7 +41,7 @@ class DonorProfileData: NSObject, NSCoding {
         email = aDecoder.decodeObject(forKey: Keys.email) as! String
         dateOfBirth = aDecoder.decodeObject(forKey: Keys.dateOfBirth) as? Date
         city = aDecoder.decodeObject(forKey: Keys.city) as? String
-        country = aDecoder.decodeObject(forKey: Keys.country) as? String
+        county = aDecoder.decodeObject(forKey: Keys.county) as? String
         ssn = aDecoder.decodeObject(forKey: Keys.ssn) as? String
         token = aDecoder.decodeObject(forKey: Keys.token) as! String
     }
@@ -54,7 +54,7 @@ class DonorProfileData: NSObject, NSCoding {
     
     var dateOfBirth: Date?
     var city: String?
-    var country: String?
+    var county: String?
     var ssn: String?
     
     var token: String

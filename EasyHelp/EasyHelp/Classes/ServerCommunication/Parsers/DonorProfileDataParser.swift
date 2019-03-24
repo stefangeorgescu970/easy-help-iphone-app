@@ -35,10 +35,6 @@ class DonorProfileDataParser: ServerResponseParser {
             userData.city = city
         }
         
-        if let country = userContent["country"].string {
-            userData.country = country
-        }
-        
         if let dobEpoch = userContent["dateOfBirth"].double {
             let date = Date(timeIntervalSince1970: dobEpoch / 1000)
             userData.dateOfBirth = date
