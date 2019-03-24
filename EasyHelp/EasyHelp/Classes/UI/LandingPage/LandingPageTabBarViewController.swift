@@ -28,16 +28,9 @@ class LandingPageTabBarViewController: UITabBarController {
         bdcNav = UINavigationController(rootViewController: bookDonationController)
         pdcNav = UINavigationController(rootViewController: profileDetailsController)
         
-        let dhcTabBarItem = UITabBarItem(title: "History", image: UIImage(named: "history_icon")?.resize(to: CGSize(width: 35, height: 30)), tag: 0)
-        dhcTabBarItem.titlePositionAdjustment = UIOffset(horizontal: 15, vertical: 0)
-        dhcNav.tabBarItem = dhcTabBarItem
-        bdcNav.tabBarItem = UITabBarItem(title: nil, image: nil, tag: 1)
-        
-        let pdcNavTabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profile_icon")?.resize(to: CGSize(width: 35, height: 35)), tag: 2)
-        pdcNavTabBarItem.titlePositionAdjustment = UIOffset(horizontal: -15, vertical: 0)
-        pdcNav.tabBarItem = pdcNavTabBarItem
-        
         super.init(nibName: nil, bundle: nil)
+        
+        addTabBarItems()
         
         let viewControllers = [dhcNav, bdcNav, pdcNav]
         
@@ -61,7 +54,21 @@ class LandingPageTabBarViewController: UITabBarController {
         self.addRaisedButton(UIImage(named: "blood_drop_tab_bar"), highlightImage: nil, offset: -10)
     }
     
-    func addRaisedButton(_ buttonImage: UIImage?, highlightImage: UIImage?, offset:CGFloat? = nil) {
+    private func addTabBarItems() {
+        let dhcIcon = UIImage(named: "history_icon")?.resize(to: CGSize(width: 35, height: 30))
+        let dhcTabBarItem = UITabBarItem(title: "History", image: dhcIcon, tag: 0)
+        dhcTabBarItem.titlePositionAdjustment = UIOffset(horizontal: 15, vertical: 0)
+        dhcNav.tabBarItem = dhcTabBarItem
+        
+        bdcNav.tabBarItem = UITabBarItem(title: nil, image: nil, tag: 1)
+        
+        let pdcIcon = UIImage(named: "profile_icon")?.resize(to: CGSize(width: 35, height: 35))
+        let pdcNavTabBarItem = UITabBarItem(title: "Profile", image: pdcIcon, tag: 2)
+        pdcNavTabBarItem.titlePositionAdjustment = UIOffset(horizontal: -15, vertical: 0)
+        pdcNav.tabBarItem = pdcNavTabBarItem
+    }
+    
+    private func addRaisedButton(_ buttonImage: UIImage?, highlightImage: UIImage?, offset:CGFloat? = nil) {
         if let buttonImage = buttonImage {
             let button = UIButton(type: UIButton.ButtonType.custom)
             button.autoresizingMask = [.flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin, .flexibleTopMargin]
@@ -76,16 +83,14 @@ class LandingPageTabBarViewController: UITabBarController {
             
             if (heightDifference < 0) {
                 button.center = self.tabBar.center
-            }
-            else {
+            } else {
                 var center = self.tabBar.center
                 center.y -= heightDifference / 2.0
                 
                 button.center = center
             }
             
-            if offset != nil
-            {
+            if offset != nil {
                 //Add offset
                 var center = button.center
                 center.y = center.y + offset!
@@ -96,7 +101,7 @@ class LandingPageTabBarViewController: UITabBarController {
         }
     }
     
-    @objc func onRaisedButton(_ sender: UIButton) {
+    @objc private func onRaisedButton(_ sender: UIButton) {
         self.selectedViewController = bdcNav
     }
 }
