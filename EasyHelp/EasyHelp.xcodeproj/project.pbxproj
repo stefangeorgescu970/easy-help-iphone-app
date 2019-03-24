@@ -10,6 +10,9 @@
 		0A23C16B03CD7FC816C7700E /* Pods_EasyHelpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DEA249C1E1D057DFF56070 /* Pods_EasyHelpUITests.framework */; };
 		198B50B66257978B72D8AE43 /* Pods_EasyHelpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E4B99E02507BF7E3CBBF88 /* Pods_EasyHelpTests.framework */; };
 		4F0F8A022247AA4700E1B270 /* MockGlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F8A012247AA4700E1B270 /* MockGlobalData.swift */; };
+		4F0F8A042247C04800E1B270 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F8A032247C04800E1B270 /* UIImage+Resize.swift */; };
+		4F0F8A052247C04800E1B270 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F8A032247C04800E1B270 /* UIImage+Resize.swift */; };
+		4F0F8A062247C04800E1B270 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F8A032247C04800E1B270 /* UIImage+Resize.swift */; };
 		4F62B3FD2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
 		4F62B3FE2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
 		4F62B3FF2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
@@ -133,6 +136,7 @@
 		1FC62837C7761277D2572382 /* Pods-EasyHelp Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyHelp Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyHelp Dev/Pods-EasyHelp Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		475B9790CE1462D354F14F67 /* Pods-EasyHelpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyHelpUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyHelpUITests/Pods-EasyHelpUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F0F8A012247AA4700E1B270 /* MockGlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGlobalData.swift; sourceTree = "<group>"; };
+		4F0F8A032247C04800E1B270 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		4F62B3FC2240EC31006D1B55 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		4F62B4002240EC76006D1B55 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		4F62B4042240EC91006D1B55 /* MockProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProfileService.swift; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */,
+				4F0F8A032247C04800E1B270 /* UIImage+Resize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -932,6 +937,7 @@
 				4FF8C47222450B5700F1AE98 /* NSError+UserInfo.swift in Sources */,
 				4FEF991B223A884A00351500 /* ServerResponseParser.swift in Sources */,
 				4FEF9967223A917600351500 /* Strings.swift in Sources */,
+				4F0F8A042247C04800E1B270 /* UIImage+Resize.swift in Sources */,
 				4FF8C47C2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4F62B40E2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */,
 				4FEF9963223A914C00351500 /* SignupView.swift in Sources */,
@@ -972,6 +978,7 @@
 				4FEF9965223A914C00351500 /* SignupView.swift in Sources */,
 				4FEF9976223A91CC00351500 /* AppFonts.swift in Sources */,
 				4F62B4032240EC76006D1B55 /* ProfileService.swift in Sources */,
+				4F0F8A062247C04800E1B270 /* UIImage+Resize.swift in Sources */,
 				4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4FF8C47E2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4FEF9953223A8EB100351500 /* ErrorUtils.swift in Sources */,
@@ -1004,6 +1011,7 @@
 				4FF8C47322450B5700F1AE98 /* NSError+UserInfo.swift in Sources */,
 				F83C0C36214E7FCE00828144 /* ServerResponseParser.swift in Sources */,
 				4FEF9968223A917600351500 /* Strings.swift in Sources */,
+				4F0F8A052247C04800E1B270 /* UIImage+Resize.swift in Sources */,
 				4FF8C47D2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4F62B40F2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */,
 				4FEF9964223A914C00351500 /* SignupView.swift in Sources */,

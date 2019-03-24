@@ -12,7 +12,7 @@ class BookDonationViewController: UIViewController {
     
     override func viewDidLoad() {
         let container = UIView(frame: UIScreen.main.bounds)
-        container.backgroundColor = .green
+        container.backgroundColor = .white
         self.view = container
     }
 }
