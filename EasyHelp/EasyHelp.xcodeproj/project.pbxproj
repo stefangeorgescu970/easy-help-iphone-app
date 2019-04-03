@@ -27,6 +27,27 @@
 		4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */; };
 		4F62B40E2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */; };
 		4F62B40F2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */; };
+		4FB7833B2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7833A2254F8F5007E741E /* OnboardingFlowManager.swift */; };
+		4FB7833C2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7833A2254F8F5007E741E /* OnboardingFlowManager.swift */; };
+		4FB7833D2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7833A2254F8F5007E741E /* OnboardingFlowManager.swift */; };
+		4FB783412254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB783402254F94F007E741E /* CountySSNOnboardingViewController.swift */; };
+		4FB783422254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB783402254F94F007E741E /* CountySSNOnboardingViewController.swift */; };
+		4FB783432254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB783402254F94F007E741E /* CountySSNOnboardingViewController.swift */; };
+		4FB783492254FD51007E741E /* MiscService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB783482254FD51007E741E /* MiscService.swift */; };
+		4FB7834A2254FD51007E741E /* MiscService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB783482254FD51007E741E /* MiscService.swift */; };
+		4FB7834B2254FD51007E741E /* MiscService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB783482254FD51007E741E /* MiscService.swift */; };
+		4FB7834D2254FD60007E741E /* DefaultMiscService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7834C2254FD60007E741E /* DefaultMiscService.swift */; };
+		4FB7834E2254FD60007E741E /* DefaultMiscService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7834C2254FD60007E741E /* DefaultMiscService.swift */; };
+		4FB783502254FD6D007E741E /* MockMiscService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7834F2254FD6D007E741E /* MockMiscService.swift */; };
+		4FB7835222550160007E741E /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7835122550160007E741E /* UIViewController+DismissKeyboard.swift */; };
+		4FB7835322550160007E741E /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7835122550160007E741E /* UIViewController+DismissKeyboard.swift */; };
+		4FB7835422550160007E741E /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7835122550160007E741E /* UIViewController+DismissKeyboard.swift */; };
+		4FB783562255026B007E741E /* AppScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB783552255026B007E741E /* AppScreenUtils.swift */; };
+		4FB783572255026B007E741E /* AppScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB783552255026B007E741E /* AppScreenUtils.swift */; };
+		4FB783582255026B007E741E /* AppScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB783552255026B007E741E /* AppScreenUtils.swift */; };
+		4FB7835B225505B7007E741E /* BloodGroupOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7835A225505B7007E741E /* BloodGroupOnboardingViewController.swift */; };
+		4FB7835C225505B7007E741E /* BloodGroupOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7835A225505B7007E741E /* BloodGroupOnboardingViewController.swift */; };
+		4FB7835D225505B7007E741E /* BloodGroupOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7835A225505B7007E741E /* BloodGroupOnboardingViewController.swift */; };
 		4FEF9915223A884A00351500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814AFD62148393400C36BDA /* AppDelegate.swift */; };
 		4FEF9916223A884A00351500 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C33214E7F8800828144 /* ServerRequest.swift */; };
 		4FEF9917223A884A00351500 /* SimpleServerCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C39214E86BB00828144 /* SimpleServerCallback.swift */; };
@@ -143,6 +164,14 @@
 		4F62B4062240ECAE006D1B55 /* DefaultProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProfileService.swift; sourceTree = "<group>"; };
 		4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorProfileData.swift; sourceTree = "<group>"; };
 		4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorProfileDataParser.swift; sourceTree = "<group>"; };
+		4FB7833A2254F8F5007E741E /* OnboardingFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowManager.swift; sourceTree = "<group>"; };
+		4FB783402254F94F007E741E /* CountySSNOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountySSNOnboardingViewController.swift; sourceTree = "<group>"; };
+		4FB783482254FD51007E741E /* MiscService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscService.swift; sourceTree = "<group>"; };
+		4FB7834C2254FD60007E741E /* DefaultMiscService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMiscService.swift; sourceTree = "<group>"; };
+		4FB7834F2254FD6D007E741E /* MockMiscService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMiscService.swift; sourceTree = "<group>"; };
+		4FB7835122550160007E741E /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
+		4FB783552255026B007E741E /* AppScreenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreenUtils.swift; sourceTree = "<group>"; };
+		4FB7835A225505B7007E741E /* BloodGroupOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodGroupOnboardingViewController.swift; sourceTree = "<group>"; };
 		4FEF9928223A884A00351500 /* EasyHelp Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyHelp Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEF9940223A888E00351500 /* EasyHelp Mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyHelp Mock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEF9943223A8A7C00351500 /* Settings-Dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Settings-Dev.plist"; sourceTree = "<group>"; };
@@ -274,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				4F62B4002240EC76006D1B55 /* ProfileService.swift */,
+				4FB783482254FD51007E741E /* MiscService.swift */,
 			);
 			path = Definition;
 			sourceTree = "<group>";
@@ -283,8 +313,34 @@
 			children = (
 				4F0F8A012247AA4700E1B270 /* MockGlobalData.swift */,
 				4F62B4042240EC91006D1B55 /* MockProfileService.swift */,
+				4FB7834F2254FD6D007E741E /* MockMiscService.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		4FB7833E2254F91F007E741E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4FB78359225505A5007E741E /* BloodGroup */,
+				4FB7833F2254F928007E741E /* CountySSN */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		4FB7833F2254F928007E741E /* CountySSN */ = {
+			isa = PBXGroup;
+			children = (
+				4FB783402254F94F007E741E /* CountySSNOnboardingViewController.swift */,
+			);
+			path = CountySSN;
+			sourceTree = "<group>";
+		};
+		4FB78359225505A5007E741E /* BloodGroup */ = {
+			isa = PBXGroup;
+			children = (
+				4FB7835A225505B7007E741E /* BloodGroupOnboardingViewController.swift */,
+			);
+			path = BloodGroup;
 			sourceTree = "<group>";
 		};
 		4FEF9942223A8A4E00351500 /* Resources */ = {
@@ -306,6 +362,7 @@
 				4FEF9973223A91CC00351500 /* AppFonts.swift */,
 				4FEF9977223A91EE00351500 /* AppInterfaceFormatter.swift */,
 				4FEF997F223A926100351500 /* EmailUtils.swift */,
+				4FB783552255026B007E741E /* AppScreenUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -342,6 +399,7 @@
 			children = (
 				4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */,
 				4F0F8A032247C04800E1B270 /* UIImage+Resize.swift */,
+				4FB7835122550160007E741E /* UIViewController+DismissKeyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */,
+				4FB7833A2254F8F5007E741E /* OnboardingFlowManager.swift */,
 			);
 			path = FlowManagers;
 			sourceTree = "<group>";
@@ -457,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				4F62B4062240ECAE006D1B55 /* DefaultProfileService.swift */,
+				4FB7834C2254FD60007E741E /* DefaultMiscService.swift */,
 			);
 			path = Default;
 			sourceTree = "<group>";
@@ -495,6 +555,7 @@
 		F85B5E8A214E75750098BE65 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4FB7833E2254F91F007E741E /* Onboarding */,
 				4FF8C481224520BF00F1AE98 /* DonationHistory */,
 				4FF8C480224520B600F1AE98 /* BookDonation */,
 				4FF8C47F2245209F00F1AE98 /* ProfileDetails */,
@@ -927,20 +988,27 @@
 				4FF8C487224520E400F1AE98 /* BookDonationViewController.swift in Sources */,
 				4FF8C48B224520FC00F1AE98 /* DonationHistoryViewController.swift in Sources */,
 				4FEF9978223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,
+				4FB783562255026B007E741E /* AppScreenUtils.swift in Sources */,
 				4F62B3FD2240EC31006D1B55 /* AppServices.swift in Sources */,
+				4FB7833B2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */,
 				4FEF9917223A884A00351500 /* SimpleServerCallback.swift in Sources */,
 				4FEF9919223A884A00351500 /* Server.swift in Sources */,
 				4FEF9970223A91BF00351500 /* AppColors.swift in Sources */,
 				4FF8C47722450C3700F1AE98 /* DonationForm.swift in Sources */,
+				4FB7835B225505B7007E741E /* BloodGroupOnboardingViewController.swift in Sources */,
 				4FEF996C223A919B00351500 /* LoginTextField.swift in Sources */,
 				4FEF995D223A914C00351500 /* LoginView.swift in Sources */,
 				4FF8C47222450B5700F1AE98 /* NSError+UserInfo.swift in Sources */,
 				4FEF991B223A884A00351500 /* ServerResponseParser.swift in Sources */,
 				4FEF9967223A917600351500 /* Strings.swift in Sources */,
+				4FB7835222550160007E741E /* UIViewController+DismissKeyboard.swift in Sources */,
+				4FB7834D2254FD60007E741E /* DefaultMiscService.swift in Sources */,
 				4F0F8A042247C04800E1B270 /* UIImage+Resize.swift in Sources */,
+				4FB783412254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */,
 				4FF8C47C2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4F62B40E2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */,
 				4FEF9963223A914C00351500 /* SignupView.swift in Sources */,
+				4FB783492254FD51007E741E /* MiscService.swift in Sources */,
 				4FEF9974223A91CC00351500 /* AppFonts.swift in Sources */,
 				4FF8C483224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
 				4F62B4072240ECAE006D1B55 /* DefaultProfileService.swift in Sources */,
@@ -957,21 +1025,27 @@
 				4FEF994A223A8B5600351500 /* ServerUtils.swift in Sources */,
 				4FEF992D223A888E00351500 /* AppDelegate.swift in Sources */,
 				4FEF9982223A926100351500 /* EmailUtils.swift in Sources */,
+				4FB783502254FD6D007E741E /* MockMiscService.swift in Sources */,
 				4FF8C47922450C3700F1AE98 /* DonationForm.swift in Sources */,
 				4FF8C48D224520FC00F1AE98 /* DonationHistoryViewController.swift in Sources */,
 				4FEF997E223A923600351500 /* ButtonWithActivity.swift in Sources */,
 				4FEF994F223A8B8A00351500 /* AppSettings.swift in Sources */,
 				4FEF9962223A914C00351500 /* LoginViewController.swift in Sources */,
 				4FEF992E223A888E00351500 /* ServerRequest.swift in Sources */,
+				4FB783582255026B007E741E /* AppScreenUtils.swift in Sources */,
+				4FB7834B2254FD51007E741E /* MiscService.swift in Sources */,
 				4FEF9958223A904C00351500 /* LandingPageTabBarViewController.swift in Sources */,
 				4FEF997A223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,
+				4FB7835D225505B7007E741E /* BloodGroupOnboardingViewController.swift in Sources */,
 				4FF8C489224520E500F1AE98 /* BookDonationViewController.swift in Sources */,
 				4F62B3FF2240EC31006D1B55 /* AppServices.swift in Sources */,
 				4FF8C47422450B5700F1AE98 /* NSError+UserInfo.swift in Sources */,
+				4FB7835422550160007E741E /* UIViewController+DismissKeyboard.swift in Sources */,
 				4FEF992F223A888E00351500 /* SimpleServerCallback.swift in Sources */,
 				4F0F8A022247AA4700E1B270 /* MockGlobalData.swift in Sources */,
 				4FEF9972223A91BF00351500 /* AppColors.swift in Sources */,
 				4FEF996E223A919B00351500 /* LoginTextField.swift in Sources */,
+				4FB7833D2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */,
 				4FEF995F223A914C00351500 /* LoginView.swift in Sources */,
 				4F62B4052240EC91006D1B55 /* MockProfileService.swift in Sources */,
 				4FEF9969223A917600351500 /* Strings.swift in Sources */,
@@ -980,6 +1054,7 @@
 				4F62B4032240EC76006D1B55 /* ProfileService.swift in Sources */,
 				4F0F8A062247C04800E1B270 /* UIImage+Resize.swift in Sources */,
 				4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
+				4FB783432254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */,
 				4FF8C47E2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4FEF9953223A8EB100351500 /* ErrorUtils.swift in Sources */,
 				4FF8C485224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
@@ -1001,20 +1076,27 @@
 				4FF8C488224520E500F1AE98 /* BookDonationViewController.swift in Sources */,
 				4FF8C48C224520FC00F1AE98 /* DonationHistoryViewController.swift in Sources */,
 				4FEF9979223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,
+				4FB783572255026B007E741E /* AppScreenUtils.swift in Sources */,
 				4F62B3FE2240EC31006D1B55 /* AppServices.swift in Sources */,
+				4FB7833C2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */,
 				F83C0C3A214E86BB00828144 /* SimpleServerCallback.swift in Sources */,
 				F85B5E90214E75F90098BE65 /* Server.swift in Sources */,
 				4FEF9971223A91BF00351500 /* AppColors.swift in Sources */,
 				4FF8C47822450C3700F1AE98 /* DonationForm.swift in Sources */,
+				4FB7835C225505B7007E741E /* BloodGroupOnboardingViewController.swift in Sources */,
 				4FEF996D223A919B00351500 /* LoginTextField.swift in Sources */,
 				4FEF995E223A914C00351500 /* LoginView.swift in Sources */,
 				4FF8C47322450B5700F1AE98 /* NSError+UserInfo.swift in Sources */,
 				F83C0C36214E7FCE00828144 /* ServerResponseParser.swift in Sources */,
 				4FEF9968223A917600351500 /* Strings.swift in Sources */,
+				4FB7835322550160007E741E /* UIViewController+DismissKeyboard.swift in Sources */,
+				4FB7834E2254FD60007E741E /* DefaultMiscService.swift in Sources */,
 				4F0F8A052247C04800E1B270 /* UIImage+Resize.swift in Sources */,
+				4FB783422254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */,
 				4FF8C47D2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4F62B40F2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */,
 				4FEF9964223A914C00351500 /* SignupView.swift in Sources */,
+				4FB7834A2254FD51007E741E /* MiscService.swift in Sources */,
 				4FEF9975223A91CC00351500 /* AppFonts.swift in Sources */,
 				4FF8C484224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
 				4F62B4082240ECAE006D1B55 /* DefaultProfileService.swift in Sources */,

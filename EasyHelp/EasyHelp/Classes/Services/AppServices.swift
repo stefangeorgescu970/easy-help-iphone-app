@@ -16,4 +16,12 @@ class AppServices {
         return DefaultProfileService()
         #endif
     }()
+    
+    static var miscService: MiscService = {
+        #if MOCK
+        return MockMiscService()
+        #else
+        return DefaultMiscService()
+        #endif
+    }()
 }

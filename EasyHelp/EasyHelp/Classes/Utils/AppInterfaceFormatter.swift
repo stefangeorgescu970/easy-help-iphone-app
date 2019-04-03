@@ -10,6 +10,61 @@
 import UIKit
 
 class AppInterfaceFormatter {
+    static func createHeader(title: String, subtitle: String?) -> UIView {
+        if let subtitleU = subtitle {
+            return self.createHeader(title: title, subtitleAttributedString: NSAttributedString(string: subtitleU))
+        } else {
+            return self.createHeader(title: title, subtitleAttributedString: nil)
+        }
+    }
+    
+    static func createHeader(title: String, subtitleAttributedString: NSAttributedString?) -> UIView {
+        let marginH:CGFloat = 15
+        var bounds = UIScreen.main.bounds
+        bounds.size.width -= 2 * marginH
+        
+        let headerView = UIView()
+        
+        let headerViewWrapper = UIView()
+        headerViewWrapper.autoresizingMask = [UIView.AutoresizingMask.flexibleTopMargin, UIView.AutoresizingMask.flexibleBottomMargin, UIView.AutoresizingMask.flexibleWidth]
+        
+        let titleLabel: UILabel = UILabel()
+        titleLabel.font = AppFonts.lightFontWithSize(21)
+        titleLabel.textColor = AppColors.darkBlue
+        titleLabel.text = title
+        titleLabel.textAlignment = NSTextAlignment.center
+        titleLabel.numberOfLines = 0
+        titleLabel.frame = CGRect(origin: CGPoint.zero, size: titleLabel.sizeThatFits(bounds.size))
+        titleLabel.autoresizingMask = UIView.AutoresizingMask.flexibleWidth
+        
+        let subtitleLabel:UILabel = UILabel(frame: CGRect.zero)
+        var withSubtitle = false
+        if let subtitleU = subtitleAttributedString {
+            withSubtitle = true
+            subtitleLabel.font = AppFonts.lightFontWithSize(12)
+            subtitleLabel.textColor = AppColors.darkBlue
+            subtitleLabel.attributedText = subtitleU
+            subtitleLabel.textAlignment = NSTextAlignment.center
+            subtitleLabel.numberOfLines = 2
+            subtitleLabel.frame = CGRect(origin: CGPoint.zero, size: subtitleLabel.sizeThatFits(bounds.size))
+            subtitleLabel.autoresizingMask = UIView.AutoresizingMask.flexibleWidth
+        }
+        
+        let scrVer = AppScreenUtils.screenVersion
+        headerView.frame = CGRect(x: marginH, y: scrVer < 5 ? 10 : 20, width: bounds.width, height: scrVer < 5 ? 65 : 75)
+        headerViewWrapper.frame = CGRect(x: 0, y: 0, width: bounds.width, height: titleLabel.bounds.height + subtitleLabel.bounds.height + 5)
+        headerViewWrapper.center = CGPoint(x: headerView.frame.width / 2, y: headerView.frame.height / 2)
+        
+        titleLabel.frame = CGRect(x: 0, y: 0, width: bounds.width, height: titleLabel.bounds.height + (withSubtitle ? 0 : 7.5))
+        subtitleLabel.frame = CGRect(x: 0, y: titleLabel.bounds.height + 5, width: bounds.width, height: subtitleLabel.bounds.height)
+        
+        headerViewWrapper.addSubview(titleLabel)
+        headerViewWrapper.addSubview(subtitleLabel)
+        headerView.addSubview(headerViewWrapper)
+        
+        return headerView
+    }
+    
     static func addUnderline(toTextField textField: UITextField) {
         let border = CALayer()
         let width = CGFloat(1.0)

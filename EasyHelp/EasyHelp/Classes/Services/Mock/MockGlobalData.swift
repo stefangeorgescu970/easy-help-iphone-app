@@ -10,7 +10,7 @@ import Foundation
 
 class MockGlobalData: NSObject {
     static func getUncompleteMockProfile() -> DonorProfileData {
-        return DonorProfileData(id: 1, email: "donor@mail.com", token: "mockToken")
+        return DonorProfileData(id: 1, email: "donor@mail.com", token: "mockToken", firstName: "a", lastName: "b")
     }
     
     static func getMockProfile() -> DonorProfileData {

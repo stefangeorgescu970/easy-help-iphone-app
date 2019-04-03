@@ -54,7 +54,13 @@ extension LoginViewController: LoginViewDelegate {
                 loginView.setButtonLoading(isLoading: false)
                 loginView.stopShowingError()
                 AppServices.profileService.saveCurrentUser(profileData)
-                MainFlowManager.redirectAfterLogin()
+                
+                // Check for data existance
+                if profileData.county != nil {
+                    MainFlowManager.redirectAfterLogin()
+                } else {
+                    OnboardingFlowManager.instance.startFlow()
+                }
             } else {
                 loginView.setButtonLoading(isLoading: false)
                 if let errorDescription = error?.myErrorInfo {
