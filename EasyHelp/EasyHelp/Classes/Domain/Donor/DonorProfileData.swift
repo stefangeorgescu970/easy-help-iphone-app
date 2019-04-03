@@ -36,8 +36,8 @@ class DonorProfileData: NSObject, NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         id = aDecoder.decodeInteger(forKey: Keys.id)
-        firstName = aDecoder.decodeObject(forKey: Keys.firstName) as? String
-        lastName = aDecoder.decodeObject(forKey: Keys.lastName) as? String
+        firstName = aDecoder.decodeObject(forKey: Keys.firstName) as! String
+        lastName = aDecoder.decodeObject(forKey: Keys.lastName) as! String
         email = aDecoder.decodeObject(forKey: Keys.email) as! String
         dateOfBirth = aDecoder.decodeObject(forKey: Keys.dateOfBirth) as? Date
         city = aDecoder.decodeObject(forKey: Keys.city) as? String
@@ -48,8 +48,8 @@ class DonorProfileData: NSObject, NSCoding {
     
     var id: Int
     
-    var firstName: String?
-    var lastName: String?
+    var firstName: String
+    var lastName: String
     var email: String
     
     var dateOfBirth: Date?
@@ -59,9 +59,11 @@ class DonorProfileData: NSObject, NSCoding {
     
     var token: String
     
-    public init(id: Int, email: String, token: String) {
+    public init(id: Int, email: String, token: String, firstName: String, lastName: String) {
         self.id = id
         self.email = email
         self.token = token
+        self.lastName = lastName
+        self.firstName = firstName
     }
 }

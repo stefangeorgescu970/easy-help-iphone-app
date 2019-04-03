@@ -36,6 +36,8 @@ class LandingPageTabBarViewController: UITabBarController {
         
         self.viewControllers = viewControllers
         
+        self.selectedIndex = 1
+        
         self.tabBar.tintColor = .red
         self.view.backgroundColor = .white
     }

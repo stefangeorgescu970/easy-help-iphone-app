@@ -11,6 +11,8 @@ import Foundation
 class EmailUtils {
     static func isValidEmailFormat(_ email: String) -> Bool {
         
+        return true
+        
         #if MOCK
         return true
         #endif

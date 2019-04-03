@@ -72,18 +72,14 @@ extension LoginViewController: LoginViewDelegate {
 }
 
 extension LoginViewController: SignupViewDelegate {
-    func signupViewDidRequestSignUp(_ signupView: SignupView, withName name: String, withEmail email: String, withPassword password: String) {
-        AppServices.profileService.signupUser(withName: name, withEmail: email, withPassword: password) { [unowned self] (error: NSError?) in
+    func signupViewDidRequestSignUp(_ signupView: SignupView, withFirstName firstName: String, withLastName lastName: String, withEmail email: String, withPassword password: String) {
+        AppServices.profileService.signupUser(withFirstName: firstName, withLastName: lastName, withEmail: email, withPassword: password) { (error) in
             if let error = error {
                 signupView.setButtonLoading(isLoading: false)
                 signupView.showError(withText: error.myErrorInfo)
             } else {
-                signupView.setButtonLoading(isLoading: false)
-                self.signupView.stopShowingError()
-                self.signupView.clearInputFields()
-                self.loginView.setEmailInput(value: email)
-                self.loginView.showInfo(withText: Strings.Login.validateAccountFirst())
-                self.signupViewDidRequestLoginPage(signupView)
+                // Go to next page
+                print("next Page")
             }
         }
     }

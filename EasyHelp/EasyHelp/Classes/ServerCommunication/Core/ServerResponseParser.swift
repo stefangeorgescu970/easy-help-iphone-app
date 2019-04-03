@@ -26,15 +26,6 @@ class ServerResponseParser {
     }
     
     func parse(_ body: JSON) -> AnyObject? {
-        var body = body
-        
-        if self is DonorProfileDataParser {
-            body = body["body"]
-        }
-        if body["status"].int ?? 0 == 500 {
-            return parseError(content: body)
-        }
-            
         let success = body["status"].boolValue
         
         if success {

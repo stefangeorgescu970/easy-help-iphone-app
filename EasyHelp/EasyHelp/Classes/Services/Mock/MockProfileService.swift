@@ -38,7 +38,7 @@ class MockProfileService: ProfileService {
         }
     }
     
-    func signupUser(withName name: String, withEmail email: String, withPassword password: String, callback: @escaping (NSError?) -> ()) {
+    func signupUser(withFirstName firstName: String, withLastName lastName: String, withEmail email: String, withPassword password: String, callback: @escaping (NSError?) -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now()) { [unowned self] in
             if self.acceptedAccounts.keys.contains(email) {
                 callback(NSError())

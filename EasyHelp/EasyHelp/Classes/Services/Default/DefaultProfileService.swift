@@ -25,7 +25,7 @@ class DefaultProfileService: ProfileService {
     }
     
     func loginUser(withEmail email: String, andPassword password: String, callback: @escaping (DonorProfileData?, NSError?) -> ()) {
-        let request = ServerRequest(endpoint: "login")
+        let request = ServerRequest(endpoint: "login", controller: "users")
         request.addParameter(key: "email", value: email)
         request.addParameter(key: "password", value: password)
         
@@ -38,17 +38,25 @@ class DefaultProfileService: ProfileService {
             callback(nil, error)
         })
         
-        Server.sharedInstance.send(request, parser: DonorProfileDataParser(), callback: callback, encoding: JSONEncoding.default)
+        Server.sharedInstance.send(request, parser: DonorProfileDataParser(), callback: callback)
     }
     
-    func signupUser(withName name: String, withEmail email: String, withPassword password: String, callback: @escaping (NSError?) -> ()) {
-        let request = ServerRequest(endpoint: "register")
+    func signupUser(withFirstName firstName: String, withLastName lastName: String, withEmail email: String, withPassword password: String, callback: @escaping (NSError?) -> ()) {
+        let request = ServerRequest(endpoint: "register", controller: "users")
         request.addParameter(key: "email", value: email)
-        request.addParameter(key: "name", value: name)
+        request.addParameter(key: "firstName", value: firstName)
+        request.addParameter(key: "lastName", value: lastName)
         request.addParameter(key: "password", value: password)
+        request.addParameter(key: "userType", value: 0)
         
         let callback = SimpleServerCallback(successBlock: { (data) in
-            callback(nil)
+            if let success = data as? Bool {
+                if success {
+                    callback(nil)
+                    return
+                }
+            }
+            callback(ErrorUtils.getDefaultServerError())
         }, errorBlock: { (error) in
             let error = error as! NSError
             callback(error)

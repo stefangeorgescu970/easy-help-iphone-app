@@ -9,7 +9,10 @@
 import UIKit
 
 protocol SignupViewDelegate: class {
-    func signupViewDidRequestSignUp(_ signupView: SignupView, withName name: String, withEmail email: String, withPassword password: String)
+    func signupViewDidRequestSignUp(_ signupView: SignupView,
+                                    withFirstName firstName: String, withLastName lastName: String,
+                                    withEmail email: String,
+                                    withPassword password: String)
     func signupViewDidRequestLoginPage(_ signupView: SignupView)
 }
 
@@ -37,7 +40,7 @@ class SignupView: UIView {
         return label
     }()
     
-    private let nameLabel: UILabel = {
+    private let firstNameLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.Signup.name()
         label.textColor = AppColors.darkBlue
@@ -46,10 +49,34 @@ class SignupView: UIView {
         return label
     }()
     
-    private let nameInput: UITextField = {
+    private let firstNameInput: UITextField = {
         
         let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(string: Strings.Signup.namePlaceholder(),
+        textField.attributedPlaceholder = NSAttributedString(string: Strings.Signup.firstNamePlaceholder(),
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        textField.font = AppFonts.regularFontWithSize(16)
+        textField.autocapitalizationType = .none
+        textField.borderStyle = .none
+        textField.textColor = .black
+        
+        textField.addTarget(self, action: #selector(SignupView.userEditedText), for: .editingChanged)
+        
+        return textField
+    }()
+    
+    private let lastNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = Strings.Signup.name()
+        label.textColor = AppColors.darkBlue
+        label.font = AppFonts.boldFontWithSize(18)
+        label.sizeToFit()
+        return label
+    }()
+    
+    private let lastNameInput: UITextField = {
+        
+        let textField = UITextField()
+        textField.attributedPlaceholder = NSAttributedString(string: Strings.Signup.lastNamePlaceholder(),
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         textField.font = AppFonts.regularFontWithSize(16)
         textField.autocapitalizationType = .none
@@ -189,28 +216,38 @@ class SignupView: UIView {
         let holder = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         holder.backgroundColor = .white
         
-        
         titleLabel.frame.origin.y = currentYOffset
         titleLabel.center.x = frame.width / 2
         holder.addSubview(titleLabel)
         currentYOffset += titleLabel.frame.height + Constants.rowSpacing * 2
         
+        firstNameLabel.frame.origin.x = Constants.leftMargin
+        firstNameLabel.frame.origin.y = currentYOffset
+        holder.addSubview(firstNameLabel)
+        currentYOffset += firstNameLabel.frame.height + Constants.labelSpacing
         
-        nameLabel.frame.origin.x = Constants.leftMargin
-        nameLabel.frame.origin.y = currentYOffset
-        holder.addSubview(nameLabel)
-        currentYOffset += nameLabel.frame.height + Constants.labelSpacing
-        
-        
-        nameInput.frame = CGRect(x: Constants.leftMargin,
+        firstNameInput.frame = CGRect(x: Constants.leftMargin,
                                  y: currentYOffset,
                                  width: frame.width - 2 * Constants.leftMargin,
                                  height: 40)
-        nameInput.delegate = self
-        AppInterfaceFormatter.addUnderline(toTextField: nameInput)
-        holder.addSubview(nameInput)
-        currentYOffset += nameInput.frame.height + Constants.rowSpacing
+        firstNameInput.delegate = self
+        AppInterfaceFormatter.addUnderline(toTextField: firstNameInput)
+        holder.addSubview(firstNameInput)
+        currentYOffset += firstNameInput.frame.height + Constants.rowSpacing
         
+        lastNameLabel.frame.origin.x = Constants.leftMargin
+        lastNameLabel.frame.origin.y = currentYOffset
+        holder.addSubview(lastNameLabel)
+        currentYOffset += lastNameLabel.frame.height + Constants.labelSpacing
+        
+        lastNameInput.frame = CGRect(x: Constants.leftMargin,
+                                     y: currentYOffset,
+                                     width: frame.width - 2 * Constants.leftMargin,
+                                     height: 40)
+        lastNameInput.delegate = self
+        AppInterfaceFormatter.addUnderline(toTextField: lastNameInput)
+        holder.addSubview(lastNameInput)
+        currentYOffset += lastNameInput.frame.height + Constants.rowSpacing
         
         emailLabel.frame.origin.x = Constants.leftMargin
         emailLabel.frame.origin.y = currentYOffset
@@ -240,7 +277,6 @@ class SignupView: UIView {
         holder.addSubview(passwordInput)
         currentYOffset += passwordInput.frame.height + Constants.rowSpacing
         
-        
         confirmPasswordLabel.frame.origin.x = Constants.leftMargin
         confirmPasswordLabel.frame.origin.y = currentYOffset
         holder.addSubview(confirmPasswordLabel)
@@ -268,7 +304,6 @@ class SignupView: UIView {
                                    height: 40)
         holder.addSubview(signupButton)
         currentYOffset += signupButton.frame.height + Constants.rowSpacing / 2
-        
         
         let backToLogin = backToLoginLabel.frame.width + backToLoginButton.frame.width + 5
         
@@ -304,6 +339,10 @@ class SignupView: UIView {
                 self.backToLoginButton.frame = self.backToLoginButton.frame.offsetBy(dx: 0, dy: 50)
                 self.errorLabel.alpha = 1
             }
+        } else {
+            UIView.animate(withDuration: 0.2) {
+                self.errorLabel.text = withText
+            }
         }
     }
     
@@ -320,7 +359,8 @@ class SignupView: UIView {
     }
     
     func clearInputFields() {
-        nameInput.text = ""
+        firstNameInput.text = ""
+        lastNameInput.text = ""
         emailInput.text = ""
         passwordInput.text = ""
         confirmPasswordInput.text = ""
@@ -333,17 +373,19 @@ class SignupView: UIView {
     // MARK: - Private Methods
 
     @objc private func didPressSignup() {
-        let name = nameInput.text!
+        let fistName = firstNameInput.text!
+        let lastName = lastNameInput.text!
         let email = emailInput.text!
         let password = passwordInput.text!
         let passwordConfirm = confirmPasswordInput.text!
         
-        nameInput.resignFirstResponder()
+        firstNameInput.resignFirstResponder()
+        lastNameInput.resignFirstResponder()
         emailInput.resignFirstResponder()
         passwordInput.resignFirstResponder()
         confirmPasswordInput.resignFirstResponder()
         
-        guard !name.isEmpty, !email.isEmpty, !password.isEmpty, !passwordConfirm.isEmpty else {
+        guard !fistName.isEmpty, !lastName.isEmpty, !email.isEmpty, !password.isEmpty, !passwordConfirm.isEmpty else {
             showError(withText: Strings.Errors.Signup.allFieldsNeeded())
             return
         }
@@ -360,7 +402,7 @@ class SignupView: UIView {
         
         signupButton.showLoading()
 
-        delegate?.signupViewDidRequestSignUp(self, withName: name, withEmail: email, withPassword: password)
+        delegate?.signupViewDidRequestSignUp(self, withFirstName: fistName, withLastName: lastName, withEmail: email, withPassword: password)
     }
     
     @objc private func userEditedText() {
@@ -368,7 +410,8 @@ class SignupView: UIView {
     }
     
     @objc private func didPressBackToLogin() {
-        nameInput.resignFirstResponder()
+        firstNameInput.resignFirstResponder()
+        lastNameInput.resignFirstResponder()
         emailInput.resignFirstResponder()
         passwordInput.resignFirstResponder()
         confirmPasswordInput.resignFirstResponder()
