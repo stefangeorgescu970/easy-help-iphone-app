@@ -57,7 +57,7 @@ extension LoginViewController: LoginViewDelegate {
                 
                 // Check for data existance
                 if profileData.county != nil {
-                    MainFlowManager.redirectAfterLogin()
+                    MainFlowManager.goToLandingPage()
                 } else {
                     OnboardingFlowManager.instance.startFlow()
                 }

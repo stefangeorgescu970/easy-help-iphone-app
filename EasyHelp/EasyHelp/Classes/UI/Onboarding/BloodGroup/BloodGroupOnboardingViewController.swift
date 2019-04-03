@@ -67,7 +67,7 @@ class BloodGroupOnboardingViewController: UIViewController {
     let countyPicker = UIPickerView()
     
     @objc fileprivate func didPressContinue(_ sender: UIButton) {
-        
+        self.navigationController?.pushViewController(DonorFormOnboardingViewController(), animated: true)
     }
     
     override func viewDidLoad() {

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class MainFlowManager: NSObject {
-    static func redirectAfterLogin() {
+    static func goToLandingPage() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let window = appDelegate.window!
         

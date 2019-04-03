@@ -10,6 +10,68 @@
 import UIKit
 
 class AppInterfaceFormatter {
+    static func createLink(_ title: String, linkPart: String? = nil) -> UIButton {
+        var linkString:String = title
+        if let linkPartU = linkPart {
+            linkString = linkPartU
+        }
+        let linkRange = (title as NSString).range(of: linkString)
+        
+        let btn = UIButton(type: UIButton.ButtonType.custom)
+        btn.backgroundColor = UIColor.clear
+        
+        let attributedStringNormal = NSMutableAttributedString(string: title, attributes: [
+            NSAttributedString.Key.font: AppFonts.regularFontWithSize(16),
+            NSAttributedString.Key.foregroundColor: AppColors.darkBlue
+            ])
+        attributedStringNormal.beginEditing()
+        attributedStringNormal.addAttributes([
+            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
+            ], range: linkRange)
+        attributedStringNormal.endEditing()
+        btn.setAttributedTitle(attributedStringNormal, for: UIControl.State())
+        btn.setAttributedTitle(attributedStringNormal, for: UIControl.State.selected)
+        
+        let attributedStringHighlight = NSMutableAttributedString(attributedString: attributedStringNormal)
+        attributedStringHighlight.beginEditing()
+        attributedStringHighlight.addAttributes([
+            NSAttributedString.Key.foregroundColor: AppColors.darkBlue
+            ], range: linkRange)
+        attributedStringHighlight.endEditing()
+        btn.setAttributedTitle(attributedStringHighlight, for: UIControl.State.highlighted)
+        btn.setAttributedTitle(attributedStringHighlight, for: [UIControl.State.selected, UIControl.State.highlighted])
+        
+        btn.titleLabel?.numberOfLines = 2
+        btn.titleLabel?.textAlignment = NSTextAlignment.center
+        btn.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.center
+        btn.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        
+        btn.sizeToFit()
+        
+        return btn
+        
+    }
+    
+    static func createLongLabel(text: String) -> UILabel {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 6
+        
+        let attributedText: NSAttributedString = NSAttributedString(string: text, attributes: [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle
+            ])
+        
+        let result = UILabel(frame: CGRect(x: 30, y: 145, width: UIScreen.main.bounds.width - 2 * 30, height: 600))
+        result.font = AppFonts.regularFontWithSize(16)
+        result.textColor = AppColors.darkBlue
+        result.attributedText = attributedText
+        result.numberOfLines = 0
+        result.textAlignment = NSTextAlignment.center
+        let resultSize = result.sizeThatFits(result.frame.size)
+        result.frame.size.height = resultSize.height
+        
+        return result
+    }
+    
     static func createHeader(title: String, subtitle: String?) -> UIView {
         if let subtitleU = subtitle {
             return self.createHeader(title: title, subtitleAttributedString: NSAttributedString(string: subtitleU))
