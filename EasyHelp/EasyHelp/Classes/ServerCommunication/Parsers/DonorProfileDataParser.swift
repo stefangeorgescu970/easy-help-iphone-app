@@ -25,8 +25,8 @@ class DonorProfileDataParser: ServerResponseParser {
         let userContent = content["user"]
         let userData = DonorProfileData(id: userId, email: email, token: token, firstName: firstName, lastName: lastName)
         
-        if let city = userContent["city"].string {
-            userData.city = city
+        if let county = userContent["county"].string {
+            userData.county = county
         }
         
         if let dobEpoch = userContent["dateOfBirth"].double {

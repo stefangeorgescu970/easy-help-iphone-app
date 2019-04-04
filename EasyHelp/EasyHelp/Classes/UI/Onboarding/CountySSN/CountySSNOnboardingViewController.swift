@@ -10,6 +10,8 @@ import UIKit
 
 class CountySSNOnboardingViewController: UIViewController {
     
+    // TODO - reload data if not valid when tapping on text view
+    
     private var arrayOfCounties = ["Please Select County"]
     
     private var headerView = AppInterfaceFormatter.createHeader(title: "Personal Details", subtitle: "We require some personal details from our donors in order to facilitate a proper donation experience.")
@@ -114,6 +116,10 @@ class CountySSNOnboardingViewController: UIViewController {
             if let error = error {
                 self.showError(withText: error.myErrorInfo)
             } else {
+                let profileData = AppServices.profileService.getCurrentUser()!
+                profileData.county = self.arrayOfCounties[self.countyPicker.selectedRow(inComponent: 0)]
+                profileData.ssn = self.ssnTextField.text!
+                AppServices.profileService.saveCurrentUser(profileData)
                 self.navigationController?.pushViewController(BloodGroupOnboardingViewController(), animated: true)
             }
         }

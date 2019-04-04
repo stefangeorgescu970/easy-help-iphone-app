@@ -64,10 +64,42 @@ class BloodGroupOnboardingViewController: UIViewController {
         return button
     }()
     
-    let countyPicker = UIPickerView()
+    private let skipButton = AppInterfaceFormatter.createLink("Skip for now")
+    
+    let bloodGroupPicker = UIPickerView()
+    
+    private func isDataValid() -> Bool {
+        if groupTextField.text! == arrayOfBloodGroups[0] {
+            return false
+        }
+        
+        if rhSegmentControl.selectedSegmentIndex == UISegmentedControl.noSegment {
+            return false
+        }
+        
+        return true
+    }
     
     @objc fileprivate func didPressContinue(_ sender: UIButton) {
-        self.navigationController?.pushViewController(DonorFormOnboardingViewController(), animated: true)
+        if !isDataValid() {
+            // show error
+            return
+        }
+        
+        let bloodGroup = groupTextField.text!
+        let rh = rhSegmentControl.selectedSegmentIndex == 1
+        
+        AppServices.profileService.updateBloodGroup(bloodGroup: bloodGroup, rh: rh) { (error) in
+            if let error = error {
+                // show error
+            } else {
+                let profileData = AppServices.profileService.getCurrentUser()!
+                profileData.bloodGroupLetter = bloodGroup
+                profileData.bloodRh = rh
+                AppServices.profileService.saveCurrentUser(profileData)
+                self.navigationController?.pushViewController(DonorFormOnboardingViewController(), animated: true)
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -91,6 +123,10 @@ class BloodGroupOnboardingViewController: UIViewController {
         
         continueButton.frame = CGRect(x: 40, y: view.bounds.height - 100, width: view.bounds.width - 80, height: 40)
         
+        skipButton.frame = CGRect(x: (view.bounds.width - skipButton.frame.width) / 2, y: continueButton.frame.minY - skipButton.frame.height - 30, width: skipButton.frame.width, height: skipButton.frame.height)
+        
+        self.view.addSubview(skipButton)
+        
         self.view.addSubview(continueButton)
         self.view.addSubview(groupLabel)
         self.view.addSubview(rhLabel)
@@ -110,10 +146,10 @@ class BloodGroupOnboardingViewController: UIViewController {
     }
     
     fileprivate func createPickerView() {
-        countyPicker.delegate = self
-        countyPicker.delegate?.pickerView?(countyPicker, didSelectRow: 0, inComponent: 0)
-        groupTextField.inputView = countyPicker
-        countyPicker.backgroundColor = AppColors.white
+        bloodGroupPicker.delegate = self
+        bloodGroupPicker.delegate?.pickerView?(bloodGroupPicker, didSelectRow: 0, inComponent: 0)
+        groupTextField.inputView = bloodGroupPicker
+        bloodGroupPicker.backgroundColor = AppColors.white
     }
     
     fileprivate func createToolbar() {
@@ -129,6 +165,10 @@ class BloodGroupOnboardingViewController: UIViewController {
     
     @objc func closePickerView() {
         view.endEditing(true)
+    }
+    
+    @objc func didChooseSkip() {
+        self.navigationController?.pushViewController(DonorFormOnboardingViewController(), animated: true)
     }
 }
 

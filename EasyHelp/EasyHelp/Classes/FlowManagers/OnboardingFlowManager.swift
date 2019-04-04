@@ -9,11 +9,9 @@
 import UIKit
 
 class OnboardingFlowManager: NSObject {
-    
     static let instance = OnboardingFlowManager()
     
     var hasFinishedFlow = false
-    
     
     func startFlow(forDonor donor: DonorProfileData) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -26,5 +24,4 @@ class OnboardingFlowManager: NSObject {
             window.rootViewController = navVc
         })
     }
-    
 }

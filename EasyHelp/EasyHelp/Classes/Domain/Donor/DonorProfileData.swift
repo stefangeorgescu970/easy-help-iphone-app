@@ -15,7 +15,6 @@ class DonorProfileData: NSObject, NSCoding {
         static let lastName = "ln"
         static let email = "e"
         static let dateOfBirth = "dob"
-        static let city = "ci"
         static let county = "co"
         static let ssn = "s"
         static let token = "t"
@@ -29,7 +28,6 @@ class DonorProfileData: NSObject, NSCoding {
         aCoder.encode(lastName, forKey: Keys.lastName)
         aCoder.encode(email, forKey: Keys.email)
         aCoder.encode(dateOfBirth, forKey: Keys.dateOfBirth)
-        aCoder.encode(city, forKey: Keys.city)
         aCoder.encode(county, forKey: Keys.county)
         aCoder.encode(ssn, forKey: Keys.ssn)
         aCoder.encode(token, forKey: Keys.token)
@@ -43,7 +41,6 @@ class DonorProfileData: NSObject, NSCoding {
         lastName = aDecoder.decodeObject(forKey: Keys.lastName) as! String
         email = aDecoder.decodeObject(forKey: Keys.email) as! String
         dateOfBirth = aDecoder.decodeObject(forKey: Keys.dateOfBirth) as? Date
-        city = aDecoder.decodeObject(forKey: Keys.city) as? String
         county = aDecoder.decodeObject(forKey: Keys.county) as? String
         ssn = aDecoder.decodeObject(forKey: Keys.ssn) as? String
         token = aDecoder.decodeObject(forKey: Keys.token) as! String
@@ -58,7 +55,6 @@ class DonorProfileData: NSObject, NSCoding {
     var email: String
     
     var dateOfBirth: Date?
-    var city: String?
     var county: String?
     var ssn: String?
     
@@ -76,6 +72,6 @@ class DonorProfileData: NSObject, NSCoding {
     }
     
     public func shouldSeeOnboarding() -> Bool {
-        return county == nil || bloodGroupLetter == nil
+        return county == nil
     }
 }
