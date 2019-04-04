@@ -66,6 +66,16 @@ class CountySSNOnboardingViewController: UIViewController {
         return button
     }()
     
+    private let errorLabel: UILabel = {
+        let label = UILabel(frame: CGRect.zero)
+        label.textColor = AppColors.accentRed
+        label.font = AppFonts.boldFontWithSize(16)
+        label.contentMode = .center
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
     let countyPicker = UIPickerView()
     
     init() {
@@ -80,8 +90,33 @@ class CountySSNOnboardingViewController: UIViewController {
         }
     }
     
+    fileprivate func hasValidData() -> Bool {
+        if ssnTextField.text!.isEmpty {
+            return false
+        }
+        
+        if countyTextField.text! == arrayOfCounties[0] {
+            return false
+        }
+        
+        return true
+    }
+    
     @objc fileprivate func didPressContinue(_ sender: UIButton) {
-        self.navigationController?.pushViewController(BloodGroupOnboardingViewController(), animated: true)
+        if !hasValidData() {
+            self.showError(withText: "Invalid Data")
+            return
+        }
+        
+        self.stopShowingError()
+    
+        AppServices.profileService.updateCountyAndSSN(newCounty: arrayOfCounties[countyPicker.selectedRow(inComponent: 0)], newSSN: ssnTextField.text!) { (error) in
+            if let error = error {
+                self.showError(withText: error.myErrorInfo)
+            } else {
+                self.navigationController?.pushViewController(BloodGroupOnboardingViewController(), animated: true)
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -108,6 +143,13 @@ class CountySSNOnboardingViewController: UIViewController {
         ssnTextField.frame = CGRect(x: 20, y: currentY, width: view.bounds.width - 40, height: 40)
         
         continueButton.frame = CGRect(x: 40, y: view.bounds.height - 100, width: view.bounds.width - 80, height: 40)
+        
+        errorLabel.frame = CGRect(x: 0,
+                                  y: continueButton.frame.minY - 40 - 20,
+                                  width: UIScreen.main.bounds.width,
+                                  height: 40)
+        errorLabel.alpha = 1
+        self.view.addSubview(errorLabel)
         
         self.view.addSubview(continueButton)
         self.view.addSubview(ssnLabel)
@@ -146,6 +188,20 @@ class CountySSNOnboardingViewController: UIViewController {
         toolbar.isUserInteractionEnabled = true
         countyTextField.inputAccessoryView = toolbar
         ssnTextField.inputAccessoryView = toolbar
+    }
+    
+    fileprivate func showError(withText: String) {
+        errorLabel.text = withText
+        
+        UIView.animate(withDuration: 0.3) {
+            self.errorLabel.alpha = 1
+        }
+    }
+    
+    fileprivate func stopShowingError() {
+        UIView.animate(withDuration: 0.3) {
+            self.errorLabel.alpha = 0
+        }
     }
     
     @objc func closePickerView() {
