@@ -44,31 +44,34 @@ class LoginViewController: UIViewController {
     func setUserAndPass(user: String, pass: String) {
         loginView.setUserAndPass(user: user, pass: pass)
     }
+    
+    fileprivate func handleLoginResponse(profileData: DonorProfileData?, error: NSError?) {
+        if let profileData = profileData {
+            loginView.setButtonLoading(isLoading: false)
+            loginView.stopShowingError()
+            AppServices.profileService.saveCurrentUser(profileData)
+            
+            if profileData.shouldSeeOnboarding() {
+                OnboardingFlowManager.instance.startFlow(forDonor: profileData)
+            } else {
+                MainFlowManager.goToLandingPage()
+            }
+        } else {
+            loginView.setButtonLoading(isLoading: false)
+            if let errorDescription = error?.myErrorInfo {
+                loginView.showError(withText: errorDescription)
+            } else {
+                loginView.showError(withText: Strings.Errors.generic())
+            }
+        }
+    }
 }
 
 extension LoginViewController: LoginViewDelegate {
     func loginView(_ loginView: LoginView, didRequestLogin withEmail: String, withPassword: String) {
         
         AppServices.profileService.loginUser(withEmail: withEmail, andPassword: withPassword) { (profileData: DonorProfileData?, error: NSError?) in
-            if let profileData = profileData {
-                loginView.setButtonLoading(isLoading: false)
-                loginView.stopShowingError()
-                AppServices.profileService.saveCurrentUser(profileData)
-                
-                // Check for data existance
-                if profileData.county != nil {
-                    MainFlowManager.goToLandingPage()
-                } else {
-                    OnboardingFlowManager.instance.startFlow()
-                }
-            } else {
-                loginView.setButtonLoading(isLoading: false)
-                if let errorDescription = error?.myErrorInfo {
-                    loginView.showError(withText: errorDescription)
-                } else {
-                    loginView.showError(withText: Strings.Errors.generic())
-                }
-            }
+            self.handleLoginResponse(profileData: profileData, error: error)
         }
     }
     
@@ -84,8 +87,9 @@ extension LoginViewController: SignupViewDelegate {
                 signupView.setButtonLoading(isLoading: false)
                 signupView.showError(withText: error.myErrorInfo)
             } else {
-                // Go to next page
-                print("next Page")
+                AppServices.profileService.loginUser(withEmail: email, andPassword: password, callback: { (profileData, error) in
+                    self.handleLoginResponse(profileData: profileData, error: error)
+                })
             }
         }
     }

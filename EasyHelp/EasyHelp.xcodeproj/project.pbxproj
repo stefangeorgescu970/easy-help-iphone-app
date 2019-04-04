@@ -27,6 +27,11 @@
 		4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */; };
 		4F62B40E2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */; };
 		4F62B40F2240ED75006D1B55 /* DonorProfileDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */; };
+		4F6B78E92256400500B71EB0 /* AppEnumsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B78E82256400500B71EB0 /* AppEnumsParser.swift */; };
+		4F6B78EA2256400500B71EB0 /* AppEnumsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B78E82256400500B71EB0 /* AppEnumsParser.swift */; };
+		4F6B78ED2256401D00B71EB0 /* AppEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B78EC2256401D00B71EB0 /* AppEnums.swift */; };
+		4F6B78EE2256401D00B71EB0 /* AppEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B78EC2256401D00B71EB0 /* AppEnums.swift */; };
+		4F6B78EF2256401D00B71EB0 /* AppEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B78EC2256401D00B71EB0 /* AppEnums.swift */; };
 		4FB7833B2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7833A2254F8F5007E741E /* OnboardingFlowManager.swift */; };
 		4FB7833C2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7833A2254F8F5007E741E /* OnboardingFlowManager.swift */; };
 		4FB7833D2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7833A2254F8F5007E741E /* OnboardingFlowManager.swift */; };
@@ -167,6 +172,8 @@
 		4F62B4062240ECAE006D1B55 /* DefaultProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProfileService.swift; sourceTree = "<group>"; };
 		4F62B4092240ED2E006D1B55 /* DonorProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorProfileData.swift; sourceTree = "<group>"; };
 		4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorProfileDataParser.swift; sourceTree = "<group>"; };
+		4F6B78E82256400500B71EB0 /* AppEnumsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnumsParser.swift; sourceTree = "<group>"; };
+		4F6B78EC2256401D00B71EB0 /* AppEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnums.swift; sourceTree = "<group>"; };
 		4FB7833A2254F8F5007E741E /* OnboardingFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowManager.swift; sourceTree = "<group>"; };
 		4FB783402254F94F007E741E /* CountySSNOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountySSNOnboardingViewController.swift; sourceTree = "<group>"; };
 		4FB783482254FD51007E741E /* MiscService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscService.swift; sourceTree = "<group>"; };
@@ -320,6 +327,14 @@
 				4FB7834F2254FD6D007E741E /* MockMiscService.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		4F6B78EB2256400E00B71EB0 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				4F6B78EC2256401D00B71EB0 /* AppEnums.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		4FB7833E2254F91F007E741E /* Onboarding */ = {
@@ -560,6 +575,7 @@
 		F85B5E89214E756D0098BE65 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				4F6B78EB2256400E00B71EB0 /* Misc */,
 				4FF8C47522450C2600F1AE98 /* Donor */,
 			);
 			path = Domain;
@@ -595,6 +611,7 @@
 			isa = PBXGroup;
 			children = (
 				4F62B40D2240ED75006D1B55 /* DonorProfileDataParser.swift */,
+				4F6B78E82256400500B71EB0 /* AppEnumsParser.swift */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -1011,6 +1028,7 @@
 				4FF8C47722450C3700F1AE98 /* DonationForm.swift in Sources */,
 				4FB7835B225505B7007E741E /* BloodGroupOnboardingViewController.swift in Sources */,
 				4FEF996C223A919B00351500 /* LoginTextField.swift in Sources */,
+				4F6B78ED2256401D00B71EB0 /* AppEnums.swift in Sources */,
 				4FEF995D223A914C00351500 /* LoginView.swift in Sources */,
 				4FF8C47222450B5700F1AE98 /* NSError+UserInfo.swift in Sources */,
 				4FEF991B223A884A00351500 /* ServerResponseParser.swift in Sources */,
@@ -1027,6 +1045,7 @@
 				4FF8C483224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
 				4F62B4072240ECAE006D1B55 /* DefaultProfileService.swift in Sources */,
 				4F62B4012240EC76006D1B55 /* ProfileService.swift in Sources */,
+				4F6B78E92256400500B71EB0 /* AppEnumsParser.swift in Sources */,
 				4F62B40A2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4FEF9951223A8EB100351500 /* ErrorUtils.swift in Sources */,
 			);
@@ -1038,6 +1057,7 @@
 			files = (
 				4FEF994A223A8B5600351500 /* ServerUtils.swift in Sources */,
 				4FEF992D223A888E00351500 /* AppDelegate.swift in Sources */,
+				4F6B78EF2256401D00B71EB0 /* AppEnums.swift in Sources */,
 				4FEF9982223A926100351500 /* EmailUtils.swift in Sources */,
 				4FB783502254FD6D007E741E /* MockMiscService.swift in Sources */,
 				4FF8C47922450C3700F1AE98 /* DonationForm.swift in Sources */,
@@ -1101,6 +1121,7 @@
 				4FF8C47822450C3700F1AE98 /* DonationForm.swift in Sources */,
 				4FB7835C225505B7007E741E /* BloodGroupOnboardingViewController.swift in Sources */,
 				4FEF996D223A919B00351500 /* LoginTextField.swift in Sources */,
+				4F6B78EE2256401D00B71EB0 /* AppEnums.swift in Sources */,
 				4FEF995E223A914C00351500 /* LoginView.swift in Sources */,
 				4FF8C47322450B5700F1AE98 /* NSError+UserInfo.swift in Sources */,
 				F83C0C36214E7FCE00828144 /* ServerResponseParser.swift in Sources */,
@@ -1117,6 +1138,7 @@
 				4FF8C484224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
 				4F62B4082240ECAE006D1B55 /* DefaultProfileService.swift in Sources */,
 				4F62B4022240EC76006D1B55 /* ProfileService.swift in Sources */,
+				4F6B78EA2256400500B71EB0 /* AppEnumsParser.swift in Sources */,
 				4F62B40B2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4FEF9952223A8EB100351500 /* ErrorUtils.swift in Sources */,
 			);

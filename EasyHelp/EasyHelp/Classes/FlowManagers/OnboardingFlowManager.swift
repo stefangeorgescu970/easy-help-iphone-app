@@ -15,7 +15,7 @@ class OnboardingFlowManager: NSObject {
     var hasFinishedFlow = false
     
     
-    func startFlow() {
+    func startFlow(forDonor donor: DonorProfileData) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let window = appDelegate.window!
         

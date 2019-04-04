@@ -38,6 +38,14 @@ class DonorProfileDataParser: ServerResponseParser {
             userData.ssn = ssn
         }
         
+        if let bloodGroup = userContent["bloodGroupLetter"].string {
+            userData.bloodGroupLetter = bloodGroup
+        }
+        
+        if let rh = userContent["rh"].bool {
+            userData.bloodRh = rh
+        }
+        
         donorProfileData = userData
     }
     

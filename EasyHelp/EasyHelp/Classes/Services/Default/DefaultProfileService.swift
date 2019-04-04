@@ -76,4 +76,48 @@ class DefaultProfileService: ProfileService {
         
         Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
     }
+    
+    func updateCountyAndSSN(newCounty: String, newSSN: String, callback: @escaping (NSError?) -> ()) {
+        let request = ServerRequest(endpoint: "updateSsnCounty", controller: "donor")
+        request.addParameter(key: "donorId", value: getCurrentUser()!.id)
+        request.addParameter(key: "ssn", value: newSSN)
+        request.addParameter(key: "county", value: newCounty)
+        
+        let callback = SimpleServerCallback(successBlock: { (data) in
+            if let success = data as? Bool {
+                if success {
+                    callback(nil)
+                    return
+                }
+            }
+            callback(ErrorUtils.getDefaultServerError())
+        }, errorBlock: { (error) in
+            let error = error as! NSError
+            callback(error)
+        })
+        
+        Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
+    }
+    
+    func updateBloodGroup(bloodGroup: String, rh: Bool, callback: @escaping (NSError?) -> ()) {
+        let request = ServerRequest(endpoint: "updateBloodGroup", controller: "donor")
+        request.addParameter(key: "donorId", value: getCurrentUser()!.id)
+        request.addParameter(key: "groupLetter", value: bloodGroup)
+        request.addParameter(key: "rh", value: rh)
+        
+        let callback = SimpleServerCallback(successBlock: { (data) in
+            if let success = data as? Bool {
+                if success {
+                    callback(nil)
+                    return
+                }
+            }
+            callback(ErrorUtils.getDefaultServerError())
+        }, errorBlock: { (error) in
+            let error = error as! NSError
+            callback(error)
+        })
+        
+        Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
+    }
 }

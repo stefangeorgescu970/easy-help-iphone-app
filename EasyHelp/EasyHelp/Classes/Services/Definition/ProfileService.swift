@@ -17,5 +17,9 @@ protocol ProfileService {
     
     func getCurrentUser() -> DonorProfileData?
     
-    func saveCurrentUser(_ user: DonorProfileData) 
+    func saveCurrentUser(_ user: DonorProfileData)
+    
+    func updateCountyAndSSN(newCounty: String, newSSN: String, callback: @escaping (NSError?) -> ())
+    
+    func updateBloodGroup(bloodGroup: String, rh: Bool, callback: @escaping (NSError?) -> ())
 }

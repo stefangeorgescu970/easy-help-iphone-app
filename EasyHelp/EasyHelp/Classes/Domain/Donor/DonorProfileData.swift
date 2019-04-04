@@ -19,8 +19,9 @@ class DonorProfileData: NSObject, NSCoding {
         static let county = "co"
         static let ssn = "s"
         static let token = "t"
+        static let bloodGroupLetter = "bg"
+        static let bloodGroupRh = "r"
     }
-    
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(id, forKey: Keys.id)
@@ -32,6 +33,8 @@ class DonorProfileData: NSObject, NSCoding {
         aCoder.encode(county, forKey: Keys.county)
         aCoder.encode(ssn, forKey: Keys.ssn)
         aCoder.encode(token, forKey: Keys.token)
+        aCoder.encode(bloodGroupLetter, forKey: Keys.bloodGroupLetter)
+        aCoder.encode(bloodRh, forKey: Keys.bloodGroupRh)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,6 +47,8 @@ class DonorProfileData: NSObject, NSCoding {
         county = aDecoder.decodeObject(forKey: Keys.county) as? String
         ssn = aDecoder.decodeObject(forKey: Keys.ssn) as? String
         token = aDecoder.decodeObject(forKey: Keys.token) as! String
+        bloodGroupLetter = aDecoder.decodeObject(forKey: Keys.bloodGroupLetter) as? String
+        bloodRh = aDecoder.decodeObject(forKey: Keys.bloodGroupRh) as? Bool
     }
     
     var id: Int
@@ -57,6 +62,9 @@ class DonorProfileData: NSObject, NSCoding {
     var county: String?
     var ssn: String?
     
+    var bloodGroupLetter: String?
+    var bloodRh: Bool?
+    
     var token: String
     
     public init(id: Int, email: String, token: String, firstName: String, lastName: String) {
@@ -65,5 +73,9 @@ class DonorProfileData: NSObject, NSCoding {
         self.token = token
         self.lastName = lastName
         self.firstName = firstName
+    }
+    
+    public func shouldSeeOnboarding() -> Bool {
+        return county == nil || bloodGroupLetter == nil
     }
 }

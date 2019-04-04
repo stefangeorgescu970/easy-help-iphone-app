@@ -174,10 +174,10 @@ extension CountySSNOnboardingViewController: UIPickerViewDelegate {
         
         var label:UILabel
         
-        if let v = view as? UILabel{
+        if let v = view as? UILabel {
             label = v
         }
-        else{
+        else {
             label = UILabel()
         }
         
@@ -185,7 +185,7 @@ extension CountySSNOnboardingViewController: UIPickerViewDelegate {
         label.textAlignment = .left
         label.font = UIFont(name: "Helvetica", size: 16)
         
-        label.text = arrayOfCounties[row]
+        label.text = arrayOfCounties[row].replacingOccurrences(of: "_", with: " ")
         
         return label
     }
