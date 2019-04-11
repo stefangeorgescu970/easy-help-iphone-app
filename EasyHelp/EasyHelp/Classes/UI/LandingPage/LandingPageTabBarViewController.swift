@@ -10,7 +10,7 @@ import UIKit
 
 class LandingPageTabBarViewController: UITabBarController {
     private let donationHistoryController: DonationHistoryViewController
-    private let bookDonationController: BookDonationViewController
+    private let mainScreenController: MainScreenViewController
     private let profileDetailsController: ProfileDetailsViewController
     
     private let dhcNav: UINavigationController
@@ -21,11 +21,11 @@ class LandingPageTabBarViewController: UITabBarController {
     
     init() {
         donationHistoryController = DonationHistoryViewController()
-        bookDonationController = BookDonationViewController()
+        mainScreenController = MainScreenViewController()
         profileDetailsController = ProfileDetailsViewController()
         
         dhcNav = UINavigationController(rootViewController: donationHistoryController)
-        bdcNav = UINavigationController(rootViewController: bookDonationController)
+        bdcNav = UINavigationController(rootViewController: mainScreenController)
         pdcNav = UINavigationController(rootViewController: profileDetailsController)
         
         super.init(nibName: nil, bundle: nil)
@@ -52,7 +52,7 @@ class LandingPageTabBarViewController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        self.edgesForExtendedLayout = []
         self.addRaisedButton(UIImage(named: "blood_drop_tab_bar"), highlightImage: nil, offset: -10)
     }
     

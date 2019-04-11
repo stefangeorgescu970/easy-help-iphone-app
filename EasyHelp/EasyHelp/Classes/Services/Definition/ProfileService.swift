@@ -22,4 +22,6 @@ protocol ProfileService {
     func updateCountyAndSSN(newCounty: String, newSSN: String, callback: @escaping (NSError?) -> ())
     
     func updateBloodGroup(bloodGroup: String, rh: Bool, callback: @escaping (NSError?) -> ())
+    
+    func getDonationSummary(id: Int, callback: @escaping (DonorSummaryData?, NSError?) -> ())
 }

@@ -120,4 +120,10 @@ class DefaultProfileService: ProfileService {
         
         Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
     }
+    
+    func getDonationSummary(id: Int, callback: @escaping (DonorSummaryData?, NSError?) -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            callback(DonorSummaryData(), nil)
+        }
+    }
 }
