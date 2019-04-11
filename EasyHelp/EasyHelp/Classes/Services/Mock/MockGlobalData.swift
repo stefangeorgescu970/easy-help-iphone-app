@@ -20,8 +20,7 @@ class MockGlobalData: NSObject {
         donor.lastName = "Georgescu"
         
         donor.dateOfBirth = Date(timeIntervalSince1970: 867974400 / 1000)
-        donor.city = "Cluj-Napoca"
-        donor.county = "Cluj"
+        donor.county = "CLUJ"
         
         donor.ssn = "1970704035266"
         

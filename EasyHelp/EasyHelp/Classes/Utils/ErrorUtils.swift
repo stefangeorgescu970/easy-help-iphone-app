@@ -10,7 +10,7 @@ import Foundation
 
 class ErrorUtils {
     static func getDefaultServerError() -> NSError {
-        return NSError(domain: "EasyHelp", code: 404, userInfo: ["description": "Bush is in Iraq"])
+        return NSError(domain: "EasyHelp", code: 404, userInfo: ["description": "Some weird error occured."])
     }
     
     static func getInvalidCredentialsError() -> NSError {

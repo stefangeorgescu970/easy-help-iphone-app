@@ -10,6 +10,9 @@ import Foundation
 
 class MockMiscService: MiscService {
     func getCounties(callback: @escaping ([String]?, NSError?) -> ()) {
-        callback(["Arad", "Timisoara"], nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            print("TRIGGERING")
+            callback(["Arad", "Timisoara"], nil)
+        }
     }
 }

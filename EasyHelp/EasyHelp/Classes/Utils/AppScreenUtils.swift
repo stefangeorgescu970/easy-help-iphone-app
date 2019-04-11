@@ -33,7 +33,6 @@ class AppScreenUtils: NSObject {
     
     static let screenHeaderHeight: CGFloat = 44
     static let screenStatusBarAndHeaderHeight = screenStatusBarHeight + screenHeaderHeight
-    static let screenFooterExtraHeight: CGFloat = screenCurrentSafeAreaInsets.bottom > 0 ? 10.5 : 0
     
      static let screenVersion: Float = {
         let height = UIScreen.main.bounds.height

@@ -9,7 +9,6 @@
 import Foundation
 
 class MockProfileService: ProfileService {
-    
     private let userDefs = UserDefaults.standard
     private let defsKey = "mockLogIn"
     
@@ -53,6 +52,13 @@ class MockProfileService: ProfileService {
         callback(true)
     }
     
+    func updateCountyAndSSN(newCounty: String, newSSN: String, callback: @escaping (NSError?) -> ()) {
+        callback(nil)
+    }
+    
+    func updateBloodGroup(bloodGroup: String, rh: Bool, callback: @escaping (NSError?) -> ()) {
+        callback(nil)
+    }
     
     func getDonationSummary(id: Int, callback: @escaping (DonorSummaryData?, NSError?) -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

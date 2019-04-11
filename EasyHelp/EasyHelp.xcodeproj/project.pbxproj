@@ -28,6 +28,9 @@
 		4F30A5F0225F75F4006C5B15 /* MainScreenCanBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A5EF225F75F4006C5B15 /* MainScreenCanBookView.swift */; };
 		4F30A5F1225F75F4006C5B15 /* MainScreenCanBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A5EF225F75F4006C5B15 /* MainScreenCanBookView.swift */; };
 		4F30A5F2225F75F4006C5B15 /* MainScreenCanBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A5EF225F75F4006C5B15 /* MainScreenCanBookView.swift */; };
+		4F30A5F4225F7F56006C5B15 /* CountySSNOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A5F3225F7F56006C5B15 /* CountySSNOnboardingView.swift */; };
+		4F30A5F5225F7F56006C5B15 /* CountySSNOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A5F3225F7F56006C5B15 /* CountySSNOnboardingView.swift */; };
+		4F30A5F6225F7F56006C5B15 /* CountySSNOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A5F3225F7F56006C5B15 /* CountySSNOnboardingView.swift */; };
 		4F62B3FD2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
 		4F62B3FE2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
 		4F62B3FF2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
@@ -186,6 +189,7 @@
 		4F30A5E6225F6D6D006C5B15 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F30A5EA225F6E4C006C5B15 /* DonorSummaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorSummaryData.swift; sourceTree = "<group>"; };
 		4F30A5EF225F75F4006C5B15 /* MainScreenCanBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCanBookView.swift; sourceTree = "<group>"; };
+		4F30A5F3225F7F56006C5B15 /* CountySSNOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountySSNOnboardingView.swift; sourceTree = "<group>"; };
 		4F62B3FC2240EC31006D1B55 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		4F62B4002240EC76006D1B55 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		4F62B4042240EC91006D1B55 /* MockProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProfileService.swift; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				4FB783402254F94F007E741E /* CountySSNOnboardingViewController.swift */,
+				4F30A5F3225F7F56006C5B15 /* CountySSNOnboardingView.swift */,
 			);
 			path = CountySSN;
 			sourceTree = "<group>";
@@ -1061,6 +1066,7 @@
 				4FEF9970223A91BF00351500 /* AppColors.swift in Sources */,
 				4FF8C47722450C3700F1AE98 /* DonationForm.swift in Sources */,
 				4FB7835B225505B7007E741E /* BloodGroupOnboardingViewController.swift in Sources */,
+				4F30A5F4225F7F56006C5B15 /* CountySSNOnboardingView.swift in Sources */,
 				4FEF996C223A919B00351500 /* LoginTextField.swift in Sources */,
 				4F6B78ED2256401D00B71EB0 /* AppEnums.swift in Sources */,
 				4FEF995D223A914C00351500 /* LoginView.swift in Sources */,
@@ -1133,6 +1139,7 @@
 				4F0F8A062247C04800E1B270 /* UIImage+Resize.swift in Sources */,
 				4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4FB783432254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */,
+				4F30A5F6225F7F56006C5B15 /* CountySSNOnboardingView.swift in Sources */,
 				4FF8C47E2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4FEF9953223A8EB100351500 /* ErrorUtils.swift in Sources */,
 				4FF8C485224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
@@ -1164,6 +1171,7 @@
 				4FEF9971223A91BF00351500 /* AppColors.swift in Sources */,
 				4FF8C47822450C3700F1AE98 /* DonationForm.swift in Sources */,
 				4FB7835C225505B7007E741E /* BloodGroupOnboardingViewController.swift in Sources */,
+				4F30A5F5225F7F56006C5B15 /* CountySSNOnboardingView.swift in Sources */,
 				4FEF996D223A919B00351500 /* LoginTextField.swift in Sources */,
 				4F6B78EE2256401D00B71EB0 /* AppEnums.swift in Sources */,
 				4FEF995E223A914C00351500 /* LoginView.swift in Sources */,

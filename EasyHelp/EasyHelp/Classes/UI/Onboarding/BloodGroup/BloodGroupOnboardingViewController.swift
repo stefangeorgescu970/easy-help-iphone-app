@@ -157,7 +157,7 @@ class BloodGroupOnboardingViewController: UIViewController {
         toolbar.sizeToFit()
         toolbar.tintColor = AppColors.darkBlue
         toolbar.backgroundColor = AppColors.white
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(CountySSNOnboardingViewController.closePickerView))
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(BloodGroupOnboardingViewController.closePickerView))
         toolbar.setItems([doneButton], animated: false)
         toolbar.isUserInteractionEnabled = true
         groupTextField.inputAccessoryView = toolbar

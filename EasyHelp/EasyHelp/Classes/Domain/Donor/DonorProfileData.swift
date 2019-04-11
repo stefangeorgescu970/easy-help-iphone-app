@@ -72,6 +72,10 @@ class DonorProfileData: NSObject, NSCoding {
     }
     
     public func shouldSeeOnboarding() -> Bool {
+        #if MOCK
+        return true
+        #endif
+        
         return county == nil
     }
 }
