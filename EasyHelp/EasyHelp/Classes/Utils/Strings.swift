@@ -17,6 +17,14 @@ struct Strings {
             static let county = { "County of Residence" }
             static let ssn = { "Your Social Security Number" }
         }
+        
+        struct BloodGroup {
+            static let title = { "Blood Group" }
+            static let subtitle = { "In order to match you with potential donors or people in need of blood, we need to know your blood group" }
+            static let rh = { "Rh" }
+            static let bloodGroup = { "Your Blood Group" }
+            static let bloodGroupDefaultValue = { "Select Blood Group" }
+        }
     }
     
     struct Login {
@@ -48,7 +56,8 @@ struct Strings {
         static let logout = { "Log out" }
         static let tryAgain = { "Try again" }
         static let cont = { "Continue" }
-        static let done = { "Done" } 
+        static let done = { "Done" }
+        static let skipForNow = { "Skip for now" }
     }
     
     struct Errors {

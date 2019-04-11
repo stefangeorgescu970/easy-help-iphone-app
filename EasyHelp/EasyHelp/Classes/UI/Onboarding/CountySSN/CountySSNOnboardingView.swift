@@ -134,31 +134,22 @@ class CountySSNOnboardingView: UIView {
         countyTextField.text = county
     }
     
-    fileprivate func hasValidData() -> Bool {
-        if ssnTextField.text!.isEmpty {
-            return false
-        }
-        
-        if countyTextField.text! == Strings.Onboarding.CountySSN.countyDefaultValue() {
-            return false
-        }
-        
-        return true
-    }
-    
     func reloadPickerData() {
         countyPicker.reloadAllComponents()
     }
     
-    @objc fileprivate func didPressContinue(_ sender: UIButton) {
-        if !hasValidData() {
-            self.showError(withText: Strings.Errors.Onboarding.invalidData())
-            return
+    func showError(withText: String) {
+        errorLabel.text = withText
+        
+        UIView.animate(withDuration: 0.3) {
+            self.errorLabel.alpha = 1
         }
-        
-        self.stopShowingError()
-        
-        self.delegate?.countySsnOnboardingViewDelegateDidRequestContinue(self, withCountyIndex: countyPicker.selectedRow(inComponent: 0), ssn: ssnTextField.text!)
+    }
+    
+    func stopShowingError() {
+        UIView.animate(withDuration: 0.3) {
+            self.errorLabel.alpha = 0
+        }
     }
     
     fileprivate func createPickerView(delegate: UIPickerViewDelegate, dataSource: UIPickerViewDataSource) {
@@ -181,20 +172,29 @@ class CountySSNOnboardingView: UIView {
         ssnTextField.inputAccessoryView = toolbar
     }
     
-    func showError(withText: String) {
-        errorLabel.text = withText
+    fileprivate func hasValidData() -> Bool {
+        if ssnTextField.text!.isEmpty {
+            return false
+        }
         
-        UIView.animate(withDuration: 0.3) {
-            self.errorLabel.alpha = 1
+        if countyTextField.text! == Strings.Onboarding.CountySSN.countyDefaultValue() {
+            return false
         }
+        
+        return true
     }
     
-    func stopShowingError() {
-        UIView.animate(withDuration: 0.3) {
-            self.errorLabel.alpha = 0
+    @objc fileprivate func didPressContinue(_ sender: UIButton) {
+        if !hasValidData() {
+            self.showError(withText: Strings.Errors.Onboarding.invalidData())
+            return
         }
+        
+        self.stopShowingError()
+        
+        self.delegate?.countySsnOnboardingViewDelegateDidRequestContinue(self, withCountyIndex: countyPicker.selectedRow(inComponent: 0), ssn: ssnTextField.text!)
     }
-    
+
     @objc func closePickerView() {
         self.endEditing(true)
     }

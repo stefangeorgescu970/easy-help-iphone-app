@@ -10,165 +10,24 @@ import UIKit
 
 class BloodGroupOnboardingViewController: UIViewController {
     
-    private var arrayOfBloodGroups = ["Select Blood Group", "A", "B", "AB", "0"]
+    private var arrayOfBloodGroups = [Strings.Onboarding.BloodGroup.bloodGroupDefaultValue(), "A", "B", "AB", "0"]
+    private var innerView: BloodGroupOnboardingView!
     
-    private var headerView = AppInterfaceFormatter.createHeader(title: "Blood Group", subtitle: "In order to match you with potential donors or people in need of blood, we need to know your blood group")
-    
-    private let rhLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Rh"
-        label.textColor = AppColors.darkBlue
-        label.font = AppFonts.boldFontWithSize(18)
-        label.sizeToFit()
-        return label
-    }()
-    
-    private let rhSegmentControl: UISegmentedControl = {
-        let control = UISegmentedControl(items: ["-", "+"])
-        
-        control.tintColor = AppColors.darkBlue
-        
-        return control
-    }()
-    
-    private let groupLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Your Blood Group"
-        label.textColor = AppColors.darkBlue
-        label.font = AppFonts.boldFontWithSize(18)
-        label.sizeToFit()
-        return label
-    }()
-    
-    private let groupTextField: UITextField = {
-        let textField = UITextField()
-        textField.font = AppFonts.regularFontWithSize(16)
-        textField.textColor = AppColors.darkBlue
-        textField.autocapitalizationType = .none
-        textField.borderStyle = .none
-        textField.textColor = .black
-        textField.keyboardType = .numberPad
-        
-        return textField
-    }()
-    
-    private let continueButton: ButtonWithActivity = {
-        let button = ButtonWithActivity()
-        button.setTitle("Continue", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = AppColors.darkBlue
-        button.layer.cornerRadius = 8
-        
-        button.addTarget(self, action: #selector(BloodGroupOnboardingViewController.didPressContinue(_:)), for: .touchUpInside)
-        
-        return button
-    }()
-    
-    private let skipButton = AppInterfaceFormatter.createLink("Skip for now")
-    
-    let bloodGroupPicker = UIPickerView()
-    
-    private func isDataValid() -> Bool {
-        if groupTextField.text! == arrayOfBloodGroups[0] {
-            return false
-        }
-        
-        if rhSegmentControl.selectedSegmentIndex == UISegmentedControl.noSegment {
-            return false
-        }
-        
-        return true
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        innerView = BloodGroupOnboardingView(frame: UIScreen.main.bounds, pickerDelegate: self, pickerDataSource: self)
+        innerView.delegate = self
     }
     
-    @objc fileprivate func didPressContinue(_ sender: UIButton) {
-        if !isDataValid() {
-            // show error
-            return
-        }
-        
-        let bloodGroup = groupTextField.text!
-        let rh = rhSegmentControl.selectedSegmentIndex == 1
-        
-        AppServices.profileService.updateBloodGroup(bloodGroup: bloodGroup, rh: rh) { (error) in
-            if let error = error {
-                // show error
-            } else {
-                let profileData = AppServices.profileService.getCurrentUser()!
-                profileData.bloodGroupLetter = bloodGroup
-                profileData.bloodRh = rh
-                AppServices.profileService.saveCurrentUser(profileData)
-                self.navigationController?.pushViewController(DonorFormOnboardingViewController(), animated: true)
-            }
-        }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        headerView.frame = CGRect(x: 20, y: 60, width: view.bounds.width - 2 * 20, height: 65)
-        
-        var currentY = headerView.frame.maxY + 60
-        
-        rhLabel.frame.origin = CGPoint(x: 20, y: currentY)
-        currentY += rhLabel.frame.height + 20
-        
-        rhSegmentControl.frame = CGRect(x: 20, y: currentY, width: view.bounds.width - 40, height: 40)
-        
-        currentY += rhSegmentControl.frame.height + 20
-        
-        groupLabel.frame.origin = CGPoint(x: 20, y: currentY)
-        currentY += groupLabel.frame.height + 20
-        
-        groupTextField.frame = CGRect(x: 20, y: currentY, width: view.bounds.width - 40, height: 40)
-        
-        continueButton.frame = CGRect(x: 40, y: view.bounds.height - 100, width: view.bounds.width - 80, height: 40)
-        
-        skipButton.frame = CGRect(x: (view.bounds.width - skipButton.frame.width) / 2, y: continueButton.frame.minY - skipButton.frame.height - 30, width: skipButton.frame.width, height: skipButton.frame.height)
-        
-        self.view.addSubview(skipButton)
-        
-        self.view.addSubview(continueButton)
-        self.view.addSubview(groupLabel)
-        self.view.addSubview(rhLabel)
-        
-        self.view.addSubview(headerView)
-        self.view.addSubview(rhSegmentControl)
-        self.view.addSubview(groupTextField)
-        
-        AppInterfaceFormatter.addUnderline(toTextField: groupTextField)
-        
-        self.view.backgroundColor = AppColors.white
-        
-        createPickerView()
-        createToolbar()
-        
+        self.view = innerView
+       
         self.navigationController?.navigationBar.isHidden = true
-    }
-    
-    fileprivate func createPickerView() {
-        bloodGroupPicker.delegate = self
-        bloodGroupPicker.delegate?.pickerView?(bloodGroupPicker, didSelectRow: 0, inComponent: 0)
-        groupTextField.inputView = bloodGroupPicker
-        bloodGroupPicker.backgroundColor = AppColors.white
-    }
-    
-    fileprivate func createToolbar() {
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        toolbar.tintColor = AppColors.darkBlue
-        toolbar.backgroundColor = AppColors.white
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(BloodGroupOnboardingViewController.closePickerView))
-        toolbar.setItems([doneButton], animated: false)
-        toolbar.isUserInteractionEnabled = true
-        groupTextField.inputAccessoryView = toolbar
-    }
-    
-    @objc func closePickerView() {
-        view.endEditing(true)
-    }
-    
-    @objc func didChooseSkip() {
-        self.navigationController?.pushViewController(DonorFormOnboardingViewController(), animated: true)
     }
 }
 
@@ -178,7 +37,7 @@ extension BloodGroupOnboardingViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        groupTextField.text =  arrayOfBloodGroups[row]
+        innerView.setCurrentBloodGroup(arrayOfBloodGroups[row])
     }
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
@@ -190,13 +49,11 @@ extension BloodGroupOnboardingViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        
         var label:UILabel
         
-        if let v = view as? UILabel{
+        if let v = view as? UILabel {
             label = v
-        }
-        else{
+        } else {
             label = UILabel()
         }
         
@@ -217,5 +74,25 @@ extension BloodGroupOnboardingViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return arrayOfBloodGroups.count
+    }
+}
+
+extension BloodGroupOnboardingViewController: BloodGroupOnboardingViewDelegate {
+    func bloodGroupOnboardingViewDidRequestContinue(_ sender: BloodGroupOnboardingView, group: String, rh: Bool) {
+        AppServices.profileService.updateBloodGroup(bloodGroup: group, rh: rh) { (error) in
+            if let error = error {
+                // show error
+            } else {
+                let profileData = AppServices.profileService.getCurrentUser()!
+                profileData.bloodGroupLetter = group
+                profileData.bloodRh = rh
+                AppServices.profileService.saveCurrentUser(profileData)
+                self.navigationController?.pushViewController(DonorFormOnboardingViewController(), animated: true)
+            }
+        }
+    }
+    
+    func booddGroupOnboardingViewDidRequestSkip(_ sender: BloodGroupOnboardingView) {
+        self.navigationController?.pushViewController(DonorFormOnboardingViewController(), animated: true)
     }
 }
