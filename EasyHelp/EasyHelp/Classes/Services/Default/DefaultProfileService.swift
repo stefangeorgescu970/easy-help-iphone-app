@@ -122,8 +122,20 @@ class DefaultProfileService: ProfileService {
     }
     
     func getDonationSummary(id: Int, callback: @escaping (DonorSummaryData?, NSError?) -> ()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            callback(DonorSummaryData(), nil)
-        }
+        let request = ServerRequest(endpoint: "getDonorSummary", controller: "donor")
+        request.addParameter(key: "id", value: getCurrentUser()!.id)
+        
+        let callback = SimpleServerCallback(successBlock: { (data) in
+            if let summary = data as? DonorSummaryData {
+                callback(summary, nil)
+                return
+            }
+            callback(nil, ErrorUtils.getDefaultServerError())
+        }, errorBlock: { (error) in
+            let error = error as! NSError
+            callback(nil, error)
+        })
+        
+        Server.sharedInstance.send(request, parser: DonorSummaryDataParser(), callback: callback)
     }
 }
