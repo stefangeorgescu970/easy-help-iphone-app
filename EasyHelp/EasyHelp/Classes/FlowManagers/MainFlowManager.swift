@@ -20,4 +20,15 @@ class MainFlowManager: NSObject {
             window.rootViewController = newRootVC
         })
     }
+    
+    static func goToLogin() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let window = appDelegate.window!
+        
+        let newRootVC: UIViewController = LoginViewController(frame: UIScreen.main.bounds)
+        
+        UIView.transition(with: window, duration: 0.3, options: [.transitionFlipFromLeft, .preferredFramesPerSecond60], animations: {
+            window.rootViewController = newRootVC
+        })
+    }
 }

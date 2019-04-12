@@ -12,6 +12,9 @@ struct Strings {
     struct ProfileDetails {
         static let faq = { "Frequently Asked Questions" }
         static let termsConds = { "Terms and Conditions" }
+        static let bloodGroupHeader = { "Your Blood Group" }
+        static let formHeader = { "Your Donor's Form" }
+        static let bloodGroupFallback = { "Will be updated on your first donation." }
     }
     
     struct Onboarding {

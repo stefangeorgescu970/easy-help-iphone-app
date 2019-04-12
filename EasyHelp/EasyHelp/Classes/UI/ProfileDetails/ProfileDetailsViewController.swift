@@ -33,14 +33,20 @@ class ProfileDetailsViewController: UIViewController {
 
 extension ProfileDetailsViewController: ProfileDetailsViewDelegate {
     func profileDetailsViewDidRequestTermsAndConditions(_ sender: ProfileDetailsView) {
-        
+        print("t&c")
     }
     
     func profileDetailsViewDidRequestFAQ(_ sender: ProfileDetailsView) {
-        
+        print("faq")
     }
     
     func profileDetailsViewDidRequestLogout(_ sender: ProfileDetailsView) {
-        print("logout")
+        AppServices.profileService.logoutUser { (didLogout) in
+            if let didLogout = didLogout {
+                if didLogout {
+                    MainFlowManager.goToLogin()
+                }
+            }
+        }
     }
 }

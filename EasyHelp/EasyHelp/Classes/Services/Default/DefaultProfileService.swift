@@ -24,15 +24,22 @@ class DefaultProfileService: ProfileService {
         myUserDefaults.set(data, forKey: userDefaultsKey)
     }
     
+    func deleteCurrentUser() {
+        myUserDefaults.set(nil, forKey: userDefaultsKey)
+    }
+    
     func loginUser(withEmail email: String, andPassword password: String, callback: @escaping (DonorProfileData?, NSError?) -> ()) {
         let request = ServerRequest(endpoint: "login", controller: "users")
         request.addParameter(key: "email", value: email)
         request.addParameter(key: "password", value: password)
         
         let callback = SimpleServerCallback(successBlock: { (data) in
-            
-            
-            callback(data as? DonorProfileData, nil)
+            if let data = data as? DonorProfileData {
+                self.saveCurrentUser(data)
+                callback(data, nil)
+            } else {
+                callback(nil, ErrorUtils.getDefaultServerError())
+            }
         }, errorBlock: { (error) in
             let error = error as! NSError
             callback(nil, error)
@@ -66,15 +73,12 @@ class DefaultProfileService: ProfileService {
     }
     
     func logoutUser(callback: @escaping ((Bool?) -> ())) {
-        let request = ServerRequest(endpoint: "logout")
+        // TODO - add server comms
         
-        let callback = SimpleServerCallback(successBlock: { (data) in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.deleteCurrentUser()
             callback(true)
-        }, errorBlock: { (error) in
-            callback(false)
-        })
-        
-        Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
+        }
     }
     
     func updateCountyAndSSN(newCounty: String, newSSN: String, callback: @escaping (NSError?) -> ()) {

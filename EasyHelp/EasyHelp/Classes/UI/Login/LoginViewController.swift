@@ -49,7 +49,6 @@ class LoginViewController: UIViewController {
         if let profileData = profileData {
             loginView.setButtonLoading(isLoading: false)
             loginView.stopShowingError()
-            AppServices.profileService.saveCurrentUser(profileData)
             
             if profileData.shouldSeeOnboarding() {
                 OnboardingFlowManager.instance.startFlow(forDonor: profileData)

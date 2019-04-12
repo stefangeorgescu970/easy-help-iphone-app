@@ -47,6 +47,15 @@ class ProfileDetailsView: UIView {
         return button
     }()
     
+    private let bloodHeaderLabel: UILabel = {
+        let label = UILabel()
+        label.text = Strings.ProfileDetails.bloodGroupHeader()
+        label.textColor = AppColors.darkBlue
+        label.font = AppFonts.boldFontWithSize(18)
+        label.sizeToFit()
+        return label
+    }()
+    
     private let bloodImageView: UIImageView = {
         let image = UIImage(named: "profile_blood")
         let imageView = UIImageView(image: image?.resize(to: CGSize(width: Constants.logoSize, height: Constants.logoSize)))
@@ -57,6 +66,15 @@ class ProfileDetailsView: UIView {
         let label = UILabel()
         label.textColor = AppColors.almostBlack
         label.font = AppFonts.boldFontWithSize(18)
+        return label
+    }()
+    
+    private let formHeaderLabel: UILabel = {
+        let label = UILabel()
+        label.text = Strings.ProfileDetails.formHeader()
+        label.textColor = AppColors.darkBlue
+        label.font = AppFonts.boldFontWithSize(18)
+        label.sizeToFit()
         return label
     }()
     
@@ -114,20 +132,27 @@ class ProfileDetailsView: UIView {
         nameLabel.center = CGPoint(x: nameLabel.center.x, y: profileImageView.center.y - 4)
         self.addSubview(nameLabel)
         
-        bloodImageView.frame.origin = CGPoint(x: 20, y: profileImageView.frame.maxY + 60)
+        bloodHeaderLabel.frame.origin = CGPoint(x: 20, y: profileImageView.frame.maxY + 60)
+        self.addSubview(bloodHeaderLabel)
+        
+        bloodImageView.frame.origin = CGPoint(x: 20, y: bloodHeaderLabel.frame.maxY + 20)
         self.addSubview(bloodImageView)
         
         if let group = profileData.bloodGroupLetter, let rh = profileData.bloodRh {
             bloodLabel.text = "\(group) \(rh ? "positive" : "negative")"
         } else {
-            bloodLabel.text = "Will be updated on first donation."
+            bloodLabel.font = AppFonts.boldFontWithSize(14)
+            bloodLabel.text = Strings.ProfileDetails.bloodGroupFallback()
         }
         bloodLabel.sizeToFit()
         bloodLabel.frame.origin = CGPoint(x: bloodImageView.frame.maxX + 20, y: 0)
         bloodLabel.center = CGPoint(x: bloodLabel.center.x, y: bloodImageView.center.y - 4)
         self.addSubview(bloodLabel)
         
-        formImageView.frame.origin = CGPoint(x: 20, y: bloodImageView.frame.maxY + 20)
+        formHeaderLabel.frame.origin = CGPoint(x: 20, y: bloodImageView.frame.maxY + 20)
+        self.addSubview(formHeaderLabel)
+        
+        formImageView.frame.origin = CGPoint(x: 20, y: formHeaderLabel.frame.maxY + 20)
         self.addSubview(formImageView)
         
         // TODO - here add form stuff
