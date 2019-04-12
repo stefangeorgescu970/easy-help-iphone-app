@@ -57,7 +57,7 @@ extension BloodGroupOnboardingViewController: UIPickerViewDelegate {
             label = UILabel()
         }
         
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.textAlignment = .left
         label.font = UIFont(name: "Helvetica", size: 16)
         

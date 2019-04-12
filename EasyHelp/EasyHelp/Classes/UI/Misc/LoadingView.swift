@@ -18,7 +18,7 @@ class LoadingView: UIView {
         actInd.center = self.center
         actInd.hidesWhenStopped = true
         actInd.style = .whiteLarge
-        actInd.color = AppColors.darkBlue
+        actInd.color = AppColors.appRed
         self.backgroundColor = withBgColor
         addSubview(actInd)
         actInd.startAnimating()

@@ -50,7 +50,7 @@ class LoginView: UIView {
         textField.leftViewMode = .always
         textField.leftView = UIImageView(image: tintedImage)
         textField.leftView?.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-        textField.leftView?.tintColor = AppColors.darkBlue
+        textField.leftView?.tintColor = AppColors.appRed
         
         textField.addTarget(self, action: #selector(LoginView.userEditedText), for: .editingChanged)
         
@@ -72,7 +72,7 @@ class LoginView: UIView {
         let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
         textField.leftViewMode = .always
         textField.leftView = UIImageView(image: tintedImage)
-        textField.leftView?.tintColor = AppColors.darkBlue
+        textField.leftView?.tintColor = AppColors.appRed
         
         textField.addTarget(self, action: #selector(LoginView.userEditedText), for: .editingChanged)
         
@@ -83,7 +83,7 @@ class LoginView: UIView {
         let button = ButtonWithActivity()
         button.setTitle(Strings.Login.login(), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = AppColors.darkBlue
+        button.backgroundColor = AppColors.appRed
         button.layer.cornerRadius = 8
         
         button.addTarget(self, action: #selector(LoginView.didPressLogin), for: .touchUpInside)
@@ -127,7 +127,7 @@ class LoginView: UIView {
     
     private let infoLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.numberOfLines = 2
         label.font = AppFonts.regularFontWithSize(14)
         label.contentMode = .center

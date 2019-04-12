@@ -43,7 +43,7 @@ class SignupView: UIView {
     private let firstNameLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.Signup.name()
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
         return label
@@ -67,7 +67,7 @@ class SignupView: UIView {
     private let lastNameLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.Signup.name()
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
         return label
@@ -91,7 +91,7 @@ class SignupView: UIView {
     private let emailLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.Signup.email()
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
         return label
@@ -116,7 +116,7 @@ class SignupView: UIView {
     private let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.Signup.password()
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
         return label
@@ -141,7 +141,7 @@ class SignupView: UIView {
     private let confirmPasswordLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.Signup.confirmPassword()
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
         return label
@@ -167,7 +167,7 @@ class SignupView: UIView {
         let button = ButtonWithActivity()
         button.setTitle(Strings.Signup.signup(), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = AppColors.darkBlue
+        button.backgroundColor = AppColors.appRed
         button.layer.cornerRadius = 8
         
         button.addTarget(self, action: #selector(SignupView.didPressSignup), for: .touchUpInside)

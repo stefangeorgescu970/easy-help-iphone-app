@@ -22,7 +22,7 @@ class CountySSNOnboardingView: UIView {
     private let countyLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.Onboarding.CountySSN.county()
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
         return label
@@ -31,7 +31,7 @@ class CountySSNOnboardingView: UIView {
     private let countyTextField: UITextField = {
         let textField = UITextField()
         textField.font = AppFonts.regularFontWithSize(16)
-        textField.textColor = AppColors.darkBlue
+        textField.textColor = AppColors.appRed
         textField.autocapitalizationType = .none
         textField.borderStyle = .none
         return textField
@@ -40,7 +40,7 @@ class CountySSNOnboardingView: UIView {
     private let ssnLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.Onboarding.CountySSN.ssn()
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
         return label
@@ -49,7 +49,7 @@ class CountySSNOnboardingView: UIView {
     private let ssnTextField: UITextField = {
         let textField = UITextField()
         textField.font = AppFonts.regularFontWithSize(16)
-        textField.textColor = AppColors.darkBlue
+        textField.textColor = AppColors.appRed
         textField.autocapitalizationType = .none
         textField.borderStyle = .none
         textField.textColor = .black
@@ -61,7 +61,7 @@ class CountySSNOnboardingView: UIView {
         let button = ButtonWithActivity()
         button.setTitle(Strings.Misc.cont(), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = AppColors.darkBlue
+        button.backgroundColor = AppColors.appRed
         button.layer.cornerRadius = 8
         
         button.addTarget(self, action: #selector(CountySSNOnboardingView.didPressContinue(_:)), for: .touchUpInside)
@@ -119,7 +119,7 @@ class CountySSNOnboardingView: UIView {
         AppInterfaceFormatter.addUnderline(toTextField: countyTextField)
         AppInterfaceFormatter.addUnderline(toTextField: ssnTextField)
         
-        countyTextField.textColor = AppColors.darkBlue
+        countyTextField.textColor = AppColors.appRed
         self.backgroundColor = AppColors.white
         
         createPickerView(delegate: pickerDelegate, dataSource: pickerDataSource)
@@ -163,7 +163,7 @@ class CountySSNOnboardingView: UIView {
     fileprivate func createToolbar() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        toolbar.tintColor = AppColors.darkBlue
+        toolbar.tintColor = AppColors.appRed
         toolbar.backgroundColor = AppColors.white
         let doneButton = UIBarButtonItem(title: Strings.Misc.done(), style: .plain, target: self, action: #selector(CountySSNOnboardingView.closePickerView))
         toolbar.setItems([doneButton], animated: false)

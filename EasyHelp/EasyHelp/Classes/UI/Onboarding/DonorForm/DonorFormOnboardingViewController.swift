@@ -17,7 +17,7 @@ class DonorFormOnboardingViewController: UIViewController {
         let button = ButtonWithActivity()
         button.setTitle("Fill in now", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = AppColors.darkBlue
+        button.backgroundColor = AppColors.appRed
         button.layer.cornerRadius = 8
         
         button.addTarget(self, action: #selector(DonorFormOnboardingViewController.didPressContinue(_:)), for: .touchUpInside)

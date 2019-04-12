@@ -30,7 +30,7 @@ class MainScreenCanBookView: UIView {
         let button = ButtonWithActivity()
         button.setTitle("Book a Donation", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = AppColors.darkBlue
+        button.backgroundColor = AppColors.appRed
         button.layer.cornerRadius = 8
         
         button.addTarget(self, action: #selector(MainScreenCanBookView.didPressBook(_:)), for: .touchUpInside)

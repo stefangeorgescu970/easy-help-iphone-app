@@ -22,7 +22,7 @@ class BloodGroupOnboardingView: UIView {
     private let rhLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.Onboarding.BloodGroup.rh()
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
         return label
@@ -31,7 +31,7 @@ class BloodGroupOnboardingView: UIView {
     private let rhSegmentControl: UISegmentedControl = {
         let control = UISegmentedControl(items: ["-", "+"])
         
-        control.tintColor = AppColors.darkBlue
+        control.tintColor = AppColors.appRed
         
         return control
     }()
@@ -39,7 +39,7 @@ class BloodGroupOnboardingView: UIView {
     private let groupLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.Onboarding.BloodGroup.bloodGroup()
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
         return label
@@ -48,7 +48,7 @@ class BloodGroupOnboardingView: UIView {
     private let groupTextField: UITextField = {
         let textField = UITextField()
         textField.font = AppFonts.regularFontWithSize(16)
-        textField.textColor = AppColors.darkBlue
+        textField.textColor = AppColors.appRed
         textField.autocapitalizationType = .none
         textField.borderStyle = .none
         textField.textColor = .black
@@ -61,7 +61,7 @@ class BloodGroupOnboardingView: UIView {
         let button = ButtonWithActivity()
         button.setTitle(Strings.Misc.cont(), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = AppColors.darkBlue
+        button.backgroundColor = AppColors.appRed
         button.layer.cornerRadius = 8
         
         button.addTarget(self, action: #selector(BloodGroupOnboardingView.didPressContinue(_:)), for: .touchUpInside)
@@ -134,7 +134,7 @@ class BloodGroupOnboardingView: UIView {
     fileprivate func createToolbar() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        toolbar.tintColor = AppColors.darkBlue
+        toolbar.tintColor = AppColors.appRed
         toolbar.backgroundColor = AppColors.white
         let doneButton = UIBarButtonItem(title: Strings.Misc.done(), style: .plain, target: self, action: #selector(BloodGroupOnboardingView.closePickerView))
         toolbar.setItems([doneButton], animated: false)

@@ -22,7 +22,7 @@ class AppInterfaceFormatter {
         
         let attributedStringNormal = NSMutableAttributedString(string: title, attributes: [
             NSAttributedString.Key.font: AppFonts.regularFontWithSize(16),
-            NSAttributedString.Key.foregroundColor: AppColors.darkBlue
+            NSAttributedString.Key.foregroundColor: AppColors.appRed
             ])
         attributedStringNormal.beginEditing()
         attributedStringNormal.addAttributes([
@@ -35,7 +35,7 @@ class AppInterfaceFormatter {
         let attributedStringHighlight = NSMutableAttributedString(attributedString: attributedStringNormal)
         attributedStringHighlight.beginEditing()
         attributedStringHighlight.addAttributes([
-            NSAttributedString.Key.foregroundColor: AppColors.darkBlue
+            NSAttributedString.Key.foregroundColor: AppColors.appRed
             ], range: linkRange)
         attributedStringHighlight.endEditing()
         btn.setAttributedTitle(attributedStringHighlight, for: UIControl.State.highlighted)
@@ -62,7 +62,7 @@ class AppInterfaceFormatter {
         
         let result = UILabel(frame: CGRect(x: 30, y: 145, width: UIScreen.main.bounds.width - 2 * 30, height: 600))
         result.font = AppFonts.regularFontWithSize(16)
-        result.textColor = AppColors.darkBlue
+        result.textColor = AppColors.appRed
         result.attributedText = attributedText
         result.numberOfLines = 0
         result.textAlignment = NSTextAlignment.center
@@ -92,7 +92,7 @@ class AppInterfaceFormatter {
         
         let titleLabel: UILabel = UILabel()
         titleLabel.font = AppFonts.lightFontWithSize(21)
-        titleLabel.textColor = AppColors.darkBlue
+        titleLabel.textColor = AppColors.appRed
         titleLabel.text = title
         titleLabel.textAlignment = NSTextAlignment.center
         titleLabel.numberOfLines = 0
@@ -104,7 +104,7 @@ class AppInterfaceFormatter {
         if let subtitleU = subtitleAttributedString {
             withSubtitle = true
             subtitleLabel.font = AppFonts.lightFontWithSize(12)
-            subtitleLabel.textColor = AppColors.darkBlue
+            subtitleLabel.textColor = AppColors.appRed
             subtitleLabel.attributedText = subtitleU
             subtitleLabel.textAlignment = NSTextAlignment.center
             subtitleLabel.numberOfLines = 2
@@ -130,7 +130,7 @@ class AppInterfaceFormatter {
     static func addUnderline(toTextField textField: UITextField) {
         let border = CALayer()
         let width = CGFloat(1.0)
-        border.borderColor = AppColors.darkBlue.cgColor
+        border.borderColor = AppColors.appRed.cgColor
         border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width: textField.frame.size.width, height: textField.frame.size.height)
         
         border.borderWidth = width
@@ -138,13 +138,13 @@ class AppInterfaceFormatter {
         textField.layer.masksToBounds = true
     }
     
-    static func addSeparator(view: UIView, yOffset: CGFloat, marginSpacing: CGFloat, height: CGFloat, color: UIColor = AppColors.darkBlue) {
+    static func addSeparator(view: UIView, yOffset: CGFloat, marginSpacing: CGFloat, height: CGFloat, color: UIColor = AppColors.appRed) {
         let sep = UIView(frame: CGRect(x: marginSpacing, y: yOffset, width: view.frame.width - 2 * marginSpacing, height: height))
         sep.backgroundColor = color
         view.addSubview(sep)
     }
     
-    static func createBoldFontLabel(fontSize: CGFloat, text: String = "", color: UIColor = AppColors.darkBlue) -> UILabel {
+    static func createBoldFontLabel(fontSize: CGFloat, text: String = "", color: UIColor = AppColors.appRed) -> UILabel {
         let label = UILabel()
         label.font = AppFonts.boldFontWithSize(fontSize)
         label.textAlignment = .center
@@ -154,7 +154,7 @@ class AppInterfaceFormatter {
         return label
     }
     
-    static func createRegularFontLabel(fontSize: CGFloat, text: String = "", color: UIColor = AppColors.darkBlue) -> UILabel {
+    static func createRegularFontLabel(fontSize: CGFloat, text: String = "", color: UIColor = AppColors.appRed) -> UILabel {
         let label = UILabel()
         label.font = AppFonts.regularFontWithSize(fontSize)
         label.textAlignment = .center
@@ -206,7 +206,7 @@ class AppInterfaceFormatter {
         return rightLabel.frame.height
     }
     
-    static func addVerticalSeparator(toView: UIView, xOffset: CGFloat, yOffset: CGFloat, width: CGFloat, height: CGFloat, color: UIColor = AppColors.darkBlue) {
+    static func addVerticalSeparator(toView: UIView, xOffset: CGFloat, yOffset: CGFloat, width: CGFloat, height: CGFloat, color: UIColor = AppColors.appRed) {
         let verticalLine = UIView(frame: CGRect(x: xOffset,
                                                 y: yOffset,
                                                 width: width,

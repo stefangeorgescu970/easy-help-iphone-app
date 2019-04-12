@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let navBarAppearance = UINavigationBar.appearance()
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : AppColors.darkBlue]
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : AppColors.appRed]
         navBarAppearance.tintColor = .white
         
         window = UIWindow(frame: UIScreen.main.bounds)

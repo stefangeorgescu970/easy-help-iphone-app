@@ -39,7 +39,7 @@ class ProfileDetailsView: UIView {
         let button = ButtonWithActivity()
         button.setTitle(Strings.Misc.logout(), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = AppColors.darkBlue
+        button.backgroundColor = AppColors.appRed
         button.layer.cornerRadius = 8
         
         button.addTarget(self, action: #selector(ProfileDetailsView.didPressLogout(_:)), for: .touchUpInside)
@@ -50,7 +50,7 @@ class ProfileDetailsView: UIView {
     private let bloodHeaderLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.ProfileDetails.bloodGroupHeader()
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
         return label
@@ -72,7 +72,7 @@ class ProfileDetailsView: UIView {
     private let formHeaderLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.ProfileDetails.formHeader()
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
         return label
@@ -87,7 +87,7 @@ class ProfileDetailsView: UIView {
     private let termsAndConditionsButton: UIButton = {
         let button = UIButton()
         button.setTitle(Strings.ProfileDetails.termsConds(), for: .normal)
-        button.setTitleColor(AppColors.darkBlue, for: .normal)
+        button.setTitleColor(AppColors.appRed, for: .normal)
         button.titleLabel?.font = AppFonts.regularFontWithSize(12)
         button.backgroundColor = .clear
         button.sizeToFit()
@@ -99,7 +99,7 @@ class ProfileDetailsView: UIView {
     private let faqButton: UIButton = {
         let button = UIButton()
         button.setTitle(Strings.ProfileDetails.faq(), for: .normal)
-        button.setTitleColor(AppColors.darkBlue, for: .normal)
+        button.setTitleColor(AppColors.appRed, for: .normal)
         button.titleLabel?.font = AppFonts.regularFontWithSize(12)
         button.backgroundColor = .clear
         button.sizeToFit()
@@ -112,7 +112,7 @@ class ProfileDetailsView: UIView {
         let dotSeparator = UILabel()
         dotSeparator.attributedText = NSAttributedString(string: "•", attributes: [
             NSAttributedString.Key.font: AppFonts.regularFontWithSize(16),
-            NSAttributedString.Key.foregroundColor: AppColors.darkBlue
+            NSAttributedString.Key.foregroundColor: AppColors.appRed
             ])
         dotSeparator.textAlignment = NSTextAlignment.center
         dotSeparator.sizeToFit()

@@ -20,7 +20,7 @@ class MainScreenView: UIView {
     
     private let logoLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
-        label.textColor = AppColors.darkBlue
+        label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(22)
         label.contentMode = .center
         label.textAlignment = .center
