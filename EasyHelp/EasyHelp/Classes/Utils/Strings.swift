@@ -9,6 +9,11 @@
 import Foundation
 
 struct Strings {
+    struct ProfileDetails {
+        static let faq = { "Frequently Asked Questions" }
+        static let termsConds = { "Terms and Conditions" }
+    }
+    
     struct Onboarding {
         struct CountySSN {
             static let countyDefaultValue = { "Please Select County" }

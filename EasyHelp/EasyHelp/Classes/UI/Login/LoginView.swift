@@ -29,7 +29,7 @@ class LoginView: UIView {
     
     // MARK: - View Properties Declaration
     
-    private let ubbImageView: UIImageView = {
+    private let logoImageView: UIImageView = {
         let image = UIImage(named: "blood_drop")
         let imageView = UIImageView(image: image)
         return imageView
@@ -141,11 +141,11 @@ class LoginView: UIView {
         let holder = UIView(frame: frame)
         holder.backgroundColor = .white
         
-        ubbImageView.frame = CGRect(x: Constants.imageSpacing,
+        logoImageView.frame = CGRect(x: Constants.imageSpacing,
                                     y: 150,
                                     width: frame.width - 2 * Constants.imageSpacing,
                                     height: frame.width - 2 * Constants.imageSpacing)
-        holder.addSubview(ubbImageView)
+        holder.addSubview(logoImageView)
         
         emailInput.frame = CGRect(x: Constants.fieldSpacing,
                                   y: 300,

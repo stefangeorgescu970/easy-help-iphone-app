@@ -25,5 +25,4 @@ class DonorSummaryDataParser: ServerResponseParser {
     override func getResult() -> AnyObject? {
         return donorData as AnyObject
     }
-    
 }
