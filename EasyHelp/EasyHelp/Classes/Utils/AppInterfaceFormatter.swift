@@ -215,4 +215,30 @@ class AppInterfaceFormatter {
         verticalLine.backgroundColor = color
         toView.addSubview(verticalLine)
     }
+    
+    static func navigationBarButtonWithIcon(_ icon: UIImage?, highlightIcon: UIImage?) -> UIButton {
+        let button = navigationBarButton()
+        
+        let actualIcon = icon
+        let actualHighlightIcon = highlightIcon
+        button.setImage(actualIcon, for: UIControl.State())
+        button.setImage(actualHighlightIcon, for: UIControl.State.selected)
+        button.setImage(actualHighlightIcon, for: UIControl.State.highlighted)
+        
+        button.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        button.frame.size.width = max(icon?.size.width ?? 0, button.frame.width)
+        let inset: CGFloat = 4
+        button.imageEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+        
+        return button
+    }
+    
+    static func navigationBarButton() -> UIButton {
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 42, height: 44))
+        button.adjustsImageWhenDisabled = false;
+        button.adjustsImageWhenHighlighted = false;
+        button.backgroundColor = UIColor.clear
+        return button
+    }
 }

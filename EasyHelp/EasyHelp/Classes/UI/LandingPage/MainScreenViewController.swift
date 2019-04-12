@@ -53,6 +53,7 @@ extension MainScreenViewController: MainScreenViewDelegate {
     }
     
     func mainScreenViewDidRequestBookDonation(_ sender: MainScreenView) {
-        print("do booking")
+        let navController = UINavigationController(rootViewController: DonationCentersViewController())
+        self.navigationController?.present(navController, animated: true, completion: nil)
     }
 }
