@@ -86,4 +86,10 @@ extension DonationCentersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dc = donationCenters[indexPath.row]
+        self.navigationController?.pushViewController(DonationCenterMainViewController(donationCenter: dc), animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

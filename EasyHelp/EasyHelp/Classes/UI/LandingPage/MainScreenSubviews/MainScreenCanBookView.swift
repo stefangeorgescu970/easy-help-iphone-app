@@ -16,7 +16,7 @@ class MainScreenCanBookView: UIView {
     
     weak var delegate: MainScreenCanBookViewDelegate?
     
-    private let nameLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.textColor = AppColors.almostBlack
         label.font = AppFonts.boldFontWithSize(16)
@@ -41,16 +41,16 @@ class MainScreenCanBookView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        nameLabel.text = "You are eligible for booking a donation!"
-        nameLabel.sizeToFit()
+        titleLabel.text = "You are eligible for booking a donation!"
+        titleLabel.sizeToFit()
         
-        nameLabel.frame.origin = CGPoint(x: (frame.width - nameLabel.frame.width) / 2, y: 20)
+        titleLabel.frame.origin = CGPoint(x: (frame.width - titleLabel.frame.width) / 2, y: 20)
         
         bookButton.frame = CGRect(x: 40,
-                                   y: nameLabel.frame.maxY + 30,
+                                   y: titleLabel.frame.maxY + 30,
                                    width: frame.width - 80,
                                    height: 50)
-        self.addSubview(nameLabel)
+        self.addSubview(titleLabel)
         self.addSubview(bookButton)
     }
     

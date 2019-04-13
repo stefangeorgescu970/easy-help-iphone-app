@@ -40,6 +40,12 @@ class LandingPageTabBarViewController: UITabBarController {
         
         self.tabBar.tintColor = .red
         self.view.backgroundColor = .white
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(LandingPageTabBarViewController.goBackToLandingPage(notification:)), name: Notification.Name.GoBackToLanding, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.GoBackToLanding, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -105,5 +111,12 @@ class LandingPageTabBarViewController: UITabBarController {
     
     @objc private func onRaisedButton(_ sender: UIButton) {
         self.selectedViewController = bdcNav
+    }
+    
+    @objc private func goBackToLandingPage(notification: NSNotification) {
+        if let booking = notification.object as? DonationBooking {
+            mainScreenController.syncView(forBooking: booking)
+        }
+        bdcNav.presentedViewController?.dismiss(animated: true, completion: nil)
     }
 }

@@ -41,9 +41,17 @@ class MainScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
+    
+    func syncView(forBooking booking: DonationBooking) {
+        self.innerView.syncView(forBooking: booking)
+    }
 }
 
 extension MainScreenViewController: MainScreenViewDelegate {
+    func mainScreenViewDidRequestShowDonation(_ sender: MainScreenView, donationBooking: DonationBooking) {
+        // TODO - show modal with booking details
+    }
+    
     func mainScreenViewDidRequestShowWhy(_ sender: MainScreenView) {
         print("why")
     }

@@ -10,6 +10,7 @@ import UIKit
 
 protocol MainScreenViewDelegate: class {
     func mainScreenViewDidRequestBookDonation(_ sender: MainScreenView)
+    func mainScreenViewDidRequestShowDonation(_ sender: MainScreenView, donationBooking: DonationBooking)
     func mainScreenViewDidRequestShowWhy(_ sender: MainScreenView)
     func mainScreenViewDidRequestShowHow(_ sender: MainScreenView)
 }
@@ -54,6 +55,7 @@ class MainScreenView: UIView {
     private let howButton = AppInterfaceFormatter.createLink("How?")
     
     private var canBookView: MainScreenCanBookView?
+    private var nextBookingView: MainScreenNextBookingView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -69,6 +71,20 @@ class MainScreenView: UIView {
         howButton.addTarget(self, action: #selector(MainScreenView.didPressHow(_:)), for: .touchUpInside)
         
         self.backgroundColor = .white
+    }
+    
+    func syncView(forBooking booking: DonationBooking) {
+        if let canBookView = canBookView {
+            canBookView.removeFromSuperview()
+            self.canBookView = nil
+        }
+        
+        nextBookingView = MainScreenNextBookingView(frame: CGRect(x: 0,
+                                                                  y: frame.height - 200 - 60,
+                                                                  width: frame.width,
+                                                                  height: 200), booking: booking)
+        nextBookingView?.delegate = self
+        self.addSubview(nextBookingView!)
     }
     
     func syncView(profileData: DonorProfileData, donorSummary: DonorSummaryData) {
@@ -119,5 +135,11 @@ class MainScreenView: UIView {
 extension MainScreenView: MainScreenCanBookViewDelegate {
     func mainScreenCanBookViewDidRequestBookDonation(_ sender: MainScreenCanBookView) {
         self.delegate?.mainScreenViewDidRequestBookDonation(self)
+    }
+}
+
+extension MainScreenView: MainScreenNextBookingViewDelegate {
+    func mainScreenNextBookingViewDidRequestShowBooking(_ sender: MainScreenNextBookingView, booking: DonationBooking) {
+        self.delegate?.mainScreenViewDidRequestShowDonation(self, donationBooking: booking)
     }
 }

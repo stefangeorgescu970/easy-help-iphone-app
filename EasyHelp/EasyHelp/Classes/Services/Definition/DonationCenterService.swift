@@ -10,4 +10,6 @@ import Foundation
 
 protocol DonationCenterService {
     func getDonationCenters(callback: @escaping ([DonationCenter]?, NSError?) -> ())
+    
+    func getAvailableHours(forDonationCenter donationCenter: DonationCenter, callback: @escaping ([AvailableDate]?, NSError?) -> ())
 }

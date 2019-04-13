@@ -32,4 +32,12 @@ class AppServices {
         return DefaultDonationCenterService()
         #endif
     }()
+    
+    static var donorService: DonorService = {
+        #if MOCK
+        return MockDonorService()
+        #else
+        return DefaultDonorService()
+        #endif
+    }()
 }
