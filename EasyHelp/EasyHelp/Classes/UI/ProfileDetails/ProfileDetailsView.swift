@@ -12,6 +12,7 @@ protocol ProfileDetailsViewDelegate: class {
     func profileDetailsViewDidRequestLogout(_ sender: ProfileDetailsView)
     func profileDetailsViewDidRequestTermsAndConditions(_ sender: ProfileDetailsView)
     func profileDetailsViewDidRequestFAQ(_ sender: ProfileDetailsView)
+    func profileDetailsViewDidRequestFormActionButton(_ sender: ProfileDetailsView)
 }
 
 class ProfileDetailsView: UIView {
@@ -84,6 +85,8 @@ class ProfileDetailsView: UIView {
         return imageView
     }()
     
+    private var formActionButton: UIButton!
+    
     private let termsAndConditionsButton: UIButton = {
         let button = UIButton()
         button.setTitle(Strings.ProfileDetails.termsConds(), for: .normal)
@@ -155,7 +158,11 @@ class ProfileDetailsView: UIView {
         formImageView.frame.origin = CGPoint(x: 20, y: formHeaderLabel.frame.maxY + 20)
         self.addSubview(formImageView)
         
-        // TODO - here add form stuff
+        formActionButton = AppInterfaceFormatter.createLink("Fill in donation form")
+        formActionButton.frame.origin = CGPoint(x: formImageView.frame.maxX + 20, y: 0)
+        formActionButton.center = CGPoint(x: formActionButton.center.x, y: formImageView.center.y - 4)
+        formActionButton.addTarget(self, action: #selector(ProfileDetailsView.didPressFormActionButton(_:)), for: .touchUpInside)
+        self.addSubview(formActionButton)
         
         let totalWidth = termsAndConditionsButton.frame.width + faqButton.frame.width + dotSeparator.frame.width + 8
         var currentX: CGFloat = (frame.width - totalWidth) / 2
@@ -193,5 +200,9 @@ class ProfileDetailsView: UIView {
     
     @objc func didPressFAQ() {
         delegate?.profileDetailsViewDidRequestFAQ(self)
+    }
+    
+    @objc func didPressFormActionButton(_ sender: UIButton) {
+        delegate?.profileDetailsViewDidRequestFormActionButton(self)
     }
 }

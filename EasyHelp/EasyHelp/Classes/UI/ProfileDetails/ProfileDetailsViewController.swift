@@ -32,6 +32,11 @@ class ProfileDetailsViewController: UIViewController {
 }
 
 extension ProfileDetailsViewController: ProfileDetailsViewDelegate {
+    func profileDetailsViewDidRequestFormActionButton(_ sender: ProfileDetailsView) {
+        let vc = UINavigationController(rootViewController: DonorFormFillViewController())
+        self.navigationController?.present(vc, animated: true, completion: nil)
+    }
+    
     func profileDetailsViewDidRequestTermsAndConditions(_ sender: ProfileDetailsView) {
         print("t&c")
     }

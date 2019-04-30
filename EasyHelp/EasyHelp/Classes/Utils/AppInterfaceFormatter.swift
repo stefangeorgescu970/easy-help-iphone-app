@@ -241,4 +241,29 @@ class AppInterfaceFormatter {
         button.backgroundColor = UIColor.clear
         return button
     }
+    
+    static func defaultYesNoControl() -> UISegmentedControl {
+        let control = UISegmentedControl(items: ["NO", "YES"])
+        control.tintColor = AppColors.appRed
+        return control
+    }
+    
+    static func defaultStepperControl() -> UIView {
+        let stepper = UIStepper(frame: CGRect(origin: CGPoint.zero, size: CGSize.zero))
+        stepper.sizeToFit()
+        stepper.tintColor = AppColors.appRed
+        stepper.value = 1
+        stepper.stepValue = 1
+        stepper.minimumValue = 0
+        
+        return stepper
+    }
+    
+    static func defaultTextField() -> UITextField {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.tintColor = AppColors.appRed
+        
+        return textField
+    }
 }
