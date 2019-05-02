@@ -35,7 +35,59 @@ class DefaultDonorService: DonorService {
     }
     
     func sendDonationFormToServer(_ donationForm: DonationForm, callback: @escaping (NSError?) -> ()) {
+        let request = ServerRequest(endpoint: "addDonationForm", controller: "donor")
+        request.addParameter(key: "donorId", value: AppServices.profileService.getCurrentUser()!.id)
+        request.addParameter(key: "recentLossOfWeight", value: donationForm.recentLossOfWeight)
+        request.addParameter(key: "recentInexplicableFever", value: donationForm.recentInexplicableFever)
+        request.addParameter(key: "recentStomatoTreatmentOrVaccine", value: donationForm.recentStomatoTreatmentOrVaccine)
+        request.addParameter(key: "currentDrugTreatment", value: donationForm.currentDrugTreatment)
+        request.addParameter(key: "sexWithHIVOrHepatitisLast12Months", value: donationForm.sexWithHIVOrHepatitisLast12Months)
+        request.addParameter(key: "sexWithPersonWhoInjectsDrugsLast12Months", value: donationForm.sexWithPersonWhoInjectsDrugsLast12Months)
+        request.addParameter(key: "sexWithProstituteLast12Months", value: donationForm.sexWithProstituteLast12Months)
+        request.addParameter(key: "sexWithMultiplePartnersLast12Months", value: donationForm.sexWithMultiplePartnersLast12Months)
+        request.addParameter(key: "injectedDrugs", value: donationForm.injectedDrugs)
+        request.addParameter(key: "acceptedMoneyOrDrugsForSex", value: donationForm.acceptedMoneyOrDrugsForSex)
+        request.addParameter(key: "changedSexPartnerLast6Months", value: donationForm.changedSexPartnerLast6Months)
+        request.addParameter(key: "surgeryOrInvestigationsLast12Months", value: donationForm.surgeryOrInvestigationsLast12Months)
+        request.addParameter(key: "tattoosOrPiercingsLast12Months", value: donationForm.tattoosOrPiercingsLast12Months)
+        request.addParameter(key: "transfusionLast12Months", value: donationForm.transfusionLast12Months)
+        request.addParameter(key: "beenPregnant", value: donationForm.beenPregnant)
+        request.addParameter(key: "bornLivedTraveledAbroad", value: donationForm.bornLivedTraveledAbroad)
+        request.addParameter(key: "prisonLastYear", value: donationForm.prisonLastYear)
+        request.addParameter(key: "exposedHepatitis", value: donationForm.exposedHepatitis)
+        request.addParameter(key: "sufferFromSet1", value: donationForm.sufferFromSet1)
+        request.addParameter(key: "sufferFromSet2", value: donationForm.sufferFromSet2)
+        request.addParameter(key: "sufferFromSet3", value: donationForm.sufferFromSet3)
+        request.addParameter(key: "sufferFromSet4", value: donationForm.sufferFromSet4)
+        request.addParameter(key: "sufferFromSet5", value: donationForm.sufferFromSet5)
+        request.addParameter(key: "sufferFromSet6", value: donationForm.sufferFromSet6)
+        request.addParameter(key: "sufferFromSet7", value: donationForm.sufferFromSet7)
+        request.addParameter(key: "smoker", value: donationForm.smoker)
+        request.addParameter(key: "beenRefused", value: donationForm.beenRefused)
+        request.addParameter(key: "requireAttentionPostDonation", value: donationForm.requireAttentionPostDonation)
+        request.addParameter(key: "numberOfPartnersLast6Months", value: donationForm.numberOfPartnersLast6Months)
+        request.addParameter(key: "birthDate", value: donationForm.birthDate)
+        request.addParameter(key: "lastMenstruation", value: donationForm.lastMenstruation)
+        request.addParameter(key: "lastAlcoholUse", value: donationForm.lastAlcoholUse)
+        request.addParameter(key: "travelWhere", value: donationForm.travelWhere)
+        request.addParameter(key: "travelWhen", value: donationForm.travelWhen)
+        request.addParameter(key: "alcoholDrank", value: donationForm.alcoholDrank)
+        request.addParameter(key: "alcoholQuantity", value: donationForm.alcoholQuantity)
         
+        let callback = SimpleServerCallback(successBlock: { (data) in
+            if let success = data as? Bool {
+                if success {
+                    callback(nil)
+                    return
+                }
+            }
+            callback(ErrorUtils.getDefaultServerError())
+        }, errorBlock: { (error) in
+            let error = error as! NSError
+            callback(error)
+        })
+        
+        Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
     }
     
     func locallyPersistDonationForm(_ donationForm: DonationForm) {
