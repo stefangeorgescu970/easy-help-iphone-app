@@ -9,6 +9,7 @@
 import Foundation
 
 class DonationBooking: NSObject {
+    var id: Int = -1
     var date: Date
     var donationCenter: DonationCenter
     

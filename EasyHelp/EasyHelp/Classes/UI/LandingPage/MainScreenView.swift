@@ -107,8 +107,14 @@ class MainScreenView: UIView {
         
         if let _ = donorSummary.lastDonation {
             
-        } else if let _ = donorSummary.nextBooking {
-            
+        } else if let nextBooking = donorSummary.nextBooking {
+            nextBookingView = MainScreenNextBookingView(frame: CGRect(x: 0,
+                                                                      y: frame.height - 200 - 60,
+                                                                      width: frame.width,
+                                                                      height: 200),
+                                                        booking: nextBooking)
+            nextBookingView?.delegate = self
+            self.addSubview(nextBookingView!)
         } else {
             canBookView = MainScreenCanBookView(frame: CGRect(x: 0,
                                                               y: frame.height - 200 - 60,

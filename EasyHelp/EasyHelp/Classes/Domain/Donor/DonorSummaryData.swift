@@ -11,5 +11,5 @@ import Foundation
 class DonorSummaryData: NSObject {
     var donationNumber: Int = 0
     var lastDonation: String?
-    var nextBooking: String?
+    var nextBooking: DonationBooking?
 }
