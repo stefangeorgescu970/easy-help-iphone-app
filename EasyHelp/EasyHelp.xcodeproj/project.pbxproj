@@ -194,6 +194,9 @@
 		4FEF9980223A926100351500 /* EmailUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF997F223A926100351500 /* EmailUtils.swift */; };
 		4FEF9981223A926100351500 /* EmailUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF997F223A926100351500 /* EmailUtils.swift */; };
 		4FEF9982223A926100351500 /* EmailUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF997F223A926100351500 /* EmailUtils.swift */; };
+		4FEFDAD7227AA65600B55B03 /* UISegmentedControl+IsSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFDAD6227AA65600B55B03 /* UISegmentedControl+IsSelected.swift */; };
+		4FEFDAD8227AA65600B55B03 /* UISegmentedControl+IsSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFDAD6227AA65600B55B03 /* UISegmentedControl+IsSelected.swift */; };
+		4FEFDAD9227AA65600B55B03 /* UISegmentedControl+IsSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFDAD6227AA65600B55B03 /* UISegmentedControl+IsSelected.swift */; };
 		4FF8C47222450B5700F1AE98 /* NSError+UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */; };
 		4FF8C47322450B5700F1AE98 /* NSError+UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */; };
 		4FF8C47422450B5700F1AE98 /* NSError+UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */; };
@@ -310,6 +313,7 @@
 		4FEF9977223A91EE00351500 /* AppInterfaceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInterfaceFormatter.swift; sourceTree = "<group>"; };
 		4FEF997B223A923600351500 /* ButtonWithActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithActivity.swift; sourceTree = "<group>"; };
 		4FEF997F223A926100351500 /* EmailUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUtils.swift; sourceTree = "<group>"; };
+		4FEFDAD6227AA65600B55B03 /* UISegmentedControl+IsSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+IsSelected.swift"; sourceTree = "<group>"; };
 		4FF8C47122450B5700F1AE98 /* NSError+UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+UserInfo.swift"; sourceTree = "<group>"; };
 		4FF8C47622450C3700F1AE98 /* DonationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationForm.swift; sourceTree = "<group>"; };
 		4FF8C47B2245149200F1AE98 /* MainFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowManager.swift; sourceTree = "<group>"; };
@@ -612,6 +616,7 @@
 				4F0F8A032247C04800E1B270 /* UIImage+Resize.swift */,
 				4FB7835122550160007E741E /* UIViewController+DismissKeyboard.swift */,
 				4F2D565C2261F756002445C9 /* NotificationName.swift */,
+				4FEFDAD6227AA65600B55B03 /* UISegmentedControl+IsSelected.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1239,6 +1244,7 @@
 				4F2D56592261EE34002445C9 /* DateUtils.swift in Sources */,
 				4F30A5E3225F6290006C5B15 /* MainScreenView.swift in Sources */,
 				4F0F8A042247C04800E1B270 /* UIImage+Resize.swift in Sources */,
+				4FEFDAD7227AA65600B55B03 /* UISegmentedControl+IsSelected.swift in Sources */,
 				4FB783412254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */,
 				4FF8C47C2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4F30A5F8225F88D8006C5B15 /* BloodGroupOnboardingView.swift in Sources */,
@@ -1316,6 +1322,7 @@
 				4FEF9976223A91CC00351500 /* AppFonts.swift in Sources */,
 				4F62B4032240EC76006D1B55 /* ProfileService.swift in Sources */,
 				4F0F8A062247C04800E1B270 /* UIImage+Resize.swift in Sources */,
+				4FEFDAD9227AA65600B55B03 /* UISegmentedControl+IsSelected.swift in Sources */,
 				4F30A6062260A876006C5B15 /* DonationCenterService.swift in Sources */,
 				4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4F30A5FA225F88D8006C5B15 /* BloodGroupOnboardingView.swift in Sources */,
@@ -1384,6 +1391,7 @@
 				4F2D565A2261EE34002445C9 /* DateUtils.swift in Sources */,
 				4F30A5E4225F6290006C5B15 /* MainScreenView.swift in Sources */,
 				4F0F8A052247C04800E1B270 /* UIImage+Resize.swift in Sources */,
+				4FEFDAD8227AA65600B55B03 /* UISegmentedControl+IsSelected.swift in Sources */,
 				4FB783422254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */,
 				4FF8C47D2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4F30A5F9225F88D8006C5B15 /* BloodGroupOnboardingView.swift in Sources */,

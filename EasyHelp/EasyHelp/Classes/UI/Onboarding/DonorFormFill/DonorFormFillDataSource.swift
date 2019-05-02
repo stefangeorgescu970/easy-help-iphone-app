@@ -33,7 +33,22 @@ class DonorFormFillDataSource: NSObject, UITableViewDataSource {
                              "Last menstruation date?",
                              "Where you born or have you lived or traveled abroad?",
                              "When?",
-                             "Where?"]
+                             "Where?",
+                             "Were you in detention last year?",
+                             "Were you exposed to  hepatithis? (Sick family members or professional risk)",
+                             "Have you ever suffereed from icter, tuberculosis, malaria, reumatic fever?",
+                             "Have you ever suffereed from heart diseases, abnormal arterial pressure?",
+                             "Have you ever suffereed from cardiac or cerebral accidents?",
+                             "Have you ever suffereed from asthma?",
+                             "Have you ever suffereed from convulsions or neurological diseases?",
+                             "Have you ever suffereed from chronic diseases (diabetes, ulcer, cancer)",
+                             "Have you ever suffereed from sexually transmitted diseases?",
+                             "Are you a smoker?",
+                             "When did you last consume alcohol?",
+                             "What alcohol did you consume?",
+                             "In what quantity?",
+                             "Were you previously refused or postponed at a donation?",
+                             "Does your job require special attention 24 hours after the donation? (ex. driver, alpinist, diver)"]
     
     private let goodHealthControl = AppInterfaceFormatter.defaultYesNoControl()
     private let weightLossControl = AppInterfaceFormatter.defaultYesNoControl()
@@ -57,6 +72,21 @@ class DonorFormFillDataSource: NSObject, UITableViewDataSource {
     private let abroadControl = AppInterfaceFormatter.defaultYesNoControl()
     private let whereText = AppInterfaceFormatter.defaultTextField()
     private let whenText = AppInterfaceFormatter.defaultTextField()
+    private let detentionControl = AppInterfaceFormatter.defaultYesNoControl()
+    private let hepaExposedControl = AppInterfaceFormatter.defaultYesNoControl()
+    private let sufferSet1Control = AppInterfaceFormatter.defaultYesNoControl()
+    private let sufferSet2Control = AppInterfaceFormatter.defaultYesNoControl()
+    private let sufferSet3Control = AppInterfaceFormatter.defaultYesNoControl()
+    private let sufferSet4Control = AppInterfaceFormatter.defaultYesNoControl()
+    private let sufferSet5Control = AppInterfaceFormatter.defaultYesNoControl()
+    private let sufferSet6Control = AppInterfaceFormatter.defaultYesNoControl()
+    private let sufferSet7Control = AppInterfaceFormatter.defaultYesNoControl()
+    private let smokerControl = AppInterfaceFormatter.defaultYesNoControl()
+    private let alcoholWhenText = AppInterfaceFormatter.defaultTextField()
+    private let alcoholWhatText = AppInterfaceFormatter.defaultTextField()
+    private let alcoholQuantityText = AppInterfaceFormatter.defaultTextField()
+    private let previouslyrefusedControl = AppInterfaceFormatter.defaultYesNoControl()
+    private let specialAttentionControl = AppInterfaceFormatter.defaultYesNoControl()
     
     private var answerViews: [UIView] = []
     
@@ -64,8 +94,69 @@ class DonorFormFillDataSource: NSObject, UITableViewDataSource {
         self.answerViews = [goodHealthControl, weightLossControl, feverControl, stomatoVaccineControl,
                             medicalTreatmentControl, sexHivHepaControl, sexDrugUserControl, sexProstituteControl, sexMultiplePartnersControl,
                             injectedDrugsControl, accepdedDrugMoneyForSexControl, changePartenerLast6MonthsControl, numberOfPartStepper,
-                            surgeryOrInvestigationsControl, tattoosOrPiercingsControl, transfusionControl, beenPregnantControl,
-                            kidBirthDateText, lastMenstruationDateText, abroadControl, whereText, whenText]
+                            surgeryOrInvestigationsControl, tattoosOrPiercingsControl, transfusionControl, beenPregnantControl, kidBirthDateText,
+                            lastMenstruationDateText, abroadControl, whereText, whenText, detentionControl, hepaExposedControl, sufferSet1Control,
+                            sufferSet2Control, sufferSet3Control, sufferSet4Control, sufferSet5Control, sufferSet6Control, sufferSet7Control,
+                            smokerControl, alcoholWhenText, alcoholWhatText, alcoholQuantityText, previouslyrefusedControl,
+                            specialAttentionControl]
+    }
+    
+    func allFieldsValid() -> Bool {
+        // TODO - remove pregnancy from required
+        
+        for view in answerViews {
+            if let view = view as? UISegmentedControl {
+                if !view.isOptionSelected() {
+                    return false
+                }
+            }
+        }
+        
+        return true
+    }
+    
+    func getDonationForm() -> DonationForm {
+        let form = DonationForm()
+        
+        form.generalGoodHealth = goodHealthControl.selectedSegmentIndex == 1
+        form.recentLossOfWeight = weightLossControl.selectedSegmentIndex == 1
+        form.recentInexplicableFever = feverControl.selectedSegmentIndex == 1
+        form.recentStomatoTreatmentOrVaccine = stomatoVaccineControl.selectedSegmentIndex == 1
+        form.currentDrugTreatment = medicalTreatmentControl.selectedSegmentIndex == 1
+        form.sexWithHIVOrHepatitisLast12Months = sexHivHepaControl.selectedSegmentIndex == 1
+        form.sexWithPersonWhoInjectsDrugsLast12Months = sexDrugUserControl.selectedSegmentIndex == 1
+        form.sexWithProstituteLast12Months = sexProstituteControl.selectedSegmentIndex == 1
+        form.sexWithMultiplePartnersLast12Months = sexMultiplePartnersControl.selectedSegmentIndex == 1
+        form.injectedDrugs = injectedDrugsControl.selectedSegmentIndex == 1
+        form.acceptedMoneyOrDrugsForSex = accepdedDrugMoneyForSexControl.selectedSegmentIndex == 1
+        form.changedSexPartnerLast6Months = changePartenerLast6MonthsControl.selectedSegmentIndex == 1
+        form.numberOfPartnersLast6Months = Int(numberOfPartStepper.value)
+        form.surgeryOrInvestigationsLast12Months = surgeryOrInvestigationsControl.selectedSegmentIndex == 1
+        form.tattoosOrPiercingsLast12Months = tattoosOrPiercingsControl.selectedSegmentIndex == 1
+        form.transfusionLast12Months = transfusionControl.selectedSegmentIndex == 1
+        form.beenPregnant = beenPregnantControl.selectedSegmentIndex == 1
+        form.birthDate = kidBirthDateText.text!
+        form.lastMenstruation = lastMenstruationDateText.text!
+        form.bornLivedTraveledAbroad = abroadControl.selectedSegmentIndex == 1
+        form.travelWhere = whereText.text!
+        form.travelWhen = whenText.text!
+        form.prisonLastYear = detentionControl.selectedSegmentIndex == 1
+        form.exposedHepatitis = hepaExposedControl.selectedSegmentIndex == 1
+        form.sufferFromSet1 = sufferSet1Control.selectedSegmentIndex == 1
+        form.sufferFromSet2 = sufferSet2Control.selectedSegmentIndex == 1
+        form.sufferFromSet3 = sufferSet3Control.selectedSegmentIndex == 1
+        form.sufferFromSet4 = sufferSet4Control.selectedSegmentIndex == 1
+        form.sufferFromSet5 = sufferSet5Control.selectedSegmentIndex == 1
+        form.sufferFromSet6 = sufferSet6Control.selectedSegmentIndex == 1
+        form.sufferFromSet7 = sufferSet7Control.selectedSegmentIndex == 1
+        form.smoker = smokerControl.selectedSegmentIndex == 1
+        form.lastAlcoholUse = alcoholWhenText.text!
+        form.alcoholDrank = alcoholWhatText.text!
+        form.alcoholQuantity = alcoholQuantityText.text!
+        form.beenRefused = previouslyrefusedControl.selectedSegmentIndex == 1
+        form.requireAttentionPostDonation = specialAttentionControl.selectedSegmentIndex == 1
+    
+        return form
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

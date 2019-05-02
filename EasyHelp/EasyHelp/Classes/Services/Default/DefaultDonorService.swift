@@ -9,6 +9,9 @@
 import Foundation
 
 class DefaultDonorService: DonorService {
+    private let myUserDefaults = UserDefaults.standard
+    private let userDefaultsKey = "currentDonationForm"
+    
     func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ()) {
         let request = ServerRequest(endpoint: "bookDonation", controller: "donor")
         request.addParameter(key: "id", value: AppServices.profileService.getCurrentUser()!.id)
@@ -29,5 +32,17 @@ class DefaultDonorService: DonorService {
         })
         
         Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
+    }
+    
+    func sendDonationFormToServer(_ donationForm: DonationForm, callback: @escaping (NSError?) -> ()) {
+        
+    }
+    
+    func locallyPersistDonationForm(_ donationForm: DonationForm) {
+        // TODO: - persist donation form
+    }
+    
+    func getLocallyPersistedDonationForm() -> DonationForm {
+        return DonationForm()
     }
 }

@@ -41,8 +41,6 @@ class DonorFormFillCell: UITableViewCell {
                                                y: answerView.frame.origin.y)
             self.addSubview(numberLabel)
         }
-        
-        self.heightAnchor.constraint(equalToConstant: answerView.frame.maxY + 10).isActive = true
     }
     
     @objc func didChangeStepperValue(_ sender: UIStepper) {

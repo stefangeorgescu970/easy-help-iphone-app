@@ -10,4 +10,10 @@ import Foundation
 
 protocol DonorService {
     func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ())
+    
+    func sendDonationFormToServer(_ donationForm: DonationForm, callback: @escaping (NSError?) -> ())
+    
+    func locallyPersistDonationForm(_ donationForm: DonationForm)
+    
+    func getLocallyPersistedDonationForm() -> DonationForm
 }

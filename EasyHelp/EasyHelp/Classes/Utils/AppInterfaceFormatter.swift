@@ -248,7 +248,7 @@ class AppInterfaceFormatter {
         return control
     }
     
-    static func defaultStepperControl() -> UIView {
+    static func defaultStepperControl() -> UIStepper {
         let stepper = UIStepper(frame: CGRect(origin: CGPoint.zero, size: CGSize.zero))
         stepper.sizeToFit()
         stepper.tintColor = AppColors.appRed

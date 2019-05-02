@@ -48,7 +48,8 @@ class DonorFormOnboardingViewController: UIViewController {
     }
     
     @objc fileprivate func didPressContinue(_ sender: UIButton) {
-        
+        let vc = UINavigationController(rootViewController: DonorFormFillViewController(source: .onboarding))
+        self.navigationController?.present(vc, animated: true, completion: nil)
     }
     
     @objc fileprivate func didPressSkip(_ sender: UIButton) {
