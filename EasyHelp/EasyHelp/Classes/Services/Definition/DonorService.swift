@@ -15,5 +15,5 @@ protocol DonorService {
     
     func locallyPersistDonationForm(_ donationForm: DonationForm)
     
-    func getLocallyPersistedDonationForm() -> DonationForm
+    func getLocallyPersistedDonationForm() -> DonationForm?
 }

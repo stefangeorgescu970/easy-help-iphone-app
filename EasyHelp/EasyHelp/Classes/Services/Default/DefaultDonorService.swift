@@ -39,10 +39,12 @@ class DefaultDonorService: DonorService {
     }
     
     func locallyPersistDonationForm(_ donationForm: DonationForm) {
-        // TODO: - persist donation form
+        let data = NSKeyedArchiver.archivedData(withRootObject: donationForm)
+        myUserDefaults.set(data, forKey: userDefaultsKey)
     }
     
-    func getLocallyPersistedDonationForm() -> DonationForm {
-        return DonationForm()
+    func getLocallyPersistedDonationForm() -> DonationForm? {
+        let data = myUserDefaults.object(forKey: userDefaultsKey) as? Data
+        return NSKeyedUnarchiver.unarchiveObject(with: data ?? Data()) as? DonationForm
     }
 }

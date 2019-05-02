@@ -35,14 +35,14 @@ class DonorFormFillDataSource: NSObject, UITableViewDataSource {
                              "When?",
                              "Where?",
                              "Were you in detention last year?",
-                             "Were you exposed to  hepatithis? (Sick family members or professional risk)",
-                             "Have you ever suffereed from icter, tuberculosis, malaria, reumatic fever?",
-                             "Have you ever suffereed from heart diseases, abnormal arterial pressure?",
-                             "Have you ever suffereed from cardiac or cerebral accidents?",
-                             "Have you ever suffereed from asthma?",
-                             "Have you ever suffereed from convulsions or neurological diseases?",
-                             "Have you ever suffereed from chronic diseases (diabetes, ulcer, cancer)",
-                             "Have you ever suffereed from sexually transmitted diseases?",
+                             "Were you exposed to hepatithis? (Sick family members or professional risk)",
+                             "Have you ever suffered from icter, tuberculosis, malaria, reumatic fever?",
+                             "Have you ever suffered from heart diseases, abnormal arterial pressure?",
+                             "Have you ever suffered from cardiac or cerebral accidents?",
+                             "Have you ever suffered from asthma?",
+                             "Have you ever suffered from convulsions or neurological diseases?",
+                             "Have you ever suffered from chronic diseases (diabetes, ulcer, cancer)",
+                             "Have you ever suffered from sexually transmitted diseases?",
                              "Are you a smoker?",
                              "When did you last consume alcohol?",
                              "What alcohol did you consume?",
@@ -157,6 +157,47 @@ class DonorFormFillDataSource: NSObject, UITableViewDataSource {
         form.requireAttentionPostDonation = specialAttentionControl.selectedSegmentIndex == 1
     
         return form
+    }
+    
+    func syncWithDonationForm(_ donationForm: DonationForm) {
+        goodHealthControl.selectedSegmentIndex = donationForm.generalGoodHealth ? 1 : 0
+        weightLossControl.selectedSegmentIndex = donationForm.recentLossOfWeight ? 1 : 0
+        feverControl.selectedSegmentIndex = donationForm.recentInexplicableFever ? 1 : 0
+        stomatoVaccineControl.selectedSegmentIndex = donationForm.recentStomatoTreatmentOrVaccine ? 1 : 0
+        medicalTreatmentControl.selectedSegmentIndex = donationForm.currentDrugTreatment ? 1 : 0
+        sexHivHepaControl.selectedSegmentIndex = donationForm.sexWithHIVOrHepatitisLast12Months ? 1 : 0
+        sexDrugUserControl.selectedSegmentIndex = donationForm.sexWithPersonWhoInjectsDrugsLast12Months ? 1 : 0
+        sexProstituteControl.selectedSegmentIndex = donationForm.sexWithProstituteLast12Months ? 1 : 0
+        sexMultiplePartnersControl.selectedSegmentIndex = donationForm.sexWithMultiplePartnersLast12Months ? 1 : 0
+        injectedDrugsControl.selectedSegmentIndex = donationForm.injectedDrugs ? 1 : 0
+        accepdedDrugMoneyForSexControl.selectedSegmentIndex = donationForm.acceptedMoneyOrDrugsForSex ? 1 : 0
+        changePartenerLast6MonthsControl.selectedSegmentIndex = donationForm.changedSexPartnerLast6Months ? 1 : 0
+        numberOfPartStepper.value = Double(donationForm.numberOfPartnersLast6Months)
+        surgeryOrInvestigationsControl.selectedSegmentIndex = donationForm.surgeryOrInvestigationsLast12Months ? 1 : 0
+        tattoosOrPiercingsControl.selectedSegmentIndex = donationForm.tattoosOrPiercingsLast12Months ? 1 : 0
+        transfusionControl.selectedSegmentIndex = donationForm.transfusionLast12Months ? 1 : 0
+        beenPregnantControl.selectedSegmentIndex = donationForm.beenPregnant ? 1 : 0
+        kidBirthDateText.text = donationForm.birthDate
+        lastMenstruationDateText.text = donationForm.lastMenstruation
+        abroadControl.selectedSegmentIndex = donationForm.bornLivedTraveledAbroad ? 1 : 0
+        whereText.text = donationForm.travelWhere
+        whenText.text = donationForm.travelWhen
+        detentionControl.selectedSegmentIndex = donationForm.prisonLastYear ? 1 : 0
+        detentionControl.selectedSegmentIndex = donationForm.prisonLastYear ? 1 : 0
+        hepaExposedControl.selectedSegmentIndex = donationForm.exposedHepatitis ? 1 : 0
+        sufferSet1Control.selectedSegmentIndex = donationForm.sufferFromSet1 ? 1 : 0
+        sufferSet2Control.selectedSegmentIndex = donationForm.sufferFromSet2 ? 1 : 0
+        sufferSet3Control.selectedSegmentIndex = donationForm.sufferFromSet3 ? 1 : 0
+        sufferSet4Control.selectedSegmentIndex = donationForm.sufferFromSet4 ? 1 : 0
+        sufferSet5Control.selectedSegmentIndex = donationForm.sufferFromSet5 ? 1 : 0
+        sufferSet6Control.selectedSegmentIndex = donationForm.sufferFromSet6 ? 1 : 0
+        sufferSet7Control.selectedSegmentIndex = donationForm.sufferFromSet7 ? 1 : 0
+        smokerControl.selectedSegmentIndex = donationForm.smoker ? 1 : 0
+        alcoholWhenText.text = donationForm.lastAlcoholUse
+        alcoholWhatText.text = donationForm.alcoholDrank
+        alcoholQuantityText.text = donationForm.alcoholQuantity
+        previouslyrefusedControl.selectedSegmentIndex = donationForm.beenRefused ? 1 : 0
+        specialAttentionControl.selectedSegmentIndex = donationForm.requireAttentionPostDonation ? 1 : 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

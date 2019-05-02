@@ -38,6 +38,10 @@ class DonorFormFillViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
+        if let donationForm = AppServices.donorService.getLocallyPersistedDonationForm() {
+            dataSource.syncWithDonationForm(donationForm)
+        }
+        
         self.title = "Donation Form"
         
         self.tableView.dataSource = dataSource
