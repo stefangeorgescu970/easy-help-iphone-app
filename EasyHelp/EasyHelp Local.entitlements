@@ -2,9 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>EH_SETTINGS_SERVER_PROTOCOL</key>
-	<string>http</string>
-	<key>EH_SETTINGS_SERVER_HOST</key>
-	<string>192.168.0.146:8080</string>
+	<key>aps-environment</key>
+	<string>development</string>
 </dict>
 </plist>

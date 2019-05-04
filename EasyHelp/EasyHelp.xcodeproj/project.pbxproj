@@ -86,6 +86,9 @@
 		4F30A61B2260ABE6006C5B15 /* DonationCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A61A2260ABE6006C5B15 /* DonationCenterCell.swift */; };
 		4F30A61C2260ABE6006C5B15 /* DonationCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A61A2260ABE6006C5B15 /* DonationCenterCell.swift */; };
 		4F30A61D2260ABE6006C5B15 /* DonationCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A61A2260ABE6006C5B15 /* DonationCenterCell.swift */; };
+		4F5589E2227D7625001DA81E /* PushNotifUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5589E1227D7625001DA81E /* PushNotifUtils.swift */; };
+		4F5589E3227D7625001DA81E /* PushNotifUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5589E1227D7625001DA81E /* PushNotifUtils.swift */; };
+		4F5589E4227D7625001DA81E /* PushNotifUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5589E1227D7625001DA81E /* PushNotifUtils.swift */; };
 		4F62B3FD2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
 		4F62B3FE2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
 		4F62B3FF2240EC31006D1B55 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B3FC2240EC31006D1B55 /* AppServices.swift */; };
@@ -275,6 +278,9 @@
 		4F30A6112260AA40006C5B15 /* DonationCentersParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCentersParser.swift; sourceTree = "<group>"; };
 		4F30A6162260AB7E006C5B15 /* DonationCentersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCentersViewController.swift; sourceTree = "<group>"; };
 		4F30A61A2260ABE6006C5B15 /* DonationCenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCenterCell.swift; sourceTree = "<group>"; };
+		4F5589E0227D75C6001DA81E /* EasyHelp Mock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EasyHelp Mock.entitlements"; sourceTree = "<group>"; };
+		4F5589E1227D7625001DA81E /* PushNotifUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifUtils.swift; sourceTree = "<group>"; };
+		4F5589E5227D7855001DA81E /* EasyHelp Local.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EasyHelp Local.entitlements"; sourceTree = "<group>"; };
 		4F62B3FC2240EC31006D1B55 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		4F62B4002240EC76006D1B55 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		4F62B4042240EC91006D1B55 /* MockProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProfileService.swift; sourceTree = "<group>"; };
@@ -574,6 +580,7 @@
 				4FEF997F223A926100351500 /* EmailUtils.swift */,
 				4FB783552255026B007E741E /* AppScreenUtils.swift */,
 				4F2D56582261EE34002445C9 /* DateUtils.swift */,
+				4F5589E1227D7625001DA81E /* PushNotifUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -660,6 +667,8 @@
 		F814AFCA2148393400C36BDA = {
 			isa = PBXGroup;
 			children = (
+				4F5589E5227D7855001DA81E /* EasyHelp Local.entitlements */,
+				4F5589E0227D75C6001DA81E /* EasyHelp Mock.entitlements */,
 				F814AFD52148393400C36BDA /* EasyHelp */,
 				F814AFEA2148393900C36BDA /* EasyHelpTests */,
 				F814AFF52148393900C36BDA /* EasyHelpUITests */,
@@ -919,11 +928,21 @@
 					};
 					4FEF992A223A888E00351500 = {
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					F814AFD22148393400C36BDA = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					F814AFE62148393900C36BDA = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -1197,6 +1216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F5589E2227D7625001DA81E /* PushNotifUtils.swift in Sources */,
 				4F2D566A22620E85002445C9 /* DonorService.swift in Sources */,
 				4FEF9948223A8B5600351500 /* ServerUtils.swift in Sources */,
 				4FEF9915223A884A00351500 /* AppDelegate.swift in Sources */,
@@ -1328,6 +1348,7 @@
 				4F30A5FA225F88D8006C5B15 /* BloodGroupOnboardingView.swift in Sources */,
 				4F30A6192260AB7E006C5B15 /* DonationCentersViewController.swift in Sources */,
 				4F2D56722262101A002445C9 /* MockDonorService.swift in Sources */,
+				4F5589E4227D7625001DA81E /* PushNotifUtils.swift in Sources */,
 				4FB783432254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */,
 				4F30A6082260A8CC006C5B15 /* MockDonationCenterService.swift in Sources */,
 				4F30A5F6225F7F56006C5B15 /* CountySSNOnboardingView.swift in Sources */,
@@ -1344,6 +1365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F5589E3227D7625001DA81E /* PushNotifUtils.swift in Sources */,
 				4F2D566B22620E85002445C9 /* DonorService.swift in Sources */,
 				4FEF9949223A8B5600351500 /* ServerUtils.swift in Sources */,
 				F814AFD72148393400C36BDA /* AppDelegate.swift in Sources */,
@@ -1500,6 +1522,7 @@
 			baseConfigurationReference = E48F447EE87283F141F5BC9F /* Pods-EasyHelp Dev-EasyHelp Mock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "EasyHelp Mock.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8WFZK78SX5;
 				INFOPLIST_FILE = "$(SRCROOT)/EasyHelp/Info.plist";
@@ -1518,6 +1541,7 @@
 			baseConfigurationReference = B1C65DFB28E660B527BF8E5E /* Pods-EasyHelp Dev-EasyHelp Mock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "EasyHelp Mock.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8WFZK78SX5;
 				INFOPLIST_FILE = "$(SRCROOT)/EasyHelp/Info.plist";
@@ -1649,6 +1673,7 @@
 			baseConfigurationReference = E8F9C4BF6F3E3262DA2BFE6F /* Pods-EasyHelp Dev-EasyHelp Local.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "EasyHelp Local.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8WFZK78SX5;
 				INFOPLIST_FILE = EasyHelp/Info.plist;
@@ -1667,6 +1692,7 @@
 			baseConfigurationReference = CC545475098A2F3CC54D91C4 /* Pods-EasyHelp Dev-EasyHelp Local.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "EasyHelp Local.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8WFZK78SX5;
 				INFOPLIST_FILE = EasyHelp/Info.plist;

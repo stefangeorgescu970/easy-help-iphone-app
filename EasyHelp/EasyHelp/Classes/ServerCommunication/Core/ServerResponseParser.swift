@@ -26,6 +26,10 @@ class ServerResponseParser {
     }
     
     func parse(_ body: JSON) -> AnyObject? {
+        if let code = body["status"].int {
+            // TODO:- handle internal server errors which are not our issues.
+        }
+        
         let success = body["status"].boolValue
         
         if success {

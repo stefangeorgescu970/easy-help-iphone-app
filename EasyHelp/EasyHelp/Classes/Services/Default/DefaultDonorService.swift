@@ -99,4 +99,26 @@ class DefaultDonorService: DonorService {
         let data = myUserDefaults.object(forKey: userDefaultsKey) as? Data
         return NSKeyedUnarchiver.unarchiveObject(with: data ?? Data()) as? DonationForm
     }
+    
+    func registerPushToken(_ token: String, callback: @escaping (NSError?) -> ()) {
+        let request = ServerRequest(endpoint: "registerPushToken", controller: "donor")
+        request.addParameter(key: "id", value: AppServices.profileService.getCurrentUser()!.id)
+        request.addParameter(key: "token", value: token)
+        request.addParameter(key: "appPlatform", value: "IOS")
+        
+        let callback = SimpleServerCallback(successBlock: { (data) in
+            if let success = data as? Bool {
+                if success {
+                    callback(nil)
+                    return
+                }
+            }
+            callback(ErrorUtils.getDefaultServerError())
+        }, errorBlock: { (error) in
+            let error = error as! NSError
+            callback(error)
+        })
+        
+        Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
+    }
 }

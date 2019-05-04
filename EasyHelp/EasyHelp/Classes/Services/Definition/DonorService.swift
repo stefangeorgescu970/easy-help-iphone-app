@@ -16,4 +16,6 @@ protocol DonorService {
     func locallyPersistDonationForm(_ donationForm: DonationForm)
     
     func getLocallyPersistedDonationForm() -> DonationForm?
+    
+    func registerPushToken(_ token: String, callback: @escaping (NSError?) -> ())
 }
