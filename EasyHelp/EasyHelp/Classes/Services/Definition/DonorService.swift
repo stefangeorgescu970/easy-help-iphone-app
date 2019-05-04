@@ -18,4 +18,6 @@ protocol DonorService {
     func getLocallyPersistedDonationForm() -> DonationForm?
     
     func registerPushToken(_ token: String, callback: @escaping (NSError?) -> ())
+    
+    func checkPatientSSN(_ ssn: String, callback: @escaping (NSError?) -> ())
 }

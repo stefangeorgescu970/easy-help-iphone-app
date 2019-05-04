@@ -17,6 +17,7 @@ class DefaultDonorService: DonorService {
         request.addParameter(key: "id", value: AppServices.profileService.getCurrentUser()!.id)
         request.addParameter(key: "donationCenterId", value: donationBooking.donationCenter.id)
         request.addParameter(key: "selectedDate", value: DateUtils.getFormattedDate(donationBooking.date))
+        request.addParameter(key: "patientSSN", value: donationBooking.patientSSN as Any)
         
         let callback = SimpleServerCallback(successBlock: { (data) in
             if let success = data as? Bool {
@@ -105,6 +106,26 @@ class DefaultDonorService: DonorService {
         request.addParameter(key: "id", value: AppServices.profileService.getCurrentUser()!.id)
         request.addParameter(key: "token", value: token)
         request.addParameter(key: "appPlatform", value: "IOS")
+        
+        let callback = SimpleServerCallback(successBlock: { (data) in
+            if let success = data as? Bool {
+                if success {
+                    callback(nil)
+                    return
+                }
+            }
+            callback(ErrorUtils.getDefaultServerError())
+        }, errorBlock: { (error) in
+            let error = error as! NSError
+            callback(error)
+        })
+        
+        Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
+    }
+    
+    func checkPatientSSN(_ ssn: String, callback: @escaping (NSError?) -> ()) {
+        let request = ServerRequest(endpoint: "checkPatientSSN", controller: "donor")
+        request.addParameter(key: "param", value: ssn)
         
         let callback = SimpleServerCallback(successBlock: { (data) in
             if let success = data as? Bool {

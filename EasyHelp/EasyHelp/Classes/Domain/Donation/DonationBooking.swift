@@ -12,6 +12,7 @@ class DonationBooking: NSObject {
     var id: Int = -1
     var date: Date
     var donationCenter: DonationCenter
+    var patientSSN: String? = nil
     
     init(date: Date, donationCenter: DonationCenter) {
         self.date = date

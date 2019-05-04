@@ -16,6 +16,7 @@ class DonationCenterMainViewController: UIViewController {
     private var availableDates: [AvailableDate] = []
     private var selectedDateIndex: Int = 0
     private var donationCenter: DonationCenter
+    private var ssn: String? = nil
     
     init(donationCenter: DonationCenter) {
         self.donationCenter = donationCenter
@@ -55,6 +56,15 @@ class DonationCenterMainViewController: UIViewController {
 }
 
 extension DonationCenterMainViewController: DonationCenterInfoViewDelegate {
+    func donationCenterInfoViewSetSSN(_sender: DonationCenterInfoView, ssn: String) {
+        self.ssn = ssn
+    }
+    
+    func donationCenterInfoViewDidRequestForm(_ sender: DonationCenterInfoView) {
+        let vc = UINavigationController(rootViewController: DonorFormFillViewController(source: .booking))
+        self.navigationController?.present(vc, animated: true, completion: nil)
+    }
+    
     func donationCenterInfoViewDidTapDate(_ sender: DonationCenterInfoView, withIndex index: Int) {
         self.selectedDateIndex = index
         self.tableView.reloadData()
@@ -79,6 +89,7 @@ extension DonationCenterMainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let date = availableDates[selectedDateIndex].availableHours[indexPath.row]
         let booking = DonationBooking(date: date, donationCenter: donationCenter)
+        booking.patientSSN = ssn
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM"
