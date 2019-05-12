@@ -41,7 +41,7 @@ class DonorFormFillDataSource: NSObject, UITableViewDataSource {
                              "Have you ever suffered from cardiac or cerebral accidents?",
                              "Have you ever suffered from asthma?",
                              "Have you ever suffered from convulsions or neurological diseases?",
-                             "Have you ever suffered from chronic diseases (diabetes, ulcer, cancer)",
+                             "Have you ever suffered from chronic diseases (diabetes, ulcer, cancer)?",
                              "Have you ever suffered from sexually transmitted diseases?",
                              "Are you a smoker?",
                              "When did you last consume alcohol?",
