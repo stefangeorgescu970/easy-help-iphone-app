@@ -73,12 +73,23 @@ class DefaultProfileService: ProfileService {
     }
     
     func logoutUser(callback: @escaping ((Bool?) -> ())) {
-        // TODO - add server comms
+        let request = ServerRequest(endpoint: "logout", controller: "users")
+        request.addParameter(key: "id", value: getCurrentUser()!.id)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.deleteCurrentUser()
-            callback(true)
-        }
+        let callback = SimpleServerCallback(successBlock: { (data) in
+            if let success = data as? Bool {
+                if success {
+                    self.deleteCurrentUser()
+                    callback(true)
+                    return
+                }
+            }
+            callback(false)
+        }, errorBlock: { (error) in
+            callback(false)
+        })
+        
+        Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
     }
     
     func updateCountyAndSSN(newCounty: String, newSSN: String, callback: @escaping (NSError?) -> ()) {
