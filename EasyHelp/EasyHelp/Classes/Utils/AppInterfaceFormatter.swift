@@ -178,12 +178,12 @@ class AppInterfaceFormatter {
         return label.frame.height
     }
     
-    static func addDefaultInfoRow(toView: UIView, leftText: String, rightText: String, marginSpacing: CGFloat, yOffset: CGFloat) -> CGFloat {
+    static func addDefaultInfoRow(toView: UIView, leftText: String, rightText: String, marginSpacing: CGFloat, yOffset: CGFloat, isAlert: Bool) -> CGFloat {
         let leftLabel = UILabel()
         leftLabel.font = AppFonts.boldFontWithSize(16)
         leftLabel.text = leftText
         leftLabel.sizeToFit()
-        leftLabel.textColor = AppColors.almostBlack
+        leftLabel.textColor = isAlert ? AppColors.appRed : AppColors.almostBlack
         leftLabel.frame = CGRect(x: marginSpacing,
                                  y: yOffset,
                                  width: leftLabel.frame.width,
@@ -193,7 +193,7 @@ class AppInterfaceFormatter {
         let rightLabelMaximumWidth = toView.frame.width - leftLabel.frame.width - 3 * marginSpacing
         
         let rightLabel = UILabel()
-        rightLabel.textColor = AppColors.almostBlack
+        rightLabel.textColor = isAlert ? AppColors.appRed : AppColors.almostBlack
         rightLabel.text = rightText
         rightLabel.sizeToFit()
         rightLabel.lineBreakMode = .byTruncatingMiddle
