@@ -20,4 +20,6 @@ protocol DonorService {
     func registerPushToken(_ token: String, callback: @escaping (NSError?) -> ())
     
     func checkPatientSSN(_ ssn: String, callback: @escaping (NSError?) -> ())
+    
+    func getDonationHistory(callback: @escaping ([Donation]?, NSError?) -> ())
 }

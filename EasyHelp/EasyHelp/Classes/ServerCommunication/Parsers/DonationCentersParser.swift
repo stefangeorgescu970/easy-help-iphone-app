@@ -14,7 +14,7 @@ class DonationCentersParser: ServerResponseParser {
     
     override func doParse(content: JSON) {
         if let jsonArray = content["objects"].array {
-            for  dcJson in jsonArray {
+            for dcJson in jsonArray {
                 guard
                     let id = dcJson["id"].int,
                     let name = dcJson["name"].string,

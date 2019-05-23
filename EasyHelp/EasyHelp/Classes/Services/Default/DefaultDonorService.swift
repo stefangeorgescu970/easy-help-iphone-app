@@ -142,4 +142,18 @@ class DefaultDonorService: DonorService {
         
         Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
     }
+    
+    func getDonationHistory(callback: @escaping ([Donation]?, NSError?) -> ()) {
+        let request = ServerRequest(endpoint: "history", controller: "donor")
+        request.addParameter(key: "id", value: AppServices.profileService.getCurrentUser()!.id)
+        
+        let callback = SimpleServerCallback(successBlock: { (data) in
+            callback(data as? [Donation], nil)
+        }, errorBlock: { (error) in
+            let error = error as! NSError
+            callback(nil, error)
+        })
+        
+        Server.sharedInstance.send(request, parser: DonationHistoryParser(), callback: callback)
+    }
 }
