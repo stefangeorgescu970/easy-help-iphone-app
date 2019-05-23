@@ -41,6 +41,44 @@ class DonorSummaryDataParser: ServerResponseParser {
             }
         }
         
+        if content["lastDonation"].exists() {
+            let donationJson = content["lastDonation"]
+            let dcJson = donationJson["donationCenter"]
+
+            if
+                let dcId = dcJson["id"].int,
+                let name = dcJson["name"].string,
+                let address = dcJson["address"].string,
+                let county = dcJson["county"].string,
+                let lat = dcJson["latitude"].double,
+                let long = dcJson["longitude"].double {
+                
+                let dc = DonationCenter(id: dcId, name: name, lat: lat, long: long, address: address, county: county)
+                
+                if
+                    let id = donationJson["id"].int,
+                    let dateStr = donationJson["date"].string,
+                    let date = dateFormatter.date(from: dateStr) {
+                    
+                    let donation = Donation(id: id, donationCenter: dc, date: date)
+                    if let testJson = donationJson["donationTestResultDTO"].dictionary {
+                        let testResult = DonationTestResults()
+                        testResult.hepatitisB = testJson["hepatitisB"]?.boolValue ?? false
+                        testResult.hepatitisC = testJson["hepatitisC"]?.boolValue ?? false
+                        testResult.hiv = testJson["hiv"]?.boolValue ?? false
+                        testResult.htlv = testJson["htlv"]?.boolValue ?? false
+                        testResult.vdrl = testJson["vdrl"]?.boolValue ?? false
+                        testResult.alt = testJson["alt"]?.boolValue ?? false
+                        
+                        donation.testResults = testResult
+                    }
+                    
+                    data.lastDonation = donation
+                    
+                }
+            }
+        }
+        
         donorData = data
     }
     
