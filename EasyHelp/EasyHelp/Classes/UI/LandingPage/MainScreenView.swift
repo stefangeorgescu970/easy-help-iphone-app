@@ -13,6 +13,7 @@ protocol MainScreenViewDelegate: class {
     func mainScreenViewDidRequestShowDonation(_ sender: MainScreenView, donationBooking: DonationBooking)
     func mainScreenViewDidRequestShowWhy(_ sender: MainScreenView)
     func mainScreenViewDidRequestShowHow(_ sender: MainScreenView)
+    func mainScreenViewDidRequestShowRecentDonation(_ sender: MainScreenView, donation: Donation)
 }
 
 class MainScreenView: UIView {
@@ -56,6 +57,7 @@ class MainScreenView: UIView {
     
     private var canBookView: MainScreenCanBookView?
     private var nextBookingView: MainScreenNextBookingView?
+    private var recentDonationView: MainScreenRecentDonationView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -105,8 +107,19 @@ class MainScreenView: UIView {
         howButton.frame.origin = CGPoint(x: 40, y: encourageLabel.frame.maxY + 20)
         whyButton.frame.origin = CGPoint(x: frame.width - whyButton.frame.width - 40, y: encourageLabel.frame.maxY + 20)
         
-        if let _ = donorSummary.lastDonation {
-            
+        // ONLY SHOW THIS IF DONATION PREVENTS FROM BOOKING. HE SHOULD BE ABLE TO BOOK AT SOME DATES EVEN IF DONOR
+        // IS STILL IN THE 72 DAYS AFTER A DONATION
+        if let donation = donorSummary.lastDonation, let daysUntil = DonationUtils.getNumberOfDaysUntilCanDonate(lastDonation: donation) {
+            recentDonationView = MainScreenRecentDonationView(frame: CGRect(x: 0,
+                                                                            y: frame.height - 200 - 60,
+                                                                            width: frame.width,
+                                                                            height: 200),
+                                                              donation: donation,
+                                                              daysUntilCanDonate: daysUntil)
+            recentDonationView?.delgate = self
+            self.addSubview(recentDonationView!)
+        } else if let _ = donorSummary.streakBegin {
+            // TODO - create another view with a message
         } else if let nextBooking = donorSummary.nextBooking {
             nextBookingView = MainScreenNextBookingView(frame: CGRect(x: 0,
                                                                       y: frame.height - 200 - 60,
@@ -147,5 +160,11 @@ extension MainScreenView: MainScreenCanBookViewDelegate {
 extension MainScreenView: MainScreenNextBookingViewDelegate {
     func mainScreenNextBookingViewDidRequestShowBooking(_ sender: MainScreenNextBookingView, booking: DonationBooking) {
         self.delegate?.mainScreenViewDidRequestShowDonation(self, donationBooking: booking)
+    }
+}
+
+extension MainScreenView: MainScreenRecentDonationViewDelegate {
+    func mainScreenRecentDonationView(_ view: MainScreenRecentDonationView, didRequestViewDonation donation: Donation) {
+        self.delegate?.mainScreenViewDidRequestShowRecentDonation(self, donation: donation)
     }
 }

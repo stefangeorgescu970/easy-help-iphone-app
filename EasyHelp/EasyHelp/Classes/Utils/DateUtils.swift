@@ -38,4 +38,15 @@ class DateUtils: NSObject {
         
         return formatter.string(from: date)
     }
+    
+    static func getDaysSinceNextDonation(lastDonation: Donation) -> Int? {
+        let calendar = Calendar.current
+        
+        let donationDate = calendar.startOfDay(for: lastDonation.date)
+        let today = calendar.startOfDay(for: Date())
+        
+        let components = calendar.dateComponents([.day], from: donationDate, to: today)
+        
+        return components.day
+    }
 }

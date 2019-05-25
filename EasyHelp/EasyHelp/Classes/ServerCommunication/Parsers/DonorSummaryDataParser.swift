@@ -79,6 +79,10 @@ class DonorSummaryDataParser: ServerResponseParser {
             }
         }
         
+        if let hourString = content["streakBegin"].string, let date = dateFormatter.date(from: hourString) {
+            donorData?.streakBegin = date
+        }
+        
         donorData = data
     }
     

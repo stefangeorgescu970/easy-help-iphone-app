@@ -48,6 +48,11 @@ class MainScreenViewController: UIViewController {
 }
 
 extension MainScreenViewController: MainScreenViewDelegate {
+    func mainScreenViewDidRequestShowRecentDonation(_ sender: MainScreenView, donation: Donation) {
+        let navController = UINavigationController(rootViewController: DonationDetailsViewController(donation: donation))
+        self.navigationController?.present(navController, animated: true, completion: nil)
+    }
+    
     func mainScreenViewDidRequestShowDonation(_ sender: MainScreenView, donationBooking: DonationBooking) {
         // TODO - show modal with booking details
     }

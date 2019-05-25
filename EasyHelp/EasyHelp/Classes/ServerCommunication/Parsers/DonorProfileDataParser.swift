@@ -18,12 +18,13 @@ class DonorProfileDataParser: ServerResponseParser {
             let userId = content["user"]["id"].int,
             let email = content["user"]["email"].string,
             let firstName = content["user"]["firstName"].string,
-            let lastName = content["user"]["lastName"].string else {
+            let lastName = content["user"]["lastName"].string,
+            let isMale = content["user"]["isMale"].bool else {
                 return
         }
         
         let userContent = content["user"]
-        let userData = DonorProfileData(id: userId, email: email, token: token, firstName: firstName, lastName: lastName)
+        let userData = DonorProfileData(id: userId, email: email, token: token, firstName: firstName, lastName: lastName, isMale: isMale)
         
         if let county = userContent["county"].string {
             userData.county = county
