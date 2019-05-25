@@ -325,6 +325,7 @@
 		4F7F457C229914F50082D608 /* DonationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationUtils.swift; sourceTree = "<group>"; };
 		4F7F458122991E540082D608 /* DonationBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationBookingViewController.swift; sourceTree = "<group>"; };
 		4F7F458522991E5F0082D608 /* DonationBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationBookingView.swift; sourceTree = "<group>"; };
+		4F7F4589229949500082D608 /* EasyHelp Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EasyHelp Dev.entitlements"; sourceTree = "<group>"; };
 		4FA5E91A2296A4A1007A23D6 /* MainScreenRecentDonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRecentDonationView.swift; sourceTree = "<group>"; };
 		4FB7833A2254F8F5007E741E /* OnboardingFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowManager.swift; sourceTree = "<group>"; };
 		4FB783402254F94F007E741E /* CountySSNOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountySSNOnboardingViewController.swift; sourceTree = "<group>"; };
@@ -739,6 +740,7 @@
 		F814AFCA2148393400C36BDA = {
 			isa = PBXGroup;
 			children = (
+				4F7F4589229949500082D608 /* EasyHelp Dev.entitlements */,
 				4F5589E5227D7855001DA81E /* EasyHelp Local.entitlements */,
 				4F5589E0227D75C6001DA81E /* EasyHelp Mock.entitlements */,
 				F814AFD52148393400C36BDA /* EasyHelp */,
@@ -999,6 +1001,11 @@
 				TargetAttributes = {
 					4FEF9912223A884A00351500 = {
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					4FEF992A223A888E00351500 = {
 						ProvisioningStyle = Manual;
@@ -1590,6 +1597,7 @@
 			baseConfigurationReference = 1FC62837C7761277D2572382 /* Pods-EasyHelp Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "EasyHelp Dev.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8WFZK78SX5;
 				INFOPLIST_FILE = "$(SRCROOT)/EasyHelp/Info.plist";
@@ -1608,6 +1616,7 @@
 			baseConfigurationReference = 847DF55A100CE810639A5B47 /* Pods-EasyHelp Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "EasyHelp Dev.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8WFZK78SX5;
 				INFOPLIST_FILE = "$(SRCROOT)/EasyHelp/Info.plist";

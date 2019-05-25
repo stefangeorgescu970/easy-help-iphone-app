@@ -35,7 +35,7 @@ class ServerRequest {
         parameters[key] = value
     }
     
-    func getParameters() -> [String : Any] {
-        return parameters
+    func getParameters() -> [String : Any]? {
+        return parameters.count != 0 ? parameters : nil
     }
 }
