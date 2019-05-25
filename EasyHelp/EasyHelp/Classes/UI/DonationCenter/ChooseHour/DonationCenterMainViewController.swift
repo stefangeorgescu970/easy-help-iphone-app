@@ -60,11 +60,6 @@ extension DonationCenterMainViewController: DonationCenterInfoViewDelegate {
         self.ssn = ssn
     }
     
-    func donationCenterInfoViewDidRequestForm(_ sender: DonationCenterInfoView) {
-        let vc = UINavigationController(rootViewController: DonorFormFillViewController(source: .booking))
-        self.navigationController?.present(vc, animated: true, completion: nil)
-    }
-    
     func donationCenterInfoViewDidTapDate(_ sender: DonationCenterInfoView, withIndex index: Int) {
         self.selectedDateIndex = index
         self.tableView.reloadData()
@@ -91,35 +86,8 @@ extension DonationCenterMainViewController: UITableViewDelegate {
         let booking = DonationBooking(date: date, donationCenter: donationCenter)
         booking.patientSSN = ssn
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM"
-        
-        var message = "Please check the booking details beform confirming\n"
-        message += "Donation Center: \(donationCenter.name)\n"
-        message += "Date of Booking: \(dateFormatter.string(from: date))\n"
-        message += "Hour Interval: \(DateUtils.getHourIntervalString(fromDate: date))"
-        
-        let alertController = UIAlertController(title: "Confirm Booking", message: message, preferredStyle: .actionSheet)
-        
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            self.tableView.deselectRow(at: indexPath, animated: true)
-        }
-        
-        let bookButton = UIAlertAction(title: "Book Donation", style: .default) { (action) in
-            self.tableView.deselectRow(at: indexPath, animated: true)
-            AppServices.donorService.bookDonation(booking, callback: { (error) in
-                if let error = error {
-                    // handle error
-                } else {
-                    NotificationCenter.default.post(name: .GoBackToLanding, object: booking)
-                }
-            })
-        }
-        
-        alertController.addAction(cancelButton)
-        alertController.addAction(bookButton)
-        
-        self.navigationController?.present(alertController, animated: true, completion: nil)
+        let vc = DonationBookingViewController(donationBooking: booking)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

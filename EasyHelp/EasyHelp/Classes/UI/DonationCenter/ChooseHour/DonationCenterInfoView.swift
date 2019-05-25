@@ -11,7 +11,6 @@ import UIKit
 protocol DonationCenterInfoViewDelegate: class {
     func donationCenterInfoViewDidRequestViewMap(_ sender: DonationCenterInfoView, forDonationCenter donationCenter: DonationCenter)
     func donationCenterInfoViewDidTapDate(_ sender: DonationCenterInfoView, withIndex index: Int)
-    func donationCenterInfoViewDidRequestForm(_ sender: DonationCenterInfoView)
     func donationCenterInfoViewSetSSN(_sender: DonationCenterInfoView, ssn: String)
 }
 
@@ -244,10 +243,6 @@ class DonationCenterInfoView: UIView {
         self.selectedDateIndex = sender.tag
         sender.backgroundColor = AppColors.appRed
         self.delegate?.donationCenterInfoViewDidTapDate(self, withIndex: self.selectedDateIndex)
-    }
-    
-    @objc fileprivate func didPressFormActionButton(_ sender: UIButton) {
-        self.delegate?.donationCenterInfoViewDidRequestForm(self)
     }
     
     @objc fileprivate func userEditedText() {
