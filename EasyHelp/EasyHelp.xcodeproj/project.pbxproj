@@ -69,12 +69,6 @@
 		4F30A60022608E57006C5B15 /* ProfileDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A5FF22608E57006C5B15 /* ProfileDetailsView.swift */; };
 		4F30A60122608E57006C5B15 /* ProfileDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A5FF22608E57006C5B15 /* ProfileDetailsView.swift */; };
 		4F30A60222608E57006C5B15 /* ProfileDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A5FF22608E57006C5B15 /* ProfileDetailsView.swift */; };
-		4F30A6042260A876006C5B15 /* DonationCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A6032260A876006C5B15 /* DonationCenterService.swift */; };
-		4F30A6052260A876006C5B15 /* DonationCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A6032260A876006C5B15 /* DonationCenterService.swift */; };
-		4F30A6062260A876006C5B15 /* DonationCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A6032260A876006C5B15 /* DonationCenterService.swift */; };
-		4F30A6082260A8CC006C5B15 /* MockDonationCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A6072260A8CC006C5B15 /* MockDonationCenterService.swift */; };
-		4F30A60A2260A8EF006C5B15 /* DefaultDonationCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A6092260A8EF006C5B15 /* DefaultDonationCenterService.swift */; };
-		4F30A60B2260A8EF006C5B15 /* DefaultDonationCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A6092260A8EF006C5B15 /* DefaultDonationCenterService.swift */; };
 		4F30A60E2260A93D006C5B15 /* DonationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A60D2260A93D006C5B15 /* DonationCenter.swift */; };
 		4F30A60F2260A93D006C5B15 /* DonationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A60D2260A93D006C5B15 /* DonationCenter.swift */; };
 		4F30A6102260A93D006C5B15 /* DonationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A60D2260A93D006C5B15 /* DonationCenter.swift */; };
@@ -301,9 +295,6 @@
 		4F30A5F7225F88D8006C5B15 /* BloodGroupOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodGroupOnboardingView.swift; sourceTree = "<group>"; };
 		4F30A5FB22608B18006C5B15 /* DonorSummaryDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorSummaryDataParser.swift; sourceTree = "<group>"; };
 		4F30A5FF22608E57006C5B15 /* ProfileDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsView.swift; sourceTree = "<group>"; };
-		4F30A6032260A876006C5B15 /* DonationCenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCenterService.swift; sourceTree = "<group>"; };
-		4F30A6072260A8CC006C5B15 /* MockDonationCenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDonationCenterService.swift; sourceTree = "<group>"; };
-		4F30A6092260A8EF006C5B15 /* DefaultDonationCenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDonationCenterService.swift; sourceTree = "<group>"; };
 		4F30A60D2260A93D006C5B15 /* DonationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCenter.swift; sourceTree = "<group>"; };
 		4F30A6112260AA40006C5B15 /* DonationCentersParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCentersParser.swift; sourceTree = "<group>"; };
 		4F30A6162260AB7E006C5B15 /* DonationCentersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCentersViewController.swift; sourceTree = "<group>"; };
@@ -530,7 +521,6 @@
 			children = (
 				4F62B4002240EC76006D1B55 /* ProfileService.swift */,
 				4FB783482254FD51007E741E /* MiscService.swift */,
-				4F30A6032260A876006C5B15 /* DonationCenterService.swift */,
 				4F2D566922620E85002445C9 /* DonorService.swift */,
 			);
 			path = Definition;
@@ -542,7 +532,6 @@
 				4F0F8A012247AA4700E1B270 /* MockGlobalData.swift */,
 				4F62B4042240EC91006D1B55 /* MockProfileService.swift */,
 				4FB7834F2254FD6D007E741E /* MockMiscService.swift */,
-				4F30A6072260A8CC006C5B15 /* MockDonationCenterService.swift */,
 				4F2D56712262101A002445C9 /* MockDonorService.swift */,
 			);
 			path = Mock;
@@ -811,7 +800,6 @@
 			children = (
 				4F62B4062240ECAE006D1B55 /* DefaultProfileService.swift */,
 				4FB7834C2254FD60007E741E /* DefaultMiscService.swift */,
-				4F30A6092260A8EF006C5B15 /* DefaultDonationCenterService.swift */,
 				4F2D566D22620EF7002445C9 /* DefaultDonorService.swift */,
 			);
 			path = Default;
@@ -1318,7 +1306,6 @@
 				4F30A6172260AB7E006C5B15 /* DonationCentersViewController.swift in Sources */,
 				4FB783562255026B007E741E /* AppScreenUtils.swift in Sources */,
 				4F62B3FD2240EC31006D1B55 /* AppServices.swift in Sources */,
-				4F30A6042260A876006C5B15 /* DonationCenterService.swift in Sources */,
 				4FB7833B2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */,
 				4FEF9917223A884A00351500 /* SimpleServerCallback.swift in Sources */,
 				4FB78360225519F1007E741E /* DonorFormOnboardingViewController.swift in Sources */,
@@ -1371,7 +1358,6 @@
 				4F2D56562261DCD1002445C9 /* AvailableDateParser.swift in Sources */,
 				4F7F458222991E540082D608 /* DonationBookingViewController.swift in Sources */,
 				4F30A60022608E57006C5B15 /* ProfileDetailsView.swift in Sources */,
-				4F30A60A2260A8EF006C5B15 /* DefaultDonationCenterService.swift in Sources */,
 				4F30A5FC22608B18006C5B15 /* DonorSummaryDataParser.swift in Sources */,
 				4F2D56522261DBE0002445C9 /* AvailableDate.swift in Sources */,
 				4FEF9951223A8EB100351500 /* ErrorUtils.swift in Sources */,
@@ -1443,7 +1429,6 @@
 				4F62B4032240EC76006D1B55 /* ProfileService.swift in Sources */,
 				4F0F8A062247C04800E1B270 /* UIImage+Resize.swift in Sources */,
 				4FEFDAD9227AA65600B55B03 /* UISegmentedControl+IsSelected.swift in Sources */,
-				4F30A6062260A876006C5B15 /* DonationCenterService.swift in Sources */,
 				4F62B40C2240ED2E006D1B55 /* DonorProfileData.swift in Sources */,
 				4F30A5FA225F88D8006C5B15 /* BloodGroupOnboardingView.swift in Sources */,
 				4F30A6192260AB7E006C5B15 /* DonationCentersViewController.swift in Sources */,
@@ -1451,7 +1436,6 @@
 				4F5589E4227D7625001DA81E /* PushNotifUtils.swift in Sources */,
 				4FC265ED229675AF00133A0B /* DonationHistoryCell.swift in Sources */,
 				4FB783432254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */,
-				4F30A6082260A8CC006C5B15 /* MockDonationCenterService.swift in Sources */,
 				4F30A5F6225F7F56006C5B15 /* CountySSNOnboardingView.swift in Sources */,
 				4F30A6102260A93D006C5B15 /* DonationCenter.swift in Sources */,
 				4FF8C47E2245149200F1AE98 /* MainFlowManager.swift in Sources */,
@@ -1487,7 +1471,6 @@
 				4F30A6182260AB7E006C5B15 /* DonationCentersViewController.swift in Sources */,
 				4FB783572255026B007E741E /* AppScreenUtils.swift in Sources */,
 				4F62B3FE2240EC31006D1B55 /* AppServices.swift in Sources */,
-				4F30A6052260A876006C5B15 /* DonationCenterService.swift in Sources */,
 				4FB7833C2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */,
 				F83C0C3A214E86BB00828144 /* SimpleServerCallback.swift in Sources */,
 				4FB78361225519F1007E741E /* DonorFormOnboardingViewController.swift in Sources */,
@@ -1540,7 +1523,6 @@
 				4F2D56572261DCD1002445C9 /* AvailableDateParser.swift in Sources */,
 				4F7F458322991E540082D608 /* DonationBookingViewController.swift in Sources */,
 				4F30A60122608E57006C5B15 /* ProfileDetailsView.swift in Sources */,
-				4F30A60B2260A8EF006C5B15 /* DefaultDonationCenterService.swift in Sources */,
 				4F30A5FD22608B18006C5B15 /* DonorSummaryDataParser.swift in Sources */,
 				4F2D56532261DBE0002445C9 /* AvailableDate.swift in Sources */,
 				4FEF9952223A8EB100351500 /* ErrorUtils.swift in Sources */,

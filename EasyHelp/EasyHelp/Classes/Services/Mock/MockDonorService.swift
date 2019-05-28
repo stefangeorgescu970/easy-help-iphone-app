@@ -12,4 +12,12 @@ class MockDonorService: DonorService {
     func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ()) {
 
     }
+    
+    func getDonationCenters(callback: @escaping ([DonationCenter]?, NSError?) -> ()) {
+        
+    }
+    
+    func getAvailableHours(forDonationCenter donationCenter: DonationCenter, callback: @escaping ([AvailableDate]?, NSError?) -> ()) {
+        
+    }
 }

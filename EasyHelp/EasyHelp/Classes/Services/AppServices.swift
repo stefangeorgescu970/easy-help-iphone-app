@@ -25,14 +25,6 @@ class AppServices {
         #endif
     }()
     
-    static var donationCenterService: DonationCenterService = {
-        #if MOCK
-        return MockDonationCenterService()
-        #else
-        return DefaultDonationCenterService()
-        #endif
-    }()
-    
     static var donorService: DonorService = {
         #if MOCK
         return MockDonorService()

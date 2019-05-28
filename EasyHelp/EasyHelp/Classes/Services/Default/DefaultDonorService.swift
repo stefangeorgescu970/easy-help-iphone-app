@@ -14,7 +14,7 @@ class DefaultDonorService: DonorService {
     
     func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ()) {
         let request = ServerRequest(endpoint: "bookDonation", controller: "donor")
-        request.addParameter(key: "id", value: AppServices.profileService.getCurrentUser()!.id)
+        request.addParameter(key: "userId", value: AppServices.profileService.getCurrentUser()!.id)
         request.addParameter(key: "donationCenterId", value: donationBooking.donationCenter.id)
         request.addParameter(key: "selectedDate", value: DateUtils.getFormattedDate(donationBooking.date))
         request.addParameter(key: "patientSSN", value: donationBooking.patientSSN as Any)
@@ -155,5 +155,34 @@ class DefaultDonorService: DonorService {
         })
         
         Server.sharedInstance.send(request, parser: DonationHistoryParser(), callback: callback)
+    }
+    
+    func getDonationCenters(callback: @escaping ([DonationCenter]?, NSError?) -> ()) {
+        let request = ServerRequest(endpoint: "getDonationCenters", controller: "donor")
+        request.addParameter(key: "latitude", value: 0)
+        request.addParameter(key: "longitude", value: 0)
+        
+        let callback = SimpleServerCallback(successBlock: { (data) in
+            callback(data as? [DonationCenter], nil)
+        }, errorBlock: { (error) in
+            let error = error as! NSError
+            callback(nil, error)
+        })
+        
+        Server.sharedInstance.send(request, parser: DonationCentersParser(), callback: callback)
+    }
+    
+    func getAvailableHours(forDonationCenter donationCenter: DonationCenter, callback: @escaping ([AvailableDate]?, NSError?) -> ()) {
+        let request = ServerRequest(endpoint: "getAvailableHours", controller: "donor")
+        request.addParameter(key: "id", value: donationCenter.id)
+        
+        let callback = SimpleServerCallback(successBlock: { (data) in
+            callback(data as? [AvailableDate], nil)
+        }, errorBlock: { (error) in
+            let error = error as! NSError
+            callback(nil, error)
+        })
+        
+        Server.sharedInstance.send(request, parser: AvailableDateParser(), callback: callback)
     }
 }

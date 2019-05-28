@@ -31,7 +31,7 @@ class DonationCentersViewController: UIViewController {
         closeBtn.addTarget(self, action: #selector(DonationCentersViewController.onClose(_:)), for: UIControl.Event.touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeBtn)
         
-        AppServices.donationCenterService.getDonationCenters { (donationCenters, error) in
+        AppServices.donorService.getDonationCenters { (donationCenters, error) in
             if let donationCenters = donationCenters {
                 self.donationCenters.append(contentsOf: donationCenters)
                 self.syncView()

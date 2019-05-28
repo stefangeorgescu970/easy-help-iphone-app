@@ -31,7 +31,7 @@ class DonationCenterMainViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        AppServices.donationCenterService.getAvailableHours(forDonationCenter: donationCenter) { (availableDates, error) in
+        AppServices.donorService.getAvailableHours(forDonationCenter: donationCenter) { (availableDates, error) in
             if let availableDates = availableDates {
                 self.availableDates.append(contentsOf: availableDates)
                 self.tableView.reloadData()
