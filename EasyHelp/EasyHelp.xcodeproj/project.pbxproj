@@ -80,6 +80,9 @@
 		4F30A61B2260ABE6006C5B15 /* DonationCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A61A2260ABE6006C5B15 /* DonationCenterCell.swift */; };
 		4F30A61C2260ABE6006C5B15 /* DonationCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A61A2260ABE6006C5B15 /* DonationCenterCell.swift */; };
 		4F30A61D2260ABE6006C5B15 /* DonationCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A61A2260ABE6006C5B15 /* DonationCenterCell.swift */; };
+		4F3B18B122A036DE001D9EA3 /* LocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B18B022A036DE001D9EA3 /* LocationUtils.swift */; };
+		4F3B18B222A036DE001D9EA3 /* LocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B18B022A036DE001D9EA3 /* LocationUtils.swift */; };
+		4F3B18B322A036DE001D9EA3 /* LocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B18B022A036DE001D9EA3 /* LocationUtils.swift */; };
 		4F5589E2227D7625001DA81E /* PushNotifUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5589E1227D7625001DA81E /* PushNotifUtils.swift */; };
 		4F5589E3227D7625001DA81E /* PushNotifUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5589E1227D7625001DA81E /* PushNotifUtils.swift */; };
 		4F5589E4227D7625001DA81E /* PushNotifUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5589E1227D7625001DA81E /* PushNotifUtils.swift */; };
@@ -299,6 +302,7 @@
 		4F30A6112260AA40006C5B15 /* DonationCentersParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCentersParser.swift; sourceTree = "<group>"; };
 		4F30A6162260AB7E006C5B15 /* DonationCentersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCentersViewController.swift; sourceTree = "<group>"; };
 		4F30A61A2260ABE6006C5B15 /* DonationCenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCenterCell.swift; sourceTree = "<group>"; };
+		4F3B18B022A036DE001D9EA3 /* LocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtils.swift; sourceTree = "<group>"; };
 		4F5589E0227D75C6001DA81E /* EasyHelp Mock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EasyHelp Mock.entitlements"; sourceTree = "<group>"; };
 		4F5589E1227D7625001DA81E /* PushNotifUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifUtils.swift; sourceTree = "<group>"; };
 		4F5589E5227D7855001DA81E /* EasyHelp Local.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EasyHelp Local.entitlements"; sourceTree = "<group>"; };
@@ -642,6 +646,7 @@
 				4F2D56582261EE34002445C9 /* DateUtils.swift */,
 				4F5589E1227D7625001DA81E /* PushNotifUtils.swift */,
 				4F7F457C229914F50082D608 /* DonationUtils.swift */,
+				4F3B18B022A036DE001D9EA3 /* LocationUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1350,6 +1355,7 @@
 				4FF8C483224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
 				4F62B4072240ECAE006D1B55 /* DefaultProfileService.swift in Sources */,
 				4F62B4012240EC76006D1B55 /* ProfileService.swift in Sources */,
+				4F3B18B122A036DE001D9EA3 /* LocationUtils.swift in Sources */,
 				4FC265EB229675AF00133A0B /* DonationHistoryCell.swift in Sources */,
 				4F6B78E92256400500B71EB0 /* AppEnumsParser.swift in Sources */,
 				4FC265F12296847700133A0B /* DonationDetailsViewController.swift in Sources */,
@@ -1434,6 +1440,7 @@
 				4F30A6192260AB7E006C5B15 /* DonationCentersViewController.swift in Sources */,
 				4F2D56722262101A002445C9 /* MockDonorService.swift in Sources */,
 				4F5589E4227D7625001DA81E /* PushNotifUtils.swift in Sources */,
+				4F3B18B322A036DE001D9EA3 /* LocationUtils.swift in Sources */,
 				4FC265ED229675AF00133A0B /* DonationHistoryCell.swift in Sources */,
 				4FB783432254F94F007E741E /* CountySSNOnboardingViewController.swift in Sources */,
 				4F30A5F6225F7F56006C5B15 /* CountySSNOnboardingView.swift in Sources */,
@@ -1515,6 +1522,7 @@
 				4FF8C484224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
 				4F62B4082240ECAE006D1B55 /* DefaultProfileService.swift in Sources */,
 				4F62B4022240EC76006D1B55 /* ProfileService.swift in Sources */,
+				4F3B18B222A036DE001D9EA3 /* LocationUtils.swift in Sources */,
 				4FC265EC229675AF00133A0B /* DonationHistoryCell.swift in Sources */,
 				4F6B78EA2256400500B71EB0 /* AppEnumsParser.swift in Sources */,
 				4FC265F22296847700133A0B /* DonationDetailsViewController.swift in Sources */,

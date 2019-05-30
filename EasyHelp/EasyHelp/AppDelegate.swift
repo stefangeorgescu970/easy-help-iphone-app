@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,7 +42,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         registerForPushNotifications()
         
+        LocationUtils.sharedInstance.requestAuth()
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        LocationUtils.sharedInstance.startReceivingLocationChanges()
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        LocationUtils.sharedInstance.stopReceivingLocationChanges()
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        LocationUtils.sharedInstance.stopReceivingLocationChanges()
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        LocationUtils.sharedInstance.stopReceivingLocationChanges()
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

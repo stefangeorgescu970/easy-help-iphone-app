@@ -11,6 +11,7 @@ import Foundation
 class DefaultDonorService: DonorService {
     private let myUserDefaults = UserDefaults.standard
     private let userDefaultsKey = "currentDonationForm"
+    private let userDefaultsTokenKey = "tokenKey"
     
     func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ()) {
         let request = ServerRequest(endpoint: "bookDonation", controller: "donor")
@@ -101,10 +102,22 @@ class DefaultDonorService: DonorService {
         return NSKeyedUnarchiver.unarchiveObject(with: data ?? Data()) as? DonationForm
     }
     
-    func registerPushToken(_ token: String, callback: @escaping (NSError?) -> ()) {
+    func registerPushToken(_ token: String?, callback: @escaping (NSError?) -> ()) {
+        var token = token
+        
+        if token == nil {
+            token = myUserDefaults.string(forKey: userDefaultsTokenKey)
+        }
+        
+        if AppServices.profileService.getCurrentUser() == nil {
+            myUserDefaults.set(token, forKey: userDefaultsTokenKey)
+            callback(nil)
+            return
+        }
+        
         let request = ServerRequest(endpoint: "registerPushToken", controller: "donor")
         request.addParameter(key: "userId", value: AppServices.profileService.getCurrentUser()!.id)
-        request.addParameter(key: "token", value: token)
+        request.addParameter(key: "token", value: token!)
         request.addParameter(key: "appPlatform", value: "IOS")
         
         let callback = SimpleServerCallback(successBlock: { (data) in
@@ -157,10 +170,10 @@ class DefaultDonorService: DonorService {
         Server.sharedInstance.send(request, parser: DonationHistoryParser(), callback: callback)
     }
     
-    func getDonationCenters(callback: @escaping ([DonationCenter]?, NSError?) -> ()) {
+    func getDonationCenters(lat: Double?, long: Double?, callback: @escaping ([DonationCenter]?, NSError?) -> ()) {
         let request = ServerRequest(endpoint: "getDonationCenters", controller: "donor")
-        request.addParameter(key: "latitude", value: 0)
-        request.addParameter(key: "longitude", value: 0)
+        request.addParameter(key: "latitude", value: lat as Any)
+        request.addParameter(key: "longitude", value: long as Any)
         
         let callback = SimpleServerCallback(successBlock: { (data) in
             callback(data as? [DonationCenter], nil)

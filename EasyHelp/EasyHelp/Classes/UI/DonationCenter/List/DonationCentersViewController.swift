@@ -31,7 +31,10 @@ class DonationCentersViewController: UIViewController {
         closeBtn.addTarget(self, action: #selector(DonationCentersViewController.onClose(_:)), for: UIControl.Event.touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeBtn)
         
-        AppServices.donorService.getDonationCenters { (donationCenters, error) in
+        let latitude = LocationUtils.sharedInstance.lastLocation?.coordinate.latitude
+        let longitude = LocationUtils.sharedInstance.lastLocation?.coordinate.latitude
+        
+        AppServices.donorService.getDonationCenters(lat: latitude, long: longitude) { (donationCenters, error) in
             if let donationCenters = donationCenters {
                 self.donationCenters.append(contentsOf: donationCenters)
                 self.syncView()

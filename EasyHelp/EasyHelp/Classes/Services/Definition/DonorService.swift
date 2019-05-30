@@ -17,13 +17,13 @@ protocol DonorService {
     
     func getLocallyPersistedDonationForm() -> DonationForm?
     
-    func registerPushToken(_ token: String, callback: @escaping (NSError?) -> ())
+    func registerPushToken(_ token: String?, callback: @escaping (NSError?) -> ())
     
     func checkPatientSSN(_ ssn: String, callback: @escaping (NSError?) -> ())
     
     func getDonationHistory(callback: @escaping ([Donation]?, NSError?) -> ())
     
-    func getDonationCenters(callback: @escaping ([DonationCenter]?, NSError?) -> ())
+    func getDonationCenters(lat: Double?, long: Double?, callback: @escaping ([DonationCenter]?, NSError?) -> ())
     
     func getAvailableHours(forDonationCenter donationCenter: DonationCenter, callback: @escaping ([AvailableDate]?, NSError?) -> ())
 }
