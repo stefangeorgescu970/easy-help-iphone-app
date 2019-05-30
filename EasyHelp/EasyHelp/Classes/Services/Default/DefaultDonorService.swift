@@ -103,7 +103,7 @@ class DefaultDonorService: DonorService {
     
     func registerPushToken(_ token: String, callback: @escaping (NSError?) -> ()) {
         let request = ServerRequest(endpoint: "registerPushToken", controller: "donor")
-        request.addParameter(key: "id", value: AppServices.profileService.getCurrentUser()!.id)
+        request.addParameter(key: "userId", value: AppServices.profileService.getCurrentUser()!.id)
         request.addParameter(key: "token", value: token)
         request.addParameter(key: "appPlatform", value: "IOS")
         
