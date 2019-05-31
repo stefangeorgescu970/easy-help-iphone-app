@@ -26,6 +26,16 @@ class MainScreenCanBookView: UIView {
         return label
     }()
     
+    private let subtitleLabel: UILabel = {
+        let label = UILabel(frame: CGRect.zero)
+        label.textColor = AppColors.almostBlack
+        label.font = AppFonts.regularFontWithSize(14)
+        label.contentMode = .center
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
     private let bookButton: ButtonWithActivity = {
         let button = ButtonWithActivity()
         button.setTitle("Book a Donation", for: .normal)
@@ -38,18 +48,28 @@ class MainScreenCanBookView: UIView {
         return button
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, numberOfPeople: Int?) {
         super.init(frame: frame)
         
         titleLabel.text = "You are eligible for booking a donation!"
         titleLabel.sizeToFit()
-        
         titleLabel.frame.origin = CGPoint(x: (frame.width - titleLabel.frame.width) / 2, y: 20)
         
         bookButton.frame = CGRect(x: 40,
-                                   y: titleLabel.frame.maxY + 30,
-                                   width: frame.width - 80,
-                                   height: 50)
+                                  y: titleLabel.frame.maxY + 30,
+                                  width: frame.width - 80,
+                                  height: 50)
+        
+        if let numberOfPeople = numberOfPeople {
+            titleLabel.frame.origin = CGPoint(x: (frame.width - titleLabel.frame.width) / 2, y: 0)
+            bookButton.frame.origin = CGPoint(x: 40, y: titleLabel.frame.maxY + 60)
+            
+            subtitleLabel.text = "\(numberOfPeople) people need exactly your blood type at this moment."
+            subtitleLabel.sizeToFit()
+            subtitleLabel.frame.origin = CGPoint(x: (frame.width - subtitleLabel.frame.width) / 2, y: titleLabel.frame.maxY + 10)
+            addSubview(subtitleLabel)
+        }        
+        
         self.addSubview(titleLabel)
         self.addSubview(bookButton)
     }

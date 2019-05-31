@@ -132,7 +132,8 @@ class MainScreenView: UIView {
             canBookView = MainScreenCanBookView(frame: CGRect(x: 0,
                                                               y: frame.height - 200 - 60,
                                                               width: frame.width,
-                                                              height: 200))
+                                                              height: 200),
+                                                numberOfPeople: donorSummary.numberOfPeopleYouCouldHelp)
             canBookView?.delegate = self
             self.addSubview(canBookView!)
         }
