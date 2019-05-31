@@ -49,4 +49,15 @@ class DateUtils: NSObject {
         
         return components.day
     }
+    
+    static func getDaysUntilOneYear(fromDate date: Date) -> Int {
+        let calendar = Calendar.current
+        
+        let donationDate = calendar.startOfDay(for: date)
+        let today = calendar.startOfDay(for: Date())
+        
+        let components = calendar.dateComponents([.day], from: donationDate, to: today)
+        
+        return 365 - components.day!
+    }
 }

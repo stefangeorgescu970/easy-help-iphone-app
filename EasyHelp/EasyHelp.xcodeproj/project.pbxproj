@@ -128,6 +128,9 @@
 		4FA18DA522A1694F000F38F6 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA18DA422A1694F000F38F6 /* ErrorView.swift */; };
 		4FA18DA622A1694F000F38F6 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA18DA422A1694F000F38F6 /* ErrorView.swift */; };
 		4FA18DA722A1694F000F38F6 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA18DA422A1694F000F38F6 /* ErrorView.swift */; };
+		4FA18DAA22A183EF000F38F6 /* MainScreenTooManyDonationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA18DA922A183EF000F38F6 /* MainScreenTooManyDonationsView.swift */; };
+		4FA18DAB22A183EF000F38F6 /* MainScreenTooManyDonationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA18DA922A183EF000F38F6 /* MainScreenTooManyDonationsView.swift */; };
+		4FA18DAC22A183EF000F38F6 /* MainScreenTooManyDonationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA18DA922A183EF000F38F6 /* MainScreenTooManyDonationsView.swift */; };
 		4FA5E91B2296A4A1007A23D6 /* MainScreenRecentDonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5E91A2296A4A1007A23D6 /* MainScreenRecentDonationView.swift */; };
 		4FA5E91C2296A4A1007A23D6 /* MainScreenRecentDonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5E91A2296A4A1007A23D6 /* MainScreenRecentDonationView.swift */; };
 		4FA5E91D2296A4A1007A23D6 /* MainScreenRecentDonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5E91A2296A4A1007A23D6 /* MainScreenRecentDonationView.swift */; };
@@ -327,6 +330,7 @@
 		4F7F4589229949500082D608 /* EasyHelp Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EasyHelp Dev.entitlements"; sourceTree = "<group>"; };
 		4FA18DA022A16927000F38F6 /* TitleMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleMessageView.swift; sourceTree = "<group>"; };
 		4FA18DA422A1694F000F38F6 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		4FA18DA922A183EF000F38F6 /* MainScreenTooManyDonationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTooManyDonationsView.swift; sourceTree = "<group>"; };
 		4FA5E91A2296A4A1007A23D6 /* MainScreenRecentDonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRecentDonationView.swift; sourceTree = "<group>"; };
 		4FB7833A2254F8F5007E741E /* OnboardingFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowManager.swift; sourceTree = "<group>"; };
 		4FB783402254F94F007E741E /* CountySSNOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountySSNOnboardingViewController.swift; sourceTree = "<group>"; };
@@ -495,6 +499,7 @@
 				4F30A5EF225F75F4006C5B15 /* MainScreenCanBookView.swift */,
 				4F2D56652261FB8E002445C9 /* MainScreenNextBookingView.swift */,
 				4FA5E91A2296A4A1007A23D6 /* MainScreenRecentDonationView.swift */,
+				4FA18DA922A183EF000F38F6 /* MainScreenTooManyDonationsView.swift */,
 			);
 			path = MainScreenSubviews;
 			sourceTree = "<group>";
@@ -1323,6 +1328,7 @@
 				4FB7833B2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */,
 				4FEF9917223A884A00351500 /* SimpleServerCallback.swift in Sources */,
 				4FB78360225519F1007E741E /* DonorFormOnboardingViewController.swift in Sources */,
+				4FA18DAA22A183EF000F38F6 /* MainScreenTooManyDonationsView.swift in Sources */,
 				4F30A60E2260A93D006C5B15 /* DonationCenter.swift in Sources */,
 				4FEF9919223A884A00351500 /* Server.swift in Sources */,
 				4F69703A22784F080012469C /* DonorFormFillViewController.swift in Sources */,
@@ -1438,6 +1444,7 @@
 				4F2D56502261D2C6002445C9 /* DonationCenterInfoView.swift in Sources */,
 				4FC265E522966E6800133A0B /* DonationTestResults.swift in Sources */,
 				4FEF9965223A914C00351500 /* SignupView.swift in Sources */,
+				4FA18DAC22A183EF000F38F6 /* MainScreenTooManyDonationsView.swift in Sources */,
 				4FA5E91D2296A4A1007A23D6 /* MainScreenRecentDonationView.swift in Sources */,
 				4F7F458422991E540082D608 /* DonationBookingViewController.swift in Sources */,
 				4F30A5E5225F6290006C5B15 /* MainScreenView.swift in Sources */,
@@ -1492,6 +1499,7 @@
 				4FB7833C2254F8F5007E741E /* OnboardingFlowManager.swift in Sources */,
 				F83C0C3A214E86BB00828144 /* SimpleServerCallback.swift in Sources */,
 				4FB78361225519F1007E741E /* DonorFormOnboardingViewController.swift in Sources */,
+				4FA18DAB22A183EF000F38F6 /* MainScreenTooManyDonationsView.swift in Sources */,
 				4F30A60F2260A93D006C5B15 /* DonationCenter.swift in Sources */,
 				F85B5E90214E75F90098BE65 /* Server.swift in Sources */,
 				4F69703B22784F080012469C /* DonorFormFillViewController.swift in Sources */,

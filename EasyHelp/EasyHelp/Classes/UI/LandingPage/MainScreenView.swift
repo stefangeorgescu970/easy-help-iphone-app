@@ -58,6 +58,7 @@ class MainScreenView: UIView {
     private var canBookView: MainScreenCanBookView?
     private var nextBookingView: MainScreenNextBookingView?
     private var recentDonationView: MainScreenRecentDonationView?
+    private var cannotDonateView: MainScreenTooManyDonationsView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -107,9 +108,14 @@ class MainScreenView: UIView {
         howButton.frame.origin = CGPoint(x: 40, y: encourageLabel.frame.maxY + 20)
         whyButton.frame.origin = CGPoint(x: frame.width - whyButton.frame.width - 40, y: encourageLabel.frame.maxY + 20)
         
-        // ONLY SHOW THIS IF DONATION PREVENTS FROM BOOKING. HE SHOULD BE ABLE TO BOOK AT SOME DATES EVEN IF DONOR
-        // IS STILL IN THE 72 DAYS AFTER A DONATION
-        if let donation = donorSummary.lastDonation, let daysUntil = DonationUtils.getNumberOfDaysUntilCanDonate(lastDonation: donation) {
+        if let streakBegin = donorSummary.streakBegin {
+            cannotDonateView = MainScreenTooManyDonationsView(frame: CGRect(x: 0,
+                                                                            y: frame.height - 200 - 60,
+                                                                            width: frame.width,
+                                                                            height: 200),
+                                                              beginDate: streakBegin)
+            self.addSubview(cannotDonateView!)
+        } else if let donation = donorSummary.lastDonation, let daysUntil = DonationUtils.getNumberOfDaysUntilCanDonate(lastDonation: donation) {
             recentDonationView = MainScreenRecentDonationView(frame: CGRect(x: 0,
                                                                             y: frame.height - 200 - 60,
                                                                             width: frame.width,
@@ -118,8 +124,6 @@ class MainScreenView: UIView {
                                                               daysUntilCanDonate: daysUntil)
             recentDonationView?.delgate = self
             self.addSubview(recentDonationView!)
-        } else if let _ = donorSummary.streakBegin {
-            // TODO - create another view with a message
         } else if let nextBooking = donorSummary.nextBooking {
             nextBookingView = MainScreenNextBookingView(frame: CGRect(x: 0,
                                                                       y: frame.height - 200 - 60,

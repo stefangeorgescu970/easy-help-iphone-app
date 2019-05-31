@@ -29,6 +29,7 @@ class DonationHistoryViewController: UIViewController {
         tableView.backgroundView = LoadingView(frame: tableView.bounds)
         tableView.register(DonationHistoryCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         
         self.title = "Donation History"
         
