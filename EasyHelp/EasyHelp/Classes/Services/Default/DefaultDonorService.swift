@@ -39,6 +39,7 @@ class DefaultDonorService: DonorService {
     func sendDonationFormToServer(_ donationForm: DonationForm, callback: @escaping (NSError?) -> ()) {
         let request = ServerRequest(endpoint: "addDonationForm", controller: "donor")
         request.addParameter(key: "donorId", value: AppServices.profileService.getCurrentUser()!.id)
+        request.addParameter(key: "generalGoodHealth", value: donationForm.generalGoodHealth)
         request.addParameter(key: "recentLossOfWeight", value: donationForm.recentLossOfWeight)
         request.addParameter(key: "recentInexplicableFever", value: donationForm.recentInexplicableFever)
         request.addParameter(key: "recentStomatoTreatmentOrVaccine", value: donationForm.recentStomatoTreatmentOrVaccine)
