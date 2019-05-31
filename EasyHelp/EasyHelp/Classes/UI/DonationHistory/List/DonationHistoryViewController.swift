@@ -29,11 +29,17 @@ class DonationHistoryViewController: UIViewController {
         
         AppServices.donorService.getDonationHistory { (donations, error) in
             if let donations = donations {
-                self.tableView.backgroundView = nil
-                self.donations = donations
-                self.tableView.reloadData()
+                if donations.isEmpty {
+                    self.tableView.backgroundView = TitleMessageView(frame: self.tableView.bounds, title: "You have no donations yet")
+                } else {
+                    self.tableView.backgroundView = nil
+                    self.donations = donations
+                    self.tableView.reloadData()
+                }
             } else if let error = error {
-                
+                let ev = ErrorView(frame: UIScreen.main.bounds, errorMessage: error.myErrorInfo)
+                ev.delegate = self
+                self.view = ev
             }
         }
     }
@@ -74,5 +80,11 @@ extension DonationHistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DonationDetailsViewController(donation: donations[indexPath.row])
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension DonationHistoryViewController: ErrorViewDelegate {
+    func errorViewDidRequestTryAgain(_ errorView: ErrorView) {
+        
     }
 }
