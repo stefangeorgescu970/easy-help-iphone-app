@@ -98,6 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             guard settings.authorizationStatus == .authorized else { return }
             DispatchQueue.main.async {
+                UNUserNotificationCenter.current().delegate = PushNotifUtils.sharedInstance
                 UIApplication.shared.registerForRemoteNotifications()
             }
         }

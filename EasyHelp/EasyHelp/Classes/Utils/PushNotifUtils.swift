@@ -39,3 +39,10 @@ class PushNotifUtils: NSObject {
         notificationCenter.removeAllPendingNotificationRequests()
     }
 }
+
+extension PushNotifUtils: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([.alert, .badge, .sound])
+    }
+}
