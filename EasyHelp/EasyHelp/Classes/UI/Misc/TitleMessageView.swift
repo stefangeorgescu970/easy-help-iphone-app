@@ -11,6 +11,7 @@ import UIKit
 class TitleMessageView: UIView {
     init(frame: CGRect, title: String) {
         super.init(frame: frame)
+        self.backgroundColor = AppColors.white
         
         let label = UILabel()
         label.font = AppFonts.regularFontWithSize(18)

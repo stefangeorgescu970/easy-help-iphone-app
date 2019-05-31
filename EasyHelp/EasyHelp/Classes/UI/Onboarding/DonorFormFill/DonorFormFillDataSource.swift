@@ -91,6 +91,8 @@ class DonorFormFillDataSource: NSObject, UITableViewDataSource {
     private var answerViews: [UIView] = []
     
     override init() {
+        super.init()
+        
         self.answerViews = [goodHealthControl, weightLossControl, feverControl, stomatoVaccineControl,
                             medicalTreatmentControl, sexHivHepaControl, sexDrugUserControl, sexProstituteControl, sexMultiplePartnersControl,
                             injectedDrugsControl, accepdedDrugMoneyForSexControl, changePartenerLast6MonthsControl, numberOfPartStepper,
@@ -99,6 +101,22 @@ class DonorFormFillDataSource: NSObject, UITableViewDataSource {
                             sufferSet2Control, sufferSet3Control, sufferSet4Control, sufferSet5Control, sufferSet6Control, sufferSet7Control,
                             smokerControl, alcoholWhenText, alcoholWhatText, alcoholQuantityText, previouslyrefusedControl,
                             specialAttentionControl]
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        toolbar.tintColor = AppColors.appRed
+        toolbar.backgroundColor = AppColors.white
+        let doneButton = UIBarButtonItem(title: Strings.Misc.done(), style: .plain, target: self, action: #selector(DonorFormFillDataSource.closeKeyboard))
+        toolbar.setItems([doneButton], animated: false)
+        toolbar.isUserInteractionEnabled = true
+        
+        kidBirthDateText.inputAccessoryView = toolbar
+        lastMenstruationDateText.inputAccessoryView = toolbar
+        whereText.inputAccessoryView = toolbar
+        whenText.inputAccessoryView = toolbar
+        alcoholWhenText.inputAccessoryView = toolbar
+        alcoholWhatText.inputAccessoryView = toolbar
+        alcoholQuantityText.inputAccessoryView = toolbar
     }
     
     func allFieldsValid() -> Bool {
@@ -215,5 +233,15 @@ class DonorFormFillDataSource: NSObject, UITableViewDataSource {
         cell.selectionStyle = .none
         
         return cell
+    }
+    
+    @objc private func closeKeyboard() {
+        kidBirthDateText.resignFirstResponder()
+        lastMenstruationDateText.resignFirstResponder()
+        whereText.resignFirstResponder()
+        whenText.resignFirstResponder()
+        alcoholWhenText.resignFirstResponder()
+        alcoholWhatText.resignFirstResponder()
+        alcoholQuantityText.resignFirstResponder()
     }
 }
