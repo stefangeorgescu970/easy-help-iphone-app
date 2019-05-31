@@ -50,9 +50,13 @@ class LoginViewController: UIViewController {
             loginView.setButtonLoading(isLoading: false)
             loginView.stopShowingError()
             
+            #if targetEnvironment(simulator)
+            
+            #else
             AppServices.donorService.registerPushToken(nil) { (error) in
                 
             }
+            #endif
             
             if profileData.shouldSeeOnboarding() {
                 OnboardingFlowManager.instance.startFlow(forDonor: profileData)

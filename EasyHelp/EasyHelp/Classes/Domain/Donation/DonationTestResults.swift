@@ -32,4 +32,8 @@ class DonationTestResults: NSObject {
     private static func getTestResult(booleanValue: Bool) -> String {
         return booleanValue ? "Positive" : "Negative"
     }
+    
+    func presentDanger() -> Bool {
+        return hepatitisB || hepatitisC || hiv || htlv || vdrl || alt
+    }
 }

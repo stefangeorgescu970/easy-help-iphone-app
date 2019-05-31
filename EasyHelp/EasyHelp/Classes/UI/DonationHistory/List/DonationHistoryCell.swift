@@ -43,8 +43,12 @@ class DonationHistoryCell: UITableViewCell {
         let shapeLayer = CAShapeLayer()
         shapeLayer.fillColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.3).cgColor
         shapeLayer.path = roundedRect.cgPath
-        shapeLayer.strokeColor = AppColors.darkGray.cgColor
         shapeLayer.lineWidth = 1.0
+        shapeLayer.strokeColor = AppColors.darkGray.cgColor
+        if let testResults = donation.testResults, testResults.presentDanger() {
+            shapeLayer.strokeColor = AppColors.appRed.cgColor
+            shapeLayer.fillColor = UIColor(red: 194/255, green: 30/255, blue: 36/255, alpha: 0.1).cgColor
+        }
         
         self.layer.addSublayer(shapeLayer)
         

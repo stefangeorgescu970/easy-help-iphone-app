@@ -10,7 +10,10 @@ import Foundation
 
 class MockGlobalData: NSObject {
     static func getUncompleteMockProfile() -> DonorProfileData {
-        return DonorProfileData(id: 1, email: "donor@mail.com", token: "mockToken", firstName: "a", lastName: "b")
+        let donor =  DonorProfileData(id: 1, email: "donor@mail.com", token: "mockToken", firstName: "a", lastName: "b", isMale: true)
+        donor.county = "ALBA"
+        
+        return donor
     }
     
     static func getMockProfile() -> DonorProfileData {
@@ -31,4 +34,18 @@ class MockGlobalData: NSObject {
         return ["don": "1"]
     }
     
+    static func defaultDonationCenter() -> DonationCenter {
+        return DonationCenter(id: 0, name: "DC", lat: 0, long: 0, address: "some street", county: "ALBA")
+    }
+    
+    static func getDonationHistory() -> [Donation] {
+        let donation1 = Donation(id: 0, donationCenter: defaultDonationCenter(), date: Date())
+        donation1.testResults = DonationTestResults()
+        donation1.testResults?.hiv = true
+        
+        let donation2 = Donation(id: 1, donationCenter: defaultDonationCenter(), date: Date())
+//        donation2.testResults = DonationTestResults()
+        
+        return [donation2, donation1]
+    }
 }

@@ -41,7 +41,6 @@
 		4F2D566C22620E85002445C9 /* DonorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D566922620E85002445C9 /* DonorService.swift */; };
 		4F2D566E22620EF7002445C9 /* DefaultDonorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D566D22620EF7002445C9 /* DefaultDonorService.swift */; };
 		4F2D566F22620EF7002445C9 /* DefaultDonorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D566D22620EF7002445C9 /* DefaultDonorService.swift */; };
-		4F2D567022620EF7002445C9 /* DefaultDonorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D566D22620EF7002445C9 /* DefaultDonorService.swift */; };
 		4F2D56722262101A002445C9 /* MockDonorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D56712262101A002445C9 /* MockDonorService.swift */; };
 		4F30A5DF225F6280006C5B15 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A5DE225F6280006C5B15 /* MainScreenViewController.swift */; };
 		4F30A5E0225F6280006C5B15 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30A5DE225F6280006C5B15 /* MainScreenViewController.swift */; };
@@ -164,7 +163,6 @@
 		4FC265E522966E6800133A0B /* DonationTestResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC265E222966E6800133A0B /* DonationTestResults.swift */; };
 		4FC265E722966F6C00133A0B /* DonationHistoryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC265E622966F6C00133A0B /* DonationHistoryParser.swift */; };
 		4FC265E822966F6C00133A0B /* DonationHistoryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC265E622966F6C00133A0B /* DonationHistoryParser.swift */; };
-		4FC265E922966F6C00133A0B /* DonationHistoryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC265E622966F6C00133A0B /* DonationHistoryParser.swift */; };
 		4FC265EB229675AF00133A0B /* DonationHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC265EA229675AF00133A0B /* DonationHistoryCell.swift */; };
 		4FC265EC229675AF00133A0B /* DonationHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC265EA229675AF00133A0B /* DonationHistoryCell.swift */; };
 		4FC265ED229675AF00133A0B /* DonationHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC265EA229675AF00133A0B /* DonationHistoryCell.swift */; };
@@ -1434,7 +1432,6 @@
 				4FC265F32296847700133A0B /* DonationDetailsViewController.swift in Sources */,
 				4FC265E122966E1D00133A0B /* Donation.swift in Sources */,
 				4FEF9969223A917600351500 /* Strings.swift in Sources */,
-				4FC265E922966F6C00133A0B /* DonationHistoryParser.swift in Sources */,
 				4F2D564C2261D0B6002445C9 /* DonationCenterMainViewController.swift in Sources */,
 				4FB78362225519F1007E741E /* DonorFormOnboardingViewController.swift in Sources */,
 				4F30A5ED225F6E4C006C5B15 /* DonorSummaryData.swift in Sources */,
@@ -1462,7 +1459,6 @@
 				4FF8C47E2245149200F1AE98 /* MainFlowManager.swift in Sources */,
 				4F2D56642261F9E4002445C9 /* DonationBooking.swift in Sources */,
 				4FEF9953223A8EB100351500 /* ErrorUtils.swift in Sources */,
-				4F2D567022620EF7002445C9 /* DefaultDonorService.swift in Sources */,
 				4FF8C485224520D000F1AE98 /* ProfileDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

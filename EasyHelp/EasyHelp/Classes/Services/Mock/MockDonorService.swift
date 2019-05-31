@@ -10,10 +10,34 @@ import Foundation
 
 class MockDonorService: DonorService {
     func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ()) {
-
+        
     }
     
-    func getDonationCenters(callback: @escaping ([DonationCenter]?, NSError?) -> ()) {
+    func locallyPersistDonationForm(_ donationForm: DonationForm) {
+        
+    }
+    
+    func getLocallyPersistedDonationForm() -> DonationForm? {
+        return nil
+    }
+    
+    func registerPushToken(_ token: String?, callback: @escaping (NSError?) -> ()) {
+        
+    }
+    
+    func checkPatientSSN(_ ssn: String, callback: @escaping (NSError?) -> ()) {
+        
+    }
+    
+    func getDonationHistory(callback: @escaping ([Donation]?, NSError?) -> ()) {
+        callback(MockGlobalData.getDonationHistory(), nil)
+    }
+    
+    func getDonationCenters(lat: Double?, long: Double?, callback: @escaping ([DonationCenter]?, NSError?) -> ()) {
+        
+    }
+    
+    func sendDonationFormToServer(_ donationForm: DonationForm, callback: @escaping (NSError?) -> ()) {
         
     }
     

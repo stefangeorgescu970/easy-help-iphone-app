@@ -67,11 +67,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let token = tokenParts.joined()
         print("Device Token: \(token)")
         
+        #if targetEnvironment(simulator)
+        
+        #else
         AppServices.donorService.registerPushToken(token) { (error) in
             if let error = error {
                 // TODO - handle error
             }
         }
+        #endif
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
