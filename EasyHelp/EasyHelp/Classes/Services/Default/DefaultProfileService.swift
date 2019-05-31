@@ -25,6 +25,7 @@ class DefaultProfileService: ProfileService {
     }
     
     func deleteCurrentUser() {
+        PushNotifUtils.sharedInstance.cancelLocalNotifications()
         myUserDefaults.set(nil, forKey: userDefaultsKey)
     }
     

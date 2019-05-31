@@ -36,10 +36,21 @@ extension DonationBookingViewController: DonationBookingViewDelegate {
             if let error = error {
                 // handle error
             } else {
+                let bookDate = donationBooking.date
+                var notifComponents = DateComponents()
+                notifComponents.year = Calendar.current.component(.year, from: bookDate)
+                notifComponents.month = Calendar.current.component(.month, from: bookDate)
+                notifComponents.day = Calendar.current.component(.day, from: bookDate) - 1
+                notifComponents.hour = 20
+                notifComponents.minute = 0
+                notifComponents.second = 0
+                notifComponents.timeZone = NSTimeZone.local
+                let notifDate = Calendar.current.date(from: notifComponents)!
+                PushNotifUtils.sharedInstance.scheduleLocalNotification(onDate: notifDate, withMessage: "Please check your donation form to speed up the donation tomorrow.")
+                
                 NotificationCenter.default.post(name: .GoBackToLanding, object: donationBooking)
             }
         })
-
     }
     
     func donationBookingViewDidRequestForm(_ sender: DonationBookingView) {
