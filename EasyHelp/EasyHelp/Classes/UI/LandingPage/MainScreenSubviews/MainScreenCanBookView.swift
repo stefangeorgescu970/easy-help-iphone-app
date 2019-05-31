@@ -64,7 +64,7 @@ class MainScreenCanBookView: UIView {
             titleLabel.frame.origin = CGPoint(x: (frame.width - titleLabel.frame.width) / 2, y: 0)
             bookButton.frame.origin = CGPoint(x: 40, y: titleLabel.frame.maxY + 60)
             
-            subtitleLabel.text = "\(numberOfPeople) people need exactly your blood type at this moment."
+            subtitleLabel.text = "\(numberOfPeople) people need your blood type at this moment."
             subtitleLabel.sizeToFit()
             subtitleLabel.frame.origin = CGPoint(x: (frame.width - subtitleLabel.frame.width) / 2, y: titleLabel.frame.maxY + 10)
             addSubview(subtitleLabel)
