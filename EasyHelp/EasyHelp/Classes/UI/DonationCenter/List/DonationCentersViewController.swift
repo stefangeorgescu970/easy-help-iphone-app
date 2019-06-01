@@ -32,7 +32,7 @@ class DonationCentersViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeBtn)
         
         let latitude = LocationUtils.sharedInstance.lastLocation?.coordinate.latitude
-        let longitude = LocationUtils.sharedInstance.lastLocation?.coordinate.latitude
+        let longitude = LocationUtils.sharedInstance.lastLocation?.coordinate.longitude
         
         AppServices.donorService.getDonationCenters(lat: latitude, long: longitude) { (donationCenters, error) in
             if let donationCenters = donationCenters {

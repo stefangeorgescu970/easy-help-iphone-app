@@ -17,6 +17,13 @@ class DonationCenterCell: UITableViewCell {
         return label
     }()
     
+    private let distanceLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AppColors.almostBlack
+        label.font = AppFonts.regularFontWithSize(14)
+        return label
+    }()
+    
     func syncView(donationCenter: DonationCenter) {
         nameLabel.text = donationCenter.name
         nameLabel.sizeToFit()
@@ -26,6 +33,14 @@ class DonationCenterCell: UITableViewCell {
                                  height: nameLabel.frame.height)
         nameLabel.center.y = frame.height / 2
         addSubview(nameLabel)
+        
+        if let distance = donationCenter.distance {
+            distanceLabel.text = String(format: "%.2f km", distance)
+            distanceLabel.sizeToFit()
+            distanceLabel.frame.origin = CGPoint(x: frame.width - 20 - distanceLabel.frame.width, y: 0)
+            distanceLabel.center.y = nameLabel.center.y
+            self.addSubview(distanceLabel)
+        }
     }
     
     func showSeparator(_ shouldShow: Bool) {

@@ -15,6 +15,7 @@ class DonationCenter: NSObject {
     var long: Double
     var address: String
     var county: String
+    var distance: Double?
     
     init(id: Int, name: String, lat: Double, long: Double, address: String, county: String) {
         self.id = id

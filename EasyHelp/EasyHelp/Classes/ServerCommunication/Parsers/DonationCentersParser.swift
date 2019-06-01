@@ -26,6 +26,11 @@ class DonationCentersParser: ServerResponseParser {
                 }
                 
                 let dc = DonationCenter(id: id, name: name, lat: lat, long: long, address: address, county: county)
+                
+                if let distance = dcJson["distance"].double, distance >= 0 {
+                    dc.distance = distance
+                }
+                
                 donationCenters.append(dc)
             }
         }
