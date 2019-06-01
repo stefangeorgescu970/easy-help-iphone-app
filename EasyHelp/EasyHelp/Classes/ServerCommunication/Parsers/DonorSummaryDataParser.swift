@@ -13,9 +13,6 @@ class DonorSummaryDataParser: ServerResponseParser {
     var donorData: DonorSummaryData?
     
     override func doParse(content: JSON) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
-        
         let data = DonorSummaryData()
         
         if let number = content["donationsNumber"].int {
@@ -27,7 +24,7 @@ class DonorSummaryDataParser: ServerResponseParser {
             let donationCenterContent = bookingContent["donationCenter"]
             if
                 let bookingId = bookingContent["id"].int,
-                let hourString = bookingContent["bookingDate"].string, let date = dateFormatter.date(from: hourString),
+                let hourString = bookingContent["bookingDate"].string, let date = DateUtils.parseServerString(hourString),
                 let dcId = donationCenterContent["id"].int,
                 let dcName = donationCenterContent["name"].string,
                 let dcCounty = donationCenterContent["county"].string,
@@ -58,7 +55,7 @@ class DonorSummaryDataParser: ServerResponseParser {
                 if
                     let id = donationJson["id"].int,
                     let dateStr = donationJson["date"].string,
-                    let date = dateFormatter.date(from: dateStr) {
+                    let date = DateUtils.parseServerString(dateStr) {
                     
                     let donation = Donation(id: id, donationCenter: dc, date: date)
                     if let testJson = donationJson["donationTestResultDTO"].dictionary {
@@ -79,7 +76,7 @@ class DonorSummaryDataParser: ServerResponseParser {
             }
         }
         
-        if let hourString = content["streakBegin"].string, let date = dateFormatter.date(from: hourString) {
+        if let hourString = content["streakBegin"].string, let date = DateUtils.parseServerString(hourString) {
             data.streakBegin = date
         }
         

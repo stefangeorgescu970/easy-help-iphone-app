@@ -17,7 +17,7 @@ class DefaultDonorService: DonorService {
         let request = ServerRequest(endpoint: "bookDonation", controller: "donor")
         request.addParameter(key: "userId", value: AppServices.profileService.getCurrentUser()!.id)
         request.addParameter(key: "donationCenterId", value: donationBooking.donationCenter.id)
-        request.addParameter(key: "selectedDate", value: DateUtils.getFormattedDate(donationBooking.date))
+        request.addParameter(key: "selectedDate", value: DateUtils.formatDateForServer(donationBooking.date))
         request.addParameter(key: "patientSSN", value: donationBooking.patientSSN as Any)
         
         let callback = SimpleServerCallback(successBlock: { (data) in

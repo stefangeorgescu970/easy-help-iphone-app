@@ -9,10 +9,23 @@
 import Foundation
 
 class DateUtils: NSObject {
+    static func parseServerString(_ stringDate: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        
+        return dateFormatter.date(from: stringDate)
+    }
+    
+    static func formatDateForServer(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        
+        return formatter.string(from: date)
+    }
+    
     static func getHourIntervalString(fromDate date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
         
         let string = formatter.string(from: date)
         let secondString = formatter.string(from: date.addingTimeInterval(1 * 60 * 20))
@@ -25,19 +38,12 @@ class DateUtils: NSObject {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
         let datePart = formatter.string(from: date)
         
         return "\(datePart), \(hoursPart)"
     }
     
-    static func getFormattedDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
-        
-        return formatter.string(from: date)
-    }
+
     
     static func getDaysSinceNextDonation(lastDonation: Donation) -> Int? {
         let calendar = Calendar.current

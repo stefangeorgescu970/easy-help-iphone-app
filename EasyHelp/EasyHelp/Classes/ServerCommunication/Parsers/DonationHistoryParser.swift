@@ -12,10 +12,7 @@ import SwiftyJSON
 class DonationHistoryParser: ServerResponseParser {
     var donations: [Donation] = []
     
-    override func doParse(content: JSON) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
-        
+    override func doParse(content: JSON) {        
         if let jsonArray = content["objects"].array {
             for donationJson in jsonArray {
                 let dcJson = donationJson["donationCenter"]
@@ -34,7 +31,7 @@ class DonationHistoryParser: ServerResponseParser {
                 guard
                     let id = donationJson["id"].int,
                     let dateStr = donationJson["date"].string,
-                    let date = dateFormatter.date(from: dateStr) else {
+                    let date = DateUtils.parseServerString(dateStr) else {
                         continue
                 }
                 

@@ -13,19 +13,16 @@ class AvailableDateParser: ServerResponseParser {
     var availableDates: [AvailableDate] = []
     
     override func doParse(content: JSON) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
-        
         if let jsonArray = content["objects"].array {
             for jsonObj in jsonArray {
                 if let dateString = jsonObj["date"].string {
                     
-                    let date = dateFormatter.date(from: dateString)
+                    let date = DateUtils.parseServerString(dateString)
                     var availableHours = [Date]()
                     
                     if let hoursJsonArray = jsonObj["availableHours"].array {
                         for hoursJson in hoursJsonArray {
-                            if let hourString = hoursJson.string, let date = dateFormatter.date(from: hourString) {
+                            if let hourString = hoursJson.string, let date = DateUtils.parseServerString(hourString) {
                                 availableHours.append(date)
                             }
                         }
