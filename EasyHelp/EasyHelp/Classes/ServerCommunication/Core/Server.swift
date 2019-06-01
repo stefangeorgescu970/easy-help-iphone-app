@@ -25,7 +25,15 @@ class Server {
     }()
     
     func send(_ request: ServerRequest, parser: ServerResponseParser?, callback: SimpleServerCallback?, method: HTTPMethod = .post, encoding: ParameterEncoding = JSONEncoding.default) {
-        self.networkManager.request(request.getEndpoint(), method: method,  parameters: request.getParameters(), encoding: encoding).responseString { response in
+        var headers: HTTPHeaders?
+        
+        if let profile = AppServices.profileService.getCurrentUser() {
+            headers = [
+                "Authorization": "Bearer \(profile.token)"
+            ]
+        }
+        
+        self.networkManager.request(request.getEndpoint(), method: method,  parameters: request.getParameters(), encoding: encoding, headers: headers ?? HTTPHeaders()).responseString { response in
             switch response.result {
             case .success(let value):
                 if response.response?.statusCode ?? 0 == 403 {
