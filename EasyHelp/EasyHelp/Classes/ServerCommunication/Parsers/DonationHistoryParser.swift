@@ -31,7 +31,7 @@ class DonationHistoryParser: ServerResponseParser {
                 guard
                     let id = donationJson["id"].int,
                     let dateStr = donationJson["date"].string,
-                    let date = DateUtils.parseServerString(dateStr) else {
+                    let date = DateUtils.parseServerString(dateStr, onlyDate: true) else {
                         continue
                 }
                 

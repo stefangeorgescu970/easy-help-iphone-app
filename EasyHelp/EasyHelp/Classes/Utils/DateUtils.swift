@@ -9,9 +9,9 @@
 import Foundation
 
 class DateUtils: NSObject {
-    static func parseServerString(_ stringDate: String) -> Date? {
+    static func parseServerString(_ stringDate: String, onlyDate: Bool = false) -> Date? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.dateFormat =  onlyDate ? "yyyy-MM-dd" : "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
         return dateFormatter.date(from: stringDate)
     }
