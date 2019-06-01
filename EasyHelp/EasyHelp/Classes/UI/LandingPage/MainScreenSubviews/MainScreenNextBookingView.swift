@@ -14,6 +14,7 @@ protocol MainScreenNextBookingViewDelegate: class {
 
 class MainScreenNextBookingView: UIView {
     weak var delegate: MainScreenNextBookingViewDelegate?
+    var donationBooking: DonationBooking
     
     private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
@@ -58,6 +59,7 @@ class MainScreenNextBookingView: UIView {
     }()
     
     init(frame: CGRect, booking: DonationBooking) {
+        self.donationBooking = booking
         super.init(frame: frame)
         
         titleLabel.text = "Your next donation booking"
@@ -80,9 +82,17 @@ class MainScreenNextBookingView: UIView {
         
         infoIcon.frame.origin = CGPoint(x: frame.width - 20 - infoIcon.frame.width, y: bookingIcon.frame.origin.y + 10 - 4)
         self.addSubview(infoIcon)
+        
+        let gestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(MainScreenNextBookingView.infoIconTapped(_:)))
+        infoIcon.addGestureRecognizer(gestureRecogniser)
+        infoIcon.isUserInteractionEnabled = true
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func infoIconTapped(_ sender: UITapGestureRecognizer) {
+        self.delegate?.mainScreenNextBookingViewDidRequestShowBooking(self, booking: donationBooking)
     }
 }

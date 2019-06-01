@@ -86,7 +86,7 @@ extension DonationCenterMainViewController: UITableViewDelegate {
         let booking = DonationBooking(date: date, donationCenter: donationCenter)
         booking.patientSSN = ssn
         
-        let vc = DonationBookingViewController(donationBooking: booking)
+        let vc = DonationBookingViewController(donationBooking: booking, style: .book)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

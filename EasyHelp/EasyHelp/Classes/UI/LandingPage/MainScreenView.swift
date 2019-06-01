@@ -19,6 +19,7 @@ protocol MainScreenViewDelegate: class {
 class MainScreenView: UIView {
     
     weak var delegate: MainScreenViewDelegate?
+    var donorSummary: DonorSummaryData?
     
     private let logoLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
@@ -76,21 +77,38 @@ class MainScreenView: UIView {
         self.backgroundColor = .white
     }
     
-    func syncView(forBooking booking: DonationBooking) {
-        if let canBookView = canBookView {
-            canBookView.removeFromSuperview()
-            self.canBookView = nil
+    func syncView(forBooking booking: DonationBooking?) {
+        if let booking = booking {
+            if let canBookView = canBookView {
+                canBookView.removeFromSuperview()
+                self.canBookView = nil
+            }
+            
+            nextBookingView = MainScreenNextBookingView(frame: CGRect(x: 0,
+                                                                      y: frame.height - 200 - 60,
+                                                                      width: frame.width,
+                                                                      height: 200), booking: booking)
+            nextBookingView?.delegate = self
+            self.addSubview(nextBookingView!)
+        } else {
+            if let nextBookingView = nextBookingView {
+                nextBookingView.removeFromSuperview()
+                self.nextBookingView = nil
+            }
+            
+            canBookView = MainScreenCanBookView(frame: CGRect(x: 0,
+                                                              y: frame.height - 200 - 60,
+                                                              width: frame.width,
+                                                              height: 200),
+                                                numberOfPeople: donorSummary?.numberOfPeopleYouCouldHelp ?? -1)
+            canBookView?.delegate = self
+            self.addSubview(canBookView!)
         }
-        
-        nextBookingView = MainScreenNextBookingView(frame: CGRect(x: 0,
-                                                                  y: frame.height - 200 - 60,
-                                                                  width: frame.width,
-                                                                  height: 200), booking: booking)
-        nextBookingView?.delegate = self
-        self.addSubview(nextBookingView!)
     }
     
     func syncView(profileData: DonorProfileData, donorSummary: DonorSummaryData) {
+        self.donorSummary = donorSummary
+        
         logoLabel.text = "Easy Help"
         logoLabel.sizeToFit()
         

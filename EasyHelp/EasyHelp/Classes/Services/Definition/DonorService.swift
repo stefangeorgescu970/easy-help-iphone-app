@@ -9,7 +9,9 @@
 import Foundation
 
 protocol DonorService {
-    func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ())
+    func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (Int?, NSError?) -> ())
+    
+    func cancelBooking(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ())
     
     func sendDonationFormToServer(_ donationForm: DonationForm, callback: @escaping (NSError?) -> ())
     

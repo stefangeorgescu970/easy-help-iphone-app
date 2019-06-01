@@ -13,6 +13,10 @@ class MockDonorService: DonorService {
         
     }
     
+    func cancelBooking(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ()) {
+        
+    }
+    
     func locallyPersistDonationForm(_ donationForm: DonationForm) {
         
     }

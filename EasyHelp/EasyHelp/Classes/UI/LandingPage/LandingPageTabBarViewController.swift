@@ -116,6 +116,8 @@ class LandingPageTabBarViewController: UITabBarController {
     @objc private func goBackToLandingPage(notification: NSNotification) {
         if let booking = notification.object as? DonationBooking {
             mainScreenController.syncView(forBooking: booking)
+        } else {
+            mainScreenController.syncView(forBooking: nil)
         }
         bdcNav.presentedViewController?.dismiss(animated: true, completion: nil)
     }

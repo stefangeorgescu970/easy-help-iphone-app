@@ -60,7 +60,7 @@ class MainScreenCanBookView: UIView {
                                   width: frame.width - 80,
                                   height: 50)
         
-        if let numberOfPeople = numberOfPeople {
+        if let numberOfPeople = numberOfPeople, numberOfPeople > -1 {
             titleLabel.frame.origin = CGPoint(x: (frame.width - titleLabel.frame.width) / 2, y: 0)
             bookButton.frame.origin = CGPoint(x: 40, y: titleLabel.frame.maxY + 60)
             

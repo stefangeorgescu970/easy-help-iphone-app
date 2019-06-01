@@ -122,6 +122,8 @@
 		4F7F458622991E5F0082D608 /* DonationBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F458522991E5F0082D608 /* DonationBookingView.swift */; };
 		4F7F458722991E5F0082D608 /* DonationBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F458522991E5F0082D608 /* DonationBookingView.swift */; };
 		4F7F458822991E5F0082D608 /* DonationBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F458522991E5F0082D608 /* DonationBookingView.swift */; };
+		4F947DDE22A26E3200F3E901 /* NewIdResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F947DDD22A26E3200F3E901 /* NewIdResponseParser.swift */; };
+		4F947DDF22A26E3200F3E901 /* NewIdResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F947DDD22A26E3200F3E901 /* NewIdResponseParser.swift */; };
 		4FA18DA122A16927000F38F6 /* TitleMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA18DA022A16927000F38F6 /* TitleMessageView.swift */; };
 		4FA18DA222A16927000F38F6 /* TitleMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA18DA022A16927000F38F6 /* TitleMessageView.swift */; };
 		4FA18DA322A16927000F38F6 /* TitleMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA18DA022A16927000F38F6 /* TitleMessageView.swift */; };
@@ -328,6 +330,7 @@
 		4F7F458122991E540082D608 /* DonationBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationBookingViewController.swift; sourceTree = "<group>"; };
 		4F7F458522991E5F0082D608 /* DonationBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationBookingView.swift; sourceTree = "<group>"; };
 		4F7F4589229949500082D608 /* EasyHelp Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EasyHelp Dev.entitlements"; sourceTree = "<group>"; };
+		4F947DDD22A26E3200F3E901 /* NewIdResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdResponseParser.swift; sourceTree = "<group>"; };
 		4FA18DA022A16927000F38F6 /* TitleMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleMessageView.swift; sourceTree = "<group>"; };
 		4FA18DA422A1694F000F38F6 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4FA18DA922A183EF000F38F6 /* MainScreenTooManyDonationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTooManyDonationsView.swift; sourceTree = "<group>"; };
@@ -893,6 +896,7 @@
 				4F30A6112260AA40006C5B15 /* DonationCentersParser.swift */,
 				4F2D56552261DCD1002445C9 /* AvailableDateParser.swift */,
 				4FC265E622966F6C00133A0B /* DonationHistoryParser.swift */,
+				4F947DDD22A26E3200F3E901 /* NewIdResponseParser.swift */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -1318,6 +1322,7 @@
 				4FC265DF22966E1D00133A0B /* Donation.swift in Sources */,
 				4FEF9916223A884A00351500 /* ServerRequest.swift in Sources */,
 				4FEF9956223A904C00351500 /* LandingPageTabBarViewController.swift in Sources */,
+				4F947DDE22A26E3200F3E901 /* NewIdResponseParser.swift in Sources */,
 				4FF8C48B224520FC00F1AE98 /* DonationHistoryViewController.swift in Sources */,
 				4F2D564A2261D0B6002445C9 /* DonationCenterMainViewController.swift in Sources */,
 				4FEF9978223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,
@@ -1489,6 +1494,7 @@
 				4FC265E022966E1D00133A0B /* Donation.swift in Sources */,
 				F83C0C34214E7F8800828144 /* ServerRequest.swift in Sources */,
 				4FEF9957223A904C00351500 /* LandingPageTabBarViewController.swift in Sources */,
+				4F947DDF22A26E3200F3E901 /* NewIdResponseParser.swift in Sources */,
 				4FF8C48C224520FC00F1AE98 /* DonationHistoryViewController.swift in Sources */,
 				4F2D564B2261D0B6002445C9 /* DonationCenterMainViewController.swift in Sources */,
 				4FEF9979223A91EE00351500 /* AppInterfaceFormatter.swift in Sources */,

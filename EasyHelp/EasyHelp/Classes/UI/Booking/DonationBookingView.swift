@@ -11,12 +11,14 @@ import UIKit
 protocol DonationBookingViewDelegate: class {
     func donationBookingViewDidRequestForm(_ sender: DonationBookingView)
     func donationBookingViewDidRequestBook(_ sender: DonationBookingView, donationBooking: DonationBooking)
+    func donationBookingViewDidRequestCancelBooking(_ sender: DonationBookingView, donationBooking: DonationBooking)
 }
 
 class DonationBookingView: UIView {
     
-    var donationBooking: DonationBooking
     weak var delegate: DonationBookingViewDelegate?
+    var donationBooking: DonationBooking
+    var style: DonationBookingControllerStyle
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -98,21 +100,21 @@ class DonationBookingView: UIView {
     
     private var formActionButton: UIButton = AppInterfaceFormatter.createLink("Fill in donation form")
     
-    private let bookButton: ButtonWithActivity = {
+    private let actionButton: ButtonWithActivity = {
         let button = ButtonWithActivity()
-        button.setTitle("Book Donation", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = AppColors.appRed
         button.layer.cornerRadius = 8
         
-        button.addTarget(self, action: #selector(DonationBookingView.didPressBook(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(DonationBookingView.didPressMainActionBook(_:)), for: .touchUpInside)
         
         return button
     }()
     
-    init(frame: CGRect, donationBooking: DonationBooking) {
+    init(frame: CGRect, donationBooking: DonationBooking, style: DonationBookingControllerStyle) {
         self.donationBooking = donationBooking
         self.addressLink = AppInterfaceFormatter.createLink(donationBooking.donationCenter.address)
+        self.style = style
         super.init(frame: frame)
         
         self.backgroundColor = AppColors.white
@@ -167,11 +169,12 @@ class DonationBookingView: UIView {
         formActionButton.addTarget(self, action: #selector(ProfileDetailsView.didPressFormActionButton(_:)), for: .touchUpInside)
         self.addSubview(formActionButton)
         
-        bookButton.frame = CGRect(x: CGFloat(integerLiteral: 40),
+        actionButton.setTitle(style == .book ? "Book Donation" : "Cancel Donation", for: .normal)
+        actionButton.frame = CGRect(x: CGFloat(integerLiteral: 40),
                                   y: self.frame.height - 50 - 60,
                                   width: self.frame.width - 80,
                                   height: CGFloat(integerLiteral: 50))
-        self.addSubview(bookButton)
+        self.addSubview(actionButton)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -187,7 +190,12 @@ class DonationBookingView: UIView {
         self.delegate?.donationBookingViewDidRequestForm(self)
     }
     
-    @objc fileprivate func didPressBook(_ sender: UIButton) {        
-        self.delegate?.donationBookingViewDidRequestBook(self, donationBooking: donationBooking)
+    @objc fileprivate func didPressMainActionBook(_ sender: UIButton) {
+        switch style {
+        case .book:
+            self.delegate?.donationBookingViewDidRequestBook(self, donationBooking: donationBooking)
+        case .view :
+            self.delegate?.donationBookingViewDidRequestCancelBooking(self, donationBooking: donationBooking)
+        }
     }
 }

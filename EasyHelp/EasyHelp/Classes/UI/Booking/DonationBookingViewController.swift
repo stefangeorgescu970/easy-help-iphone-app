@@ -8,13 +8,31 @@
 
 import UIKit
 
+public enum DonationBookingControllerStyle {
+    case book, view
+}
+
 class DonationBookingViewController: UIViewController {
     
     var donationBookingView: DonationBookingView
+    var style: DonationBookingControllerStyle
     
-    init(donationBooking: DonationBooking) {
-        self.donationBookingView = DonationBookingView(frame: CGRect(x: 0, y: AppScreenUtils.screenStatusBarAndHeaderHeight, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - AppScreenUtils.screenStatusBarAndHeaderHeight), donationBooking: donationBooking)
+    init(donationBooking: DonationBooking, style: DonationBookingControllerStyle) {
+        self.style = style
+        self.donationBookingView = DonationBookingView(frame: CGRect(x: 0,
+                                                                     y: AppScreenUtils.screenStatusBarAndHeaderHeight,
+                                                                     width: UIScreen.main.bounds.width,
+                                                                     height: UIScreen.main.bounds.height - AppScreenUtils.screenStatusBarAndHeaderHeight),
+                                                       donationBooking: donationBooking,
+                                                       style: style)
         super.init(nibName: nil, bundle: nil)
+        
+        if style == .view {
+            let closeBtn = AppInterfaceFormatter.navigationBarButtonWithIcon(UIImage(named: "close_icon")!, highlightIcon: nil)
+            closeBtn.addTarget(self, action: #selector(DonationBookingViewController.onClose(_:)), for: UIControl.Event.touchUpInside)
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeBtn)
+        }
+        
         self.donationBookingView.delegate = self
         self.title = "Booking Summary"
     }
@@ -28,14 +46,28 @@ class DonationBookingViewController: UIViewController {
         self.view.backgroundColor = AppColors.white
         self.view.addSubview(donationBookingView)
     }
+    
+    @objc fileprivate func onClose(_ sender: UIButton) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension DonationBookingViewController: DonationBookingViewDelegate {
-    func donationBookingViewDidRequestBook(_ sender: DonationBookingView, donationBooking: DonationBooking) {
-        AppServices.donorService.bookDonation(donationBooking, callback: { (error) in
+    func donationBookingViewDidRequestCancelBooking(_ sender: DonationBookingView, donationBooking: DonationBooking) {
+        AppServices.donorService.cancelBooking(donationBooking) { (error) in
             if let error = error {
                 // handle error
             } else {
+                NotificationCenter.default.post(name: .GoBackToLanding, object: nil)
+            }
+        }
+    }
+    
+    func donationBookingViewDidRequestBook(_ sender: DonationBookingView, donationBooking: DonationBooking) {
+        AppServices.donorService.bookDonation(donationBooking, callback: { (id, error) in
+            if let error = error {
+                // handle error
+            } else if let id = id {
                 let bookDate = donationBooking.date
                 var notifComponents = DateComponents()
                 notifComponents.year = Calendar.current.component(.year, from: bookDate)
@@ -48,6 +80,7 @@ extension DonationBookingViewController: DonationBookingViewDelegate {
                 let notifDate = Calendar.current.date(from: notifComponents)!
                 PushNotifUtils.sharedInstance.scheduleLocalNotification(onDate: notifDate, withMessage: "Please check your donation form to speed up the donation tomorrow.")
                 
+                donationBooking.id = id
                 NotificationCenter.default.post(name: .GoBackToLanding, object: donationBooking)
             }
         })

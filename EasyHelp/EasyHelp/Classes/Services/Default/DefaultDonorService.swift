@@ -13,7 +13,7 @@ class DefaultDonorService: DonorService {
     private let userDefaultsKey = "currentDonationForm"
     private let userDefaultsTokenKey = "tokenKey"
     
-    func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ()) {
+    func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (Int?, NSError?) -> ()) {
         let request = ServerRequest(endpoint: "bookDonation", controller: "donor")
         request.addParameter(key: "userId", value: AppServices.profileService.getCurrentUser()!.id)
         request.addParameter(key: "donationCenterId", value: donationBooking.donationCenter.id)
@@ -21,19 +21,17 @@ class DefaultDonorService: DonorService {
         request.addParameter(key: "patientSSN", value: donationBooking.patientSSN as Any)
         
         let callback = SimpleServerCallback(successBlock: { (data) in
-            if let success = data as? Bool {
-                if success {
-                    callback(nil)
-                    return
-                }
+            if let id = data as? Int {
+                callback(id, nil)
+            } else {
+                callback(nil, ErrorUtils.getDefaultServerError())
             }
-            callback(ErrorUtils.getDefaultServerError())
         }, errorBlock: { (error) in
             let error = error as! NSError
-            callback(error)
+            callback(nil, error)
         })
         
-        Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
+        Server.sharedInstance.send(request, parser: NewIdResponseParser(), callback: callback)
     }
     
     func sendDonationFormToServer(_ donationForm: DonationForm, callback: @escaping (NSError?) -> ()) {
@@ -198,5 +196,26 @@ class DefaultDonorService: DonorService {
         })
         
         Server.sharedInstance.send(request, parser: AvailableDateParser(), callback: callback)
+    }
+    
+    func cancelBooking(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ()) {
+        let request = ServerRequest(endpoint: "cancelBooking", controller: "donor")
+        request.addParameter(key: "userId", value: AppServices.profileService.getCurrentUser()!.id)
+        request.addParameter(key: "id", value: donationBooking.id)
+        
+        let callback = SimpleServerCallback(successBlock: { (data) in
+            if let success = data as? Bool {
+                if success {
+                    callback(nil)
+                    return
+                }
+            }
+            callback(ErrorUtils.getDefaultServerError())
+        }, errorBlock: { (error) in
+            let error = error as! NSError
+            callback(error)
+        })
+        
+        Server.sharedInstance.send(request, parser: ServerResponseParser(), callback: callback)
     }
 }
