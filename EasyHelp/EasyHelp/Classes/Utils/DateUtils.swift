@@ -11,14 +11,14 @@ import Foundation
 class DateUtils: NSObject {
     static func parseServerString(_ stringDate: String) -> Date? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
         return dateFormatter.date(from: stringDate)
     }
     
     static func formatDateForServer(_ date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
         return formatter.string(from: date)
     }
