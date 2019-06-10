@@ -9,8 +9,8 @@
 import Foundation
 
 class MockDonorService: DonorService {
-    func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ()) {
-        
+    func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (Int?, NSError?) -> ()) {
+    
     }
     
     func cancelBooking(_ donationBooking: DonationBooking, callback: @escaping (NSError?) -> ()) {
@@ -34,7 +34,7 @@ class MockDonorService: DonorService {
     }
     
     func getDonationHistory(callback: @escaping ([Donation]?, NSError?) -> ()) {
-        callback(MockGlobalData.getDonationHistory(), nil)
+        callback(MockGlobalData.sharedInstance.getDonationHistory(), nil)
     }
     
     func getDonationCenters(lat: Double?, long: Double?, callback: @escaping ([DonationCenter]?, NSError?) -> ()) {

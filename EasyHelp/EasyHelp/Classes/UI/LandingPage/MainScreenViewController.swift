@@ -25,7 +25,7 @@ class MainScreenViewController: UIViewController {
         AppServices.profileService.getDonationSummary(id: profileData.id) { (data, error) in
             if let data = data {
                 self.innerView.syncView(profileData: self.profileData, donorSummary: data)
-                self.view = self.innerView
+                self.viewDidLoad()
             }
         }
     }
@@ -35,11 +35,21 @@ class MainScreenViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        self.view = innerView
+        self.view = UIView(frame: UIScreen.main.bounds)
+        
+        #if MOCK
+        innerView.frame.origin.y = AppScreenUtils.screenStatusBarAndHeaderHeight
+        #endif
+        
+        self.view.addSubview(innerView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        #if MOCK
+        self.navigationController?.isNavigationBarHidden = false
+        #else
         self.navigationController?.isNavigationBarHidden = true
+        #endif
     }
     
     func syncView(forBooking booking: DonationBooking?) {

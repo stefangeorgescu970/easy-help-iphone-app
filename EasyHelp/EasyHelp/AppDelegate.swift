@@ -18,6 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        #if MOCK
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        window?.rootViewController = UINavigationController(rootViewController: MainMocksTableViewController())
+        window?.makeKeyAndVisible()
+        
+        return true
+        
+        #else
+        
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : AppColors.appRed]
         navBarAppearance.tintColor = AppColors.appRed
@@ -44,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         LocationUtils.sharedInstance.requestAuth()
         return true
+        
+        #endif
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {

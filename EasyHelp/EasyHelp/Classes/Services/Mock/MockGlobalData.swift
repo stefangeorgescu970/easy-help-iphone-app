@@ -9,14 +9,24 @@
 import Foundation
 
 class MockGlobalData: NSObject {
-    static func getUncompleteMockProfile() -> DonorProfileData {
+    static let sharedInstance = MockGlobalData()
+    
+    var summaryHasStreakBegin = false
+    var summaryHasLastDonation = false
+    var summaryHasBooking = false
+    var summaryHasCanHelp = false
+    
+    private override init() {}
+    
+    
+    func getUncompleteMockProfile() -> DonorProfileData {
         let donor =  DonorProfileData(id: 1, email: "donor@mail.com", token: "mockToken", firstName: "a", lastName: "b", isMale: true)
         donor.county = "ALBA"
         
         return donor
     }
     
-    static func getMockProfile() -> DonorProfileData {
+    func getMockProfile() -> DonorProfileData {
         let donor = getUncompleteMockProfile()
         
         donor.firstName = "Stefan"
@@ -30,15 +40,11 @@ class MockGlobalData: NSObject {
         return donor
     }
     
-    static func acceptedAccounts() -> [String: String] {
-        return ["don": "1"]
-    }
-    
-    static func defaultDonationCenter() -> DonationCenter {
+    func defaultDonationCenter() -> DonationCenter {
         return DonationCenter(id: 0, name: "DC", lat: 0, long: 0, address: "some street", county: "ALBA")
     }
     
-    static func getDonationHistory() -> [Donation] {
+    func getDonationHistory() -> [Donation] {
         let donation1 = Donation(id: 0, donationCenter: defaultDonationCenter(), date: Date())
         donation1.testResults = DonationTestResults()
         donation1.testResults?.hiv = true
@@ -47,5 +53,35 @@ class MockGlobalData: NSObject {
 //        donation2.testResults = DonationTestResults()
         
         return [donation2, donation1]
+    }
+    
+    func defaultDonation(withTestResult: Bool, badTestResults: Bool) -> Donation {
+        let donation = Donation(id: 1, donationCenter: defaultDonationCenter(), date: Date())
+        
+        if withTestResult {
+            let testResult = DonationTestResults()
+            testResult.alt = false
+            testResult.hepatitisB = false
+            testResult.hepatitisC = false
+            testResult.vdrl = false
+            testResult.htlv = false
+            testResult.hiv = badTestResults
+            
+            donation.testResults = testResult
+        }
+        
+        return donation
+    }
+    
+    func defaultDonationBooking() -> DonationBooking {
+        let booking = DonationBooking(date: getDateTomorrowAt9(), donationCenter: defaultDonationCenter())
+        
+        return booking
+    }
+    
+    private func getDateTomorrowAt9() -> Date {
+        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+        
+        return Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: tomorrow)!
     }
 }

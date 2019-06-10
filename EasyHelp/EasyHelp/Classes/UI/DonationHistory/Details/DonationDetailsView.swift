@@ -67,7 +67,7 @@ class DonationDetailsView: UIScrollView {
         let label = UILabel()
         label.textColor = AppColors.almostBlack
         label.font = AppFonts.regularFontWithSize(16)
-        label.text = "Test results for this donation are not yet available."
+        label.text = "Test results are not yet available."
         label.sizeToFit()
         return label
     }()
