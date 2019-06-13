@@ -19,11 +19,6 @@ target 'EasyHelp Dev' do
         inherit! :complete
     end
     
-    target 'EasyHelpTests' do
-        inherit! :search_paths
-        # Pods for testing
-    end
-
     target 'EasyHelpUITests' do
         inherit! :search_paths
         # Pods for testing
