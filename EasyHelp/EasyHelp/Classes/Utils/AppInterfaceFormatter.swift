@@ -178,7 +178,7 @@ class AppInterfaceFormatter {
         return label.frame.height
     }
     
-    static func addDefaultInfoRow(toView: UIView, leftText: String, rightText: String, marginSpacing: CGFloat, yOffset: CGFloat, isAlert: Bool) -> CGFloat {
+    static func addDefaultInfoRow(toView: UIView, leftText: String, rightText: String, marginSpacing: CGFloat, yOffset: CGFloat, isAlert: Bool, accIdStub: String, index: Int) -> CGFloat {
         let leftLabel = UILabel()
         leftLabel.font = AppFonts.boldFontWithSize(16)
         leftLabel.text = leftText
@@ -188,6 +188,7 @@ class AppInterfaceFormatter {
                                  y: yOffset,
                                  width: leftLabel.frame.width,
                                  height: leftLabel.frame.height)
+        leftLabel.accessibilityIdentifier = "\(index)-left\(accIdStub)"
         toView.addSubview(leftLabel)
         
         let rightLabelMaximumWidth = toView.frame.width - leftLabel.frame.width - 3 * marginSpacing
@@ -201,6 +202,7 @@ class AppInterfaceFormatter {
                                   y: yOffset,
                                   width: min(rightLabelMaximumWidth, rightLabel.frame.width),
                                   height: rightLabel.frame.height)
+        rightLabel.accessibilityIdentifier = "\(index)-right\(accIdStub)"
         toView.addSubview(rightLabel)
         
         return rightLabel.frame.height

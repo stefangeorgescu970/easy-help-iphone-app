@@ -74,6 +74,16 @@ struct TestStrings {
         
         struct DonationDetails {
             static let view = "donation-details-view"
+            static let title = "title-donation-details-view"
+            static let subtitle = "subtitle-donation-details-view"
+            static let hospitalIcon = "hospital-icon-donation-details-view"
+            static let name = "name-donation-details-view"
+            static let county = "county-donation-details-view"
+            static let address = "address-donation-details-view"
+            static let resultsTitle = "results-title-donation-details-view"
+            static let resultsSubtitle = "results-subtitle-donation-details-view"
+            static let rowStub = "-row-donation-details-view"
+            static let medicReco = "medic-reco-donation-details-view"
         }
     }
 }

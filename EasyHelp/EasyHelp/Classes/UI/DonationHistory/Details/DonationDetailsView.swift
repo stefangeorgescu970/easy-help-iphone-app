@@ -24,6 +24,7 @@ class DonationDetailsView: UIScrollView {
         label.font = AppFonts.boldFontWithSize(24)
         label.text = "Blood Donation"
         label.sizeToFit()
+        label.accessibilityIdentifier = AccIds.title
         return label
     }()
     
@@ -31,12 +32,14 @@ class DonationDetailsView: UIScrollView {
         let label = UILabel()
         label.textColor = AppColors.almostBlack
         label.font = AppFonts.regularFontWithSize(16)
+        label.accessibilityIdentifier = AccIds.subtitle
         return label
     }()
     
     private let hospitalIcon: UIImageView = {
         let image = UIImage(named: "hospital")
         let imageView = UIImageView(image: image?.resize(to: CGSize(width: 60, height: 60)))
+        imageView.accessibilityIdentifier = AccIds.hospitalIcon
         return imageView
     }()
     
@@ -44,6 +47,7 @@ class DonationDetailsView: UIScrollView {
         let label = UILabel()
         label.textColor = AppColors.almostBlack
         label.font = AppFonts.boldFontWithSize(18)
+        label.accessibilityIdentifier = AccIds.name
         return label
     }()
     
@@ -51,6 +55,7 @@ class DonationDetailsView: UIScrollView {
         let label = UILabel()
         label.textColor = AppColors.almostBlack
         label.font = AppFonts.regularFontWithSize(16)
+        label.accessibilityIdentifier = AccIds.county
         return label
     }()
     
@@ -62,6 +67,7 @@ class DonationDetailsView: UIScrollView {
         label.font = AppFonts.boldFontWithSize(20)
         label.text = "Test Results"
         label.sizeToFit()
+        label.accessibilityIdentifier = AccIds.resultsTitle
         return label
     }()
     
@@ -71,12 +77,14 @@ class DonationDetailsView: UIScrollView {
         label.font = AppFonts.regularFontWithSize(16)
         label.text = "Test results are not yet available."
         label.sizeToFit()
+        label.accessibilityIdentifier = AccIds.resultsSubtitle
         return label
     }()
     
     
     init(donation: Donation, frame: CGRect) {
         self.addressLink = AppInterfaceFormatter.createLink(donation.donationCenter.address)
+        addressLink.accessibilityIdentifier = AccIds.address
         super.init(frame: frame)
         accessibilityIdentifier = AccIds.view
         
@@ -111,6 +119,7 @@ class DonationDetailsView: UIScrollView {
         self.addSubview(resultsTitleLabel)
         
         var currentY = resultsTitleLabel.frame.maxY + 10
+        var currentRow = 0
         
         if let testResults = donation.testResults {
             var hadProblems = false
@@ -127,14 +136,18 @@ class DonationDetailsView: UIScrollView {
                                                                         rightText: right,
                                                                         marginSpacing: 20,
                                                                         yOffset: currentY,
-                                                                        isAlert: isProblem)
+                                                                        isAlert: isProblem,
+                                                                        accIdStub: AccIds.rowStub,
+                                                                        index: currentRow)
                 currentY += rowHeight + 10
+                currentRow += 1
                 AppInterfaceFormatter.addSeparator(view: self, yOffset: currentY, marginSpacing: 20, height: 0.5)
                 currentY += 15 + 1
             }
             if hadProblems {
                 let label = AppInterfaceFormatter.createLongLabel(text: "It is recommended that you get in touch with your doctor as soon as possible.")
                 label.frame = CGRect(x: 20, y: currentY, width: self.bounds.width - 40, height: 75)
+                label.accessibilityIdentifier = AccIds.medicReco
                 self.addSubview(label)
                 currentY += 75
             }

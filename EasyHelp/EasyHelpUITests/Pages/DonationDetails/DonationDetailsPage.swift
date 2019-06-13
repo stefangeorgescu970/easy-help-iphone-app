@@ -31,11 +31,58 @@ class DonationDetailsPage: Page {
     
     // MARK: - UI elements declaration
     
+    lazy private var titleLabel: XCUIElement = { return self.rootElement.staticTexts[AccIds.title] }()
+    lazy private var subtitleLabel: XCUIElement = { return self.rootElement.staticTexts[AccIds.subtitle] }()
+    lazy private var hospitalIcon: XCUIElement = { return self.rootElement.images[AccIds.hospitalIcon] }()
+    lazy private var nameLabel: XCUIElement = { return self.rootElement.staticTexts[AccIds.name] }()
+    lazy private var countyLabel: XCUIElement = { return self.rootElement.staticTexts[AccIds.county] }()
+    lazy private var addressButton: XCUIElement = { return self.rootElement.buttons[AccIds.address] }()
+    lazy private var resultsTitleLabel: XCUIElement = { return self.rootElement.staticTexts[AccIds.resultsTitle] }()
+    lazy private var resultsSubtitleLabel: XCUIElement = { return self.rootElement.staticTexts[AccIds.resultsSubtitle] }()
+    lazy private var medicRecoLabel: XCUIElement = { return self.rootElement.staticTexts[AccIds.medicReco] }()
    
     // MARK: - Access page content
     
-  
-    // MARK: - Interacting with page content
+    func getTitleText() -> String? {
+        return PageUtils.getStringOptional(fromElement: titleLabel)
+    }
     
-
+    func getSubtitleText() -> String? {
+        return PageUtils.getStringOptional(fromElement: subtitleLabel)
+    }
+    
+    func hospitalIconExists() -> Bool {
+        return hospitalIcon.exists
+    }
+    
+    func getNameText() -> String? {
+        return PageUtils.getStringOptional(fromElement: nameLabel)
+    }
+    
+    func getCountyText() -> String? {
+        return PageUtils.getStringOptional(fromElement: countyLabel)
+    }
+    
+    func getAddressText() -> String? {
+        return PageUtils.getStringOptional(fromElement: addressButton)
+    }
+    
+    func getResultsTitleText() -> String? {
+        return PageUtils.getStringOptional(fromElement: resultsTitleLabel)
+    }
+    
+    func getResultsSubtitleText() -> String? {
+        return PageUtils.getStringOptional(fromElement: resultsSubtitleLabel)
+    }
+    
+    func getRowInfo(atIndex: Int) -> (left: String?, right: String?) {
+        let left = PageUtils.getStringOptional(fromElement: rootElement.staticTexts["\(atIndex)-left\(AccIds.rowStub)"])
+        let right = PageUtils.getStringOptional(fromElement: rootElement.staticTexts["\(atIndex)-right\(AccIds.rowStub)"])
+        
+        return (left, right)
+    }
+    
+    func getMedicRecommandationText() -> String? {
+        return PageUtils.getStringOptional(fromElement: medicRecoLabel)
+    }
 }
