@@ -18,6 +18,8 @@ protocol MainScreenViewDelegate: class {
 
 class MainScreenView: UIView {
     
+    private typealias AccIds = TestStrings.App.MainScreen
+    
     weak var delegate: MainScreenViewDelegate?
     var donorSummary: DonorSummaryData?
     
@@ -63,6 +65,7 @@ class MainScreenView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        accessibilityIdentifier = AccIds.view
     
         self.addSubview(logoLabel)
         self.addSubview(nameLabel)

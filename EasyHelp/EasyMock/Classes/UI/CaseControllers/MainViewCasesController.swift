@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewCasesController: UIViewController {
     
+    private typealias AccIds = TestStrings.Mocks.MainViewCasesController
+    
     let tableView: UITableView
     let cellIdentifier = "cell-id"
     
@@ -21,6 +23,7 @@ class MainViewCasesController: UIViewController {
     init() {
         self.tableView = UITableView(frame: UIScreen.main.bounds)
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        self.tableView.accessibilityIdentifier = AccIds.view
         
         super.init(nibName: nil, bundle: nil)
         
@@ -28,6 +31,11 @@ class MainViewCasesController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        hasStreakSwitch.accessibilityIdentifier = AccIds.hasMaxDonationsSwitch
+        hasLastDonationSwitch.accessibilityIdentifier = AccIds.hasRecentlyDonatedSwitch
+        hasBookingSwitch.accessibilityIdentifier = AccIds.hasBookingSwitch
+        canHelpSwitch.accessibilityIdentifier = AccIds.canHelpDonorSwitch
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -89,6 +97,7 @@ extension MainViewCasesController: UITableViewDataSource {
             cell.selectionStyle = .none
         case 4:
             cell.textLabel?.text = "Show View"
+            cell.textLabel?.accessibilityIdentifier = AccIds.showViewCell
         default:
             break
         }

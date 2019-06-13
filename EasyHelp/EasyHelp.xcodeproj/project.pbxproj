@@ -180,6 +180,19 @@
 		4FC265F72296849500133A0B /* DonationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC265F42296849400133A0B /* DonationDetailsView.swift */; };
 		4FC7AA3722AE4AC600DEC393 /* MainViewCasesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC7AA3622AE4AC600DEC393 /* MainViewCasesController.swift */; };
 		4FC7AA3D22AE4B1100DEC393 /* DonationDetailsCasesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC7AA3C22AE4B1100DEC393 /* DonationDetailsCasesController.swift */; };
+		4FE43C5822B21E2300788B24 /* PageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C5722B21E2300788B24 /* PageUtils.swift */; };
+		4FE43C5A22B21E4400788B24 /* TestStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C5922B21E4400788B24 /* TestStrings.swift */; };
+		4FE43C5B22B21E4400788B24 /* TestStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C5922B21E4400788B24 /* TestStrings.swift */; };
+		4FE43C5C22B21E4400788B24 /* TestStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C5922B21E4400788B24 /* TestStrings.swift */; };
+		4FE43C5D22B21E4400788B24 /* TestStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C5922B21E4400788B24 /* TestStrings.swift */; };
+		4FE43C5F22B21FC500788B24 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C5E22B21FC500788B24 /* Page.swift */; };
+		4FE43C6222B21FFF00788B24 /* MainMocksPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C6122B21FFF00788B24 /* MainMocksPage.swift */; };
+		4FE43C6422B2206600788B24 /* MainViewCasesControllerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C6322B2206600788B24 /* MainViewCasesControllerPage.swift */; };
+		4FE43C6622B2207400788B24 /* DonationDetailsCasesControllerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C6522B2207400788B24 /* DonationDetailsCasesControllerPage.swift */; };
+		4FE43C6922B2217600788B24 /* MainScreenViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C6822B2217600788B24 /* MainScreenViewPage.swift */; };
+		4FE43C6D22B2220C00788B24 /* DonationDetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C6C22B2220C00788B24 /* DonationDetailsPage.swift */; };
+		4FE43C7022B2244E00788B24 /* MainScreenViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C6F22B2244E00788B24 /* MainScreenViewTests.swift */; };
+		4FE43C7222B2246100788B24 /* DonationDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE43C7122B2246100788B24 /* DonationDetailsTests.swift */; };
 		4FEF9915223A884A00351500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814AFD62148393400C36BDA /* AppDelegate.swift */; };
 		4FEF9916223A884A00351500 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C33214E7F8800828144 /* ServerRequest.swift */; };
 		4FEF9917223A884A00351500 /* SimpleServerCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C39214E86BB00828144 /* SimpleServerCallback.swift */; };
@@ -261,7 +274,6 @@
 		F814AFDE2148393900C36BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F814AFDD2148393900C36BDA /* Assets.xcassets */; };
 		F814AFE12148393900C36BDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F814AFDF2148393900C36BDA /* LaunchScreen.storyboard */; };
 		F814AFEC2148393900C36BDA /* EasyHelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814AFEB2148393900C36BDA /* EasyHelpTests.swift */; };
-		F814AFF72148393900C36BDA /* EasyHelpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814AFF62148393900C36BDA /* EasyHelpUITests.swift */; };
 		F83C0C34214E7F8800828144 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C33214E7F8800828144 /* ServerRequest.swift */; };
 		F83C0C36214E7FCE00828144 /* ServerResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C35214E7FCE00828144 /* ServerResponseParser.swift */; };
 		F83C0C3A214E86BB00828144 /* SimpleServerCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0C39214E86BB00828144 /* SimpleServerCallback.swift */; };
@@ -269,6 +281,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4FE43C5322B21D4400788B24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F814AFCB2148393400C36BDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FEF992A223A888E00351500;
+			remoteInfo = "EasyHelp Mock";
+		};
 		F814AFE82148393900C36BDA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F814AFCB2148393400C36BDA /* Project object */;
@@ -356,6 +375,16 @@
 		4FC265F42296849400133A0B /* DonationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationDetailsView.swift; sourceTree = "<group>"; };
 		4FC7AA3622AE4AC600DEC393 /* MainViewCasesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCasesController.swift; sourceTree = "<group>"; };
 		4FC7AA3C22AE4B1100DEC393 /* DonationDetailsCasesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationDetailsCasesController.swift; sourceTree = "<group>"; };
+		4FE43C5722B21E2300788B24 /* PageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageUtils.swift; sourceTree = "<group>"; };
+		4FE43C5922B21E4400788B24 /* TestStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStrings.swift; sourceTree = "<group>"; };
+		4FE43C5E22B21FC500788B24 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		4FE43C6122B21FFF00788B24 /* MainMocksPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMocksPage.swift; sourceTree = "<group>"; };
+		4FE43C6322B2206600788B24 /* MainViewCasesControllerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCasesControllerPage.swift; sourceTree = "<group>"; };
+		4FE43C6522B2207400788B24 /* DonationDetailsCasesControllerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationDetailsCasesControllerPage.swift; sourceTree = "<group>"; };
+		4FE43C6822B2217600788B24 /* MainScreenViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewPage.swift; sourceTree = "<group>"; };
+		4FE43C6C22B2220C00788B24 /* DonationDetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationDetailsPage.swift; sourceTree = "<group>"; };
+		4FE43C6F22B2244E00788B24 /* MainScreenViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewTests.swift; sourceTree = "<group>"; };
+		4FE43C7122B2246100788B24 /* DonationDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationDetailsTests.swift; sourceTree = "<group>"; };
 		4FEF9928223A884A00351500 /* EasyHelp Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyHelp Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEF9940223A888E00351500 /* EasyHelp Mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyHelp Mock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEF9943223A8A7C00351500 /* Settings-Dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Settings-Dev.plist"; sourceTree = "<group>"; };
@@ -402,7 +431,6 @@
 		F814AFEB2148393900C36BDA /* EasyHelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyHelpTests.swift; sourceTree = "<group>"; };
 		F814AFED2148393900C36BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F814AFF22148393900C36BDA /* EasyHelpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyHelpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F814AFF62148393900C36BDA /* EasyHelpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyHelpUITests.swift; sourceTree = "<group>"; };
 		F814AFF82148393900C36BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F83C0C33214E7F8800828144 /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
 		F83C0C35214E7FCE00828144 /* ServerResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseParser.swift; sourceTree = "<group>"; };
@@ -677,6 +705,61 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		4FE43C5522B21DE900788B24 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				4FE43C6A22B221ED00788B24 /* DonationDetails */,
+				4FE43C6722B2215600788B24 /* MainView */,
+				4FE43C6022B21FE900788B24 /* Mocks */,
+				4FE43C5E22B21FC500788B24 /* Page.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		4FE43C5622B21DEF00788B24 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4FE43C5722B21E2300788B24 /* PageUtils.swift */,
+				4FE43C5922B21E4400788B24 /* TestStrings.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4FE43C6022B21FE900788B24 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				4FE43C6122B21FFF00788B24 /* MainMocksPage.swift */,
+				4FE43C6322B2206600788B24 /* MainViewCasesControllerPage.swift */,
+				4FE43C6522B2207400788B24 /* DonationDetailsCasesControllerPage.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		4FE43C6722B2215600788B24 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				4FE43C6822B2217600788B24 /* MainScreenViewPage.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		4FE43C6A22B221ED00788B24 /* DonationDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4FE43C6C22B2220C00788B24 /* DonationDetailsPage.swift */,
+			);
+			path = DonationDetails;
+			sourceTree = "<group>";
+		};
+		4FE43C6E22B2242F00788B24 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4FE43C6F22B2244E00788B24 /* MainScreenViewTests.swift */,
+				4FE43C7122B2246100788B24 /* DonationDetailsTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		4FEF9942223A8A4E00351500 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -840,7 +923,9 @@
 		F814AFF52148393900C36BDA /* EasyHelpUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F814AFF62148393900C36BDA /* EasyHelpUITests.swift */,
+				4FE43C6E22B2242F00788B24 /* Tests */,
+				4FE43C5622B21DEF00788B24 /* Utils */,
+				4FE43C5522B21DE900788B24 /* Pages */,
 				F814AFF82148393900C36BDA /* Info.plist */,
 			);
 			path = EasyHelpUITests;
@@ -1034,6 +1119,7 @@
 			);
 			dependencies = (
 				F814AFF42148393900C36BDA /* PBXTargetDependency */,
+				4FE43C5422B21D4400788B24 /* PBXTargetDependency */,
 			);
 			name = EasyHelpUITests;
 			productName = EasyHelpUITests;
@@ -1086,7 +1172,7 @@
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
-						TestTargetID = F814AFD22148393400C36BDA;
+						TestTargetID = 4FEF992A223A888E00351500;
 					};
 				};
 			};
@@ -1398,6 +1484,7 @@
 				4F30A5E7225F6D6D006C5B15 /* LoadingView.swift in Sources */,
 				4F2D56662261FB8E002445C9 /* MainScreenNextBookingView.swift in Sources */,
 				4FEF991B223A884A00351500 /* ServerResponseParser.swift in Sources */,
+				4FE43C5A22B21E4400788B24 /* TestStrings.swift in Sources */,
 				4FEF9967223A917600351500 /* Strings.swift in Sources */,
 				4FB7835222550160007E741E /* UIViewController+DismissKeyboard.swift in Sources */,
 				4FB7834D2254FD60007E741E /* DefaultMiscService.swift in Sources */,
@@ -1453,6 +1540,7 @@
 				4FEF994F223A8B8A00351500 /* AppSettings.swift in Sources */,
 				4FEF9962223A914C00351500 /* LoginViewController.swift in Sources */,
 				4FEF992E223A888E00351500 /* ServerRequest.swift in Sources */,
+				4FE43C5C22B21E4400788B24 /* TestStrings.swift in Sources */,
 				4FB783582255026B007E741E /* AppScreenUtils.swift in Sources */,
 				4FB7834B2254FD51007E741E /* MiscService.swift in Sources */,
 				4FEF9958223A904C00351500 /* LandingPageTabBarViewController.swift in Sources */,
@@ -1573,6 +1661,7 @@
 				4F30A5E8225F6D6D006C5B15 /* LoadingView.swift in Sources */,
 				4F2D56672261FB8E002445C9 /* MainScreenNextBookingView.swift in Sources */,
 				F83C0C36214E7FCE00828144 /* ServerResponseParser.swift in Sources */,
+				4FE43C5B22B21E4400788B24 /* TestStrings.swift in Sources */,
 				4FEF9968223A917600351500 /* Strings.swift in Sources */,
 				4FB7835322550160007E741E /* UIViewController+DismissKeyboard.swift in Sources */,
 				4FB7834E2254FD60007E741E /* DefaultMiscService.swift in Sources */,
@@ -1621,13 +1710,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F814AFF72148393900C36BDA /* EasyHelpUITests.swift in Sources */,
+				4FE43C6922B2217600788B24 /* MainScreenViewPage.swift in Sources */,
+				4FE43C6422B2206600788B24 /* MainViewCasesControllerPage.swift in Sources */,
+				4FE43C5822B21E2300788B24 /* PageUtils.swift in Sources */,
+				4FE43C7022B2244E00788B24 /* MainScreenViewTests.swift in Sources */,
+				4FE43C6D22B2220C00788B24 /* DonationDetailsPage.swift in Sources */,
+				4FE43C7222B2246100788B24 /* DonationDetailsTests.swift in Sources */,
+				4FE43C6622B2207400788B24 /* DonationDetailsCasesControllerPage.swift in Sources */,
+				4FE43C6222B21FFF00788B24 /* MainMocksPage.swift in Sources */,
+				4FE43C5F22B21FC500788B24 /* Page.swift in Sources */,
+				4FE43C5D22B21E4400788B24 /* TestStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4FE43C5422B21D4400788B24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FEF992A223A888E00351500 /* EasyHelp Mock */;
+			targetProxy = 4FE43C5322B21D4400788B24 /* PBXContainerItemProxy */;
+		};
 		F814AFE92148393900C36BDA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F814AFD22148393400C36BDA /* EasyHelp Local */;
@@ -1886,6 +1989,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WFZK78SX5;
 				INFOPLIST_FILE = EasyHelpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.easyhelp.app.EasyHelpTests;
@@ -1903,6 +2007,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WFZK78SX5;
 				INFOPLIST_FILE = EasyHelpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.easyhelp.app.EasyHelpTests;
@@ -1918,14 +2023,17 @@
 			baseConfigurationReference = 475B9790CE1462D354F14F67 /* Pods-EasyHelpUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WFZK78SX5;
 				INFOPLIST_FILE = EasyHelpUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.easyhelp.app.EasyHelpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EasyHelp;
+				TEST_TARGET_NAME = "EasyHelp Mock";
 			};
 			name = Debug;
 		};
@@ -1934,14 +2042,17 @@
 			baseConfigurationReference = C952A0ADD180C27AC34B3EDE /* Pods-EasyHelpUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WFZK78SX5;
 				INFOPLIST_FILE = EasyHelpUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.easyhelp.app.EasyHelpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EasyHelp;
+				TEST_TARGET_NAME = "EasyHelp Mock";
 			};
 			name = Release;
 		};

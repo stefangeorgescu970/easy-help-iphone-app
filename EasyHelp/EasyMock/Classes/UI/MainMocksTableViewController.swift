@@ -10,12 +10,15 @@ import UIKit
 
 class MainMocksTableViewController: UIViewController {
     
+    private typealias AccIds = TestStrings.Mocks.MainTableView
+    
     let tableView: UITableView
     let cellIdentifier = "cell-id"
     
     init() {
         self.tableView = UITableView(frame: UIScreen.main.bounds)
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        self.tableView.accessibilityIdentifier = AccIds.view
         
         super.init(nibName: nil, bundle: nil)
         
@@ -66,8 +69,10 @@ extension MainMocksTableViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "Main View Cases"
+            cell.textLabel?.accessibilityIdentifier = AccIds.mainViewCasesCell
         case 1:
             cell.textLabel?.text = "Donation Details Cases"
+            cell.textLabel?.accessibilityIdentifier = AccIds.donationDetailsCasesCell
         default:
             break
         }

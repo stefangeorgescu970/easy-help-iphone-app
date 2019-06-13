@@ -10,6 +10,8 @@ import UIKit
 
 class DonationDetailsView: UIScrollView {
     
+    private typealias AccIds = TestStrings.App.DonationDetails
+    
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "E, d MMM yyyy"
@@ -76,6 +78,7 @@ class DonationDetailsView: UIScrollView {
     init(donation: Donation, frame: CGRect) {
         self.addressLink = AppInterfaceFormatter.createLink(donation.donationCenter.address)
         super.init(frame: frame)
+        accessibilityIdentifier = AccIds.view
         
         self.backgroundColor = AppColors.white
         
@@ -112,7 +115,11 @@ class DonationDetailsView: UIScrollView {
         if let testResults = donation.testResults {
             var hadProblems = false
             
-            for (left, right) in testResults.buildTestedDisease() {
+            for (left, right) in testResults.buildTestedDisease().sorted(by: { (arg0, arg1) -> Bool in
+                let (key1, _) = arg0
+                let (key2, _) = arg1
+                return key1 < key2
+            }) {
                 let isProblem = right == "Positive"
                 hadProblems = hadProblems || isProblem
                 let rowHeight = AppInterfaceFormatter.addDefaultInfoRow(toView: self,

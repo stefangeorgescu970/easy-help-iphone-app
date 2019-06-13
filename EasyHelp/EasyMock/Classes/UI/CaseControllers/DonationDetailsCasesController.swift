@@ -10,6 +10,8 @@ import UIKit
 
 class DonationDetailsCasesController: UIViewController {
     
+    private typealias AccIds = TestStrings.Mocks.DonationDetailsCasesController
+    
     let tableView: UITableView
     let cellIdentifier = "cell-id"
     
@@ -19,6 +21,7 @@ class DonationDetailsCasesController: UIViewController {
     init() {
         self.tableView = UITableView(frame: UIScreen.main.bounds)
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        self.tableView.accessibilityIdentifier = AccIds.view
         
         super.init(nibName: nil, bundle: nil)
         
@@ -26,6 +29,9 @@ class DonationDetailsCasesController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        hasResultsSwitch.accessibilityIdentifier = AccIds.hasResultsSwitch
+        badResultsSwitch.accessibilityIdentifier = AccIds.areResultsBadSwitch
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -69,11 +75,12 @@ extension DonationDetailsCasesController: UITableViewDataSource {
             cell.accessoryView = hasResultsSwitch
             cell.selectionStyle = .none
         case 1:
-            cell.textLabel?.text = "Has Bad Results"
+            cell.textLabel?.text = "Are Results Bad"
             cell.accessoryView = badResultsSwitch
             cell.selectionStyle = .none
         case 2:
             cell.textLabel?.text = "Show View"
+            cell.textLabel?.accessibilityIdentifier = AccIds.showViewCell
         default:
             break
         }
