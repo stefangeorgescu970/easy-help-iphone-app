@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-class MainScreenViewPage: Page {
+class MainScreenViewPage: Page, MainScreenCanBookPage, MainScreenNextBookingPage, MainScreenTooManyDonationsPage, MainScreenRecentDonationPage {
     
     // MARK: - Singleton and Abstract Parent Class Declarations
     
@@ -31,13 +31,36 @@ class MainScreenViewPage: Page {
     
     // MARK: - UI elements declaration
     
-   
+    lazy private var logoLabel: XCUIElement = { return self.rootElement.staticTexts[AccIds.logo] }()
+    lazy private var nameLabel: XCUIElement = { return self.rootElement.staticTexts[AccIds.name] }()
+    lazy private var donatedLabel: XCUIElement = { return self.rootElement.staticTexts[AccIds.donated] }()
+    lazy private var encourageLabel: XCUIElement = { return self.rootElement.staticTexts[AccIds.encourage] }()
+    lazy private var whyButton: XCUIElement = { return self.rootElement.buttons[AccIds.whyButton] }()
+    lazy private var howButton: XCUIElement = { return self.rootElement.buttons[AccIds.howButton] }()
     
     // MARK: - Access page content
     
-
+    func getLogoText() -> String? {
+        return PageUtils.getStringOptional(fromElement: logoLabel)
+    }
     
-    // MARK: - Interacting with page content
+    func getNameText() -> String? {
+        return PageUtils.getStringOptional(fromElement: nameLabel)
+    }
     
-
+    func getDonatedLabelText() -> String? {
+        return PageUtils.getStringOptional(fromElement: donatedLabel)
+    }
+    
+    func getEncourageLabelText() -> String? {
+        return PageUtils.getStringOptional(fromElement: encourageLabel)
+    }
+    
+    func whyButtonExists() -> Bool {
+        return whyButton.exists
+    }
+    
+    func howButtonExists() -> Bool {
+        return howButton.exists
+    }
 }

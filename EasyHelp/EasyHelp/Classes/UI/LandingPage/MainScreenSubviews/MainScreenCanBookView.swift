@@ -14,6 +14,8 @@ protocol MainScreenCanBookViewDelegate: class {
 
 class MainScreenCanBookView: UIView {
     
+    private typealias AccIds = TestStrings.App.MainScreen.CanBook
+    
     weak var delegate: MainScreenCanBookViewDelegate?
     
     private let titleLabel: UILabel = {
@@ -22,6 +24,7 @@ class MainScreenCanBookView: UIView {
         label.font = AppFonts.boldFontWithSize(16)
         label.contentMode = .center
         label.textAlignment = .center
+        label.accessibilityIdentifier = AccIds.title
         
         return label
     }()
@@ -32,6 +35,7 @@ class MainScreenCanBookView: UIView {
         label.font = AppFonts.regularFontWithSize(14)
         label.contentMode = .center
         label.textAlignment = .center
+        label.accessibilityIdentifier = AccIds.subtitle
         
         return label
     }()
@@ -42,6 +46,7 @@ class MainScreenCanBookView: UIView {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = AppColors.appRed
         button.layer.cornerRadius = 8
+        button.accessibilityIdentifier = AccIds.button
         
         button.addTarget(self, action: #selector(MainScreenCanBookView.didPressBook(_:)), for: .touchUpInside)
         
@@ -50,6 +55,7 @@ class MainScreenCanBookView: UIView {
     
     init(frame: CGRect, numberOfPeople: Int?) {
         super.init(frame: frame)
+        accessibilityIdentifier = AccIds.view
         
         titleLabel.text = "You are eligible for booking a donation!"
         titleLabel.sizeToFit()

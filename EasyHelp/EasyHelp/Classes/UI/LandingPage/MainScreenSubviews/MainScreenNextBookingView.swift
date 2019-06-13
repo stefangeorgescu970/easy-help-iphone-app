@@ -13,6 +13,9 @@ protocol MainScreenNextBookingViewDelegate: class {
 }
 
 class MainScreenNextBookingView: UIView {
+    
+    private typealias AccIds = TestStrings.App.MainScreen.NextBooking
+    
     weak var delegate: MainScreenNextBookingViewDelegate?
     var donationBooking: DonationBooking
     
@@ -22,6 +25,7 @@ class MainScreenNextBookingView: UIView {
         label.font = AppFonts.boldFontWithSize(16)
         label.contentMode = .center
         label.textAlignment = .center
+        label.accessibilityIdentifier = AccIds.title
         
         return label
     }()
@@ -29,6 +33,7 @@ class MainScreenNextBookingView: UIView {
     private let bookingIcon: UIImageView = {
         let image = UIImage(named: "donation_booking_landing")
         let imageView = UIImageView(image: image?.resize(to: CGSize(width: 60, height: 60)))
+        imageView.accessibilityIdentifier = AccIds.bookingIcon
         return imageView
     }()
     
@@ -38,6 +43,7 @@ class MainScreenNextBookingView: UIView {
         label.font = AppFonts.regularFontWithSize(14)
         label.contentMode = .center
         label.textAlignment = .center
+        label.accessibilityIdentifier = AccIds.nameLabel
         
         return label
     }()
@@ -48,6 +54,7 @@ class MainScreenNextBookingView: UIView {
         label.font = AppFonts.regularFontWithSize(14)
         label.contentMode = .center
         label.textAlignment = .center
+        label.accessibilityIdentifier = AccIds.dateLabel
         
         return label
     }()
@@ -55,12 +62,14 @@ class MainScreenNextBookingView: UIView {
     private let infoIcon: UIImageView = {
         let image = UIImage(named: "ic_info")
         let imageView = UIImageView(image: image?.resize(to: CGSize(width: 40, height: 40)))
+        imageView.accessibilityIdentifier = AccIds.infoIcon
         return imageView
     }()
     
     init(frame: CGRect, booking: DonationBooking) {
         self.donationBooking = booking
         super.init(frame: frame)
+        accessibilityIdentifier = AccIds.view
         
         titleLabel.text = "Your next donation booking"
         titleLabel.sizeToFit()

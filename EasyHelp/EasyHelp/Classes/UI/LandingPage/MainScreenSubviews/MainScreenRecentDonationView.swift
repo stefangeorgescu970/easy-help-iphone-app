@@ -14,6 +14,8 @@ protocol MainScreenRecentDonationViewDelegate: class {
 
 class MainScreenRecentDonationView: UIView {
     
+    private typealias AccIds = TestStrings.App.MainScreen.RecentDonation
+    
     weak var delgate: MainScreenRecentDonationViewDelegate?
     
     var donation: Donation
@@ -24,6 +26,7 @@ class MainScreenRecentDonationView: UIView {
         label.font = AppFonts.boldFontWithSize(16)
         label.contentMode = .center
         label.textAlignment = .center
+        label.accessibilityIdentifier = AccIds.title
         
         return label
     }()
@@ -34,10 +37,12 @@ class MainScreenRecentDonationView: UIView {
         self.donation = donation
         
         super.init(frame: frame)
+        accessibilityIdentifier = AccIds.view
         
         viewBookingButton.frame.origin = CGPoint(x: (frame.width - viewBookingButton.frame.width) / 2,
                                                  y: frame.height - viewBookingButton.frame.height - 20 - 60)
         viewBookingButton.addTarget(self, action: #selector(MainScreenRecentDonationView.didTapViewBooking(_:)), for: .touchUpInside)
+        viewBookingButton.accessibilityIdentifier = AccIds.button
         self.addSubview(viewBookingButton)
         
         titleLabel.text = "You will be able to donate again in \(daysUntilCanDonate) days."

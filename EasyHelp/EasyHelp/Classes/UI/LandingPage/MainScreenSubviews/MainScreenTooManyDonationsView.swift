@@ -10,12 +10,15 @@ import UIKit
 
 class MainScreenTooManyDonationsView: UIView {
     
+    private typealias AccIds = TestStrings.App.MainScreen.TooManyDonations
+    
     private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.textColor = AppColors.almostBlack
         label.font = AppFonts.boldFontWithSize(16)
         label.contentMode = .center
         label.textAlignment = .center
+        label.accessibilityIdentifier = AccIds.title
         
         return label
     }()
@@ -26,12 +29,15 @@ class MainScreenTooManyDonationsView: UIView {
         label.font = AppFonts.regularFontWithSize(14)
         label.contentMode = .center
         label.textAlignment = .center
+        label.accessibilityIdentifier = AccIds.subtitle
         
         return label
     }()
     
     init(frame: CGRect, beginDate: Date) {
         super.init(frame: frame)
+        accessibilityIdentifier = AccIds.view
+        
         let profileData = AppServices.profileService.getCurrentUser()!
         let maxDonations = profileData.isMale ? 5 : 4
         

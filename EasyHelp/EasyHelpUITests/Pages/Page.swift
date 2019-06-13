@@ -83,7 +83,7 @@ class Page {
     }
     
     @discardableResult
-    func swipeToGoBack<T: Page>(shouldGoTo: T.Type) -> T {
+    internal func swipeToGoBack<T: Page>(shouldGoTo: T.Type) -> T {
         let coord1 = Page.app.coordinate(withNormalizedOffset: CGVector(dx: 0.01, dy: 0.2))
         let coord2 = coord1.withOffset(CGVector(dx: 300, dy: 0))
         

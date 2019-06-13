@@ -29,6 +29,7 @@ class MainScreenView: UIView {
         label.font = AppFonts.boldFontWithSize(22)
         label.contentMode = .center
         label.textAlignment = .center
+        label.accessibilityIdentifier = AccIds.logo
         
         return label
     }()
@@ -39,6 +40,7 @@ class MainScreenView: UIView {
         label.font = AppFonts.boldFontWithSize(20)
         label.contentMode = .center
         label.textAlignment = .center
+        label.accessibilityIdentifier = AccIds.name
         
         return label
     }()
@@ -49,6 +51,7 @@ class MainScreenView: UIView {
         label.font = AppFonts.regularFontWithSize(16)
         label.contentMode = .center
         label.textAlignment = .center
+        label.accessibilityIdentifier = AccIds.donated
         
         return label
     }()
@@ -66,6 +69,10 @@ class MainScreenView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         accessibilityIdentifier = AccIds.view
+        
+        encourageLabel.accessibilityIdentifier = AccIds.encourage
+        whyButton.accessibilityIdentifier = AccIds.whyButton
+        howButton.accessibilityIdentifier = AccIds.howButton
     
         self.addSubview(logoLabel)
         self.addSubview(nameLabel)
