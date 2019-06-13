@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A23C16B03CD7FC816C7700E /* Pods_EasyHelpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DEA249C1E1D057DFF56070 /* Pods_EasyHelpUITests.framework */; };
-		198B50B66257978B72D8AE43 /* Pods_EasyHelpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E4B99E02507BF7E3CBBF88 /* Pods_EasyHelpTests.framework */; };
 		4F0F8A022247AA4700E1B270 /* MockGlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F8A012247AA4700E1B270 /* MockGlobalData.swift */; };
 		4F0F8A042247C04800E1B270 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F8A032247C04800E1B270 /* UIImage+Resize.swift */; };
 		4F0F8A052247C04800E1B270 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F8A032247C04800E1B270 /* UIImage+Resize.swift */; };
@@ -291,13 +290,6 @@
 			remoteGlobalIDString = 4FEF992A223A888E00351500;
 			remoteInfo = "EasyHelp Mock";
 		};
-		F814AFE82148393900C36BDA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F814AFCB2148393400C36BDA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F814AFD22148393400C36BDA;
-			remoteInfo = EasyHelp;
-		};
 		F814AFF32148393900C36BDA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F814AFCB2148393400C36BDA /* Project object */;
@@ -434,8 +426,6 @@
 		F814AFDD2148393900C36BDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F814AFE02148393900C36BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F814AFE22148393900C36BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F814AFE72148393900C36BDA /* EasyHelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyHelpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F814AFED2148393900C36BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F814AFF22148393900C36BDA /* EasyHelpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyHelpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F814AFF82148393900C36BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F83C0C33214E7F8800828144 /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
@@ -466,14 +456,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				857F02F642A4573F89D8723B /* Pods_EasyHelp_Dev_EasyHelp_Local.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F814AFE42148393900C36BDA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				198B50B66257978B72D8AE43 /* Pods_EasyHelpTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,7 +878,6 @@
 				4F5589E5227D7855001DA81E /* EasyHelp Local.entitlements */,
 				4F5589E0227D75C6001DA81E /* EasyHelp Mock.entitlements */,
 				F814AFD52148393400C36BDA /* EasyHelp */,
-				F814AFEA2148393900C36BDA /* EasyHelpTests */,
 				F814AFF52148393900C36BDA /* EasyHelpUITests */,
 				F814AFD42148393400C36BDA /* Products */,
 				29DD21D0F7201FA3C167CCB1 /* Pods */,
@@ -908,7 +889,6 @@
 			isa = PBXGroup;
 			children = (
 				F814AFD32148393400C36BDA /* EasyHelp Local.app */,
-				F814AFE72148393900C36BDA /* EasyHelpTests.xctest */,
 				F814AFF22148393900C36BDA /* EasyHelpUITests.xctest */,
 				4FEF9928223A884A00351500 /* EasyHelp Dev.app */,
 				4FEF9940223A888E00351500 /* EasyHelp Mock.app */,
@@ -927,14 +907,6 @@
 				4FEF9942223A8A4E00351500 /* Resources */,
 			);
 			path = EasyHelp;
-			sourceTree = "<group>";
-		};
-		F814AFEA2148393900C36BDA /* EasyHelpTests */ = {
-			isa = PBXGroup;
-			children = (
-				F814AFED2148393900C36BDA /* Info.plist */,
-			);
-			path = EasyHelpTests;
 			sourceTree = "<group>";
 		};
 		F814AFF52148393900C36BDA /* EasyHelpUITests */ = {
@@ -1104,25 +1076,6 @@
 			productReference = F814AFD32148393400C36BDA /* EasyHelp Local.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F814AFE62148393900C36BDA /* EasyHelpTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F814AFFE2148393900C36BDA /* Build configuration list for PBXNativeTarget "EasyHelpTests" */;
-			buildPhases = (
-				4EBD98AE88F20471CFC8FF35 /* [CP] Check Pods Manifest.lock */,
-				F814AFE32148393900C36BDA /* Sources */,
-				F814AFE42148393900C36BDA /* Frameworks */,
-				F814AFE52148393900C36BDA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F814AFE92148393900C36BDA /* PBXTargetDependency */,
-			);
-			name = EasyHelpTests;
-			productName = EasyHelpTests;
-			productReference = F814AFE72148393900C36BDA /* EasyHelpTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		F814AFF12148393900C36BDA /* EasyHelpUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F814B0012148393900C36BDA /* Build configuration list for PBXNativeTarget "EasyHelpUITests" */;
@@ -1179,12 +1132,6 @@
 							};
 						};
 					};
-					F814AFE62148393900C36BDA = {
-						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1000;
-						ProvisioningStyle = Automatic;
-						TestTargetID = F814AFD22148393400C36BDA;
-					};
 					F814AFF12148393900C36BDA = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
@@ -1209,7 +1156,6 @@
 				4FEF9912223A884A00351500 /* EasyHelp Dev */,
 				F814AFD22148393400C36BDA /* EasyHelp Local */,
 				4FEF992A223A888E00351500 /* EasyHelp Mock */,
-				F814AFE62148393900C36BDA /* EasyHelpTests */,
 				F814AFF12148393900C36BDA /* EasyHelpUITests */,
 			);
 		};
@@ -1242,13 +1188,6 @@
 				F814AFE12148393900C36BDA /* LaunchScreen.storyboard in Resources */,
 				F814AFDE2148393900C36BDA /* Assets.xcassets in Resources */,
 				4FEF9946223A8AB000351500 /* Settings-Local.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F814AFE52148393900C36BDA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1352,28 +1291,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyHelp Dev-EasyHelp Local/Pods-EasyHelp Dev-EasyHelp Local-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4EBD98AE88F20471CFC8FF35 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EasyHelpTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		86D2AA75F9120FBD2B3FA480 /* [CP] Check Pods Manifest.lock */ = {
@@ -1715,13 +1632,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F814AFE32148393900C36BDA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F814AFEE2148393900C36BDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1750,11 +1660,6 @@
 			isa = PBXTargetDependency;
 			target = 4FEF992A223A888E00351500 /* EasyHelp Mock */;
 			targetProxy = 4FE43C5322B21D4400788B24 /* PBXContainerItemProxy */;
-		};
-		F814AFE92148393900C36BDA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F814AFD22148393400C36BDA /* EasyHelp Local */;
-			targetProxy = F814AFE82148393900C36BDA /* PBXContainerItemProxy */;
 		};
 		F814AFF42148393900C36BDA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2002,42 +1907,6 @@
 			};
 			name = Release;
 		};
-		F814AFFF2148393900C36BDA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77BDDC6AEFAC400DDFBA32E4 /* Pods-EasyHelpTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8WFZK78SX5;
-				INFOPLIST_FILE = EasyHelpTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.easyhelp.app.EasyHelpTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyHelp.app/EasyHelp";
-			};
-			name = Debug;
-		};
-		F814B0002148393900C36BDA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B81F6E0EC17BAA20D07856B6 /* Pods-EasyHelpTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8WFZK78SX5;
-				INFOPLIST_FILE = EasyHelpTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.easyhelp.app.EasyHelpTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyHelp.app/EasyHelp";
-			};
-			name = Release;
-		};
 		F814B0022148393900C36BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 475B9790CE1462D354F14F67 /* Pods-EasyHelpUITests.debug.xcconfig */;
@@ -2111,15 +1980,6 @@
 			buildConfigurations = (
 				F814AFFC2148393900C36BDA /* Debug */,
 				F814AFFD2148393900C36BDA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F814AFFE2148393900C36BDA /* Build configuration list for PBXNativeTarget "EasyHelpTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F814AFFF2148393900C36BDA /* Debug */,
-				F814B0002148393900C36BDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
