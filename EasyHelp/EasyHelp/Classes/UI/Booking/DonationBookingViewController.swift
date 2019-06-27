@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 public enum DonationBookingControllerStyle {
     case book, view
@@ -53,6 +54,20 @@ class DonationBookingViewController: UIViewController {
 }
 
 extension DonationBookingViewController: DonationBookingViewDelegate {
+    func donationBookingViewDidRequestViewAddress(_ sender: DonationBookingView, donationBooking: DonationBooking) {
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(donationBooking.donationCenter.lat, donationBooking.donationCenter.long)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = donationBooking.donationCenter.name
+        mapItem.openInMaps(launchOptions: options)
+    }
+    
     func donationBookingViewDidRequestCancelBooking(_ sender: DonationBookingView, donationBooking: DonationBooking) {
         AppServices.donorService.cancelBooking(donationBooking) { (error) in
             if let error = error {

@@ -14,4 +14,5 @@ class DonorSummaryData: NSObject {
     var nextBooking: DonationBooking?
     var streakBegin: Date?
     var numberOfPeopleYouCouldHelp: Int?
+    var donationForm: DonationForm?
 }

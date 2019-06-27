@@ -12,6 +12,7 @@ protocol DonationBookingViewDelegate: class {
     func donationBookingViewDidRequestForm(_ sender: DonationBookingView)
     func donationBookingViewDidRequestBook(_ sender: DonationBookingView, donationBooking: DonationBooking)
     func donationBookingViewDidRequestCancelBooking(_ sender: DonationBookingView, donationBooking: DonationBooking)
+    func donationBookingViewDidRequestViewAddress(_ sender: DonationBookingView, donationBooking: DonationBooking)
 }
 
 class DonationBookingView: UIView {
@@ -182,7 +183,7 @@ class DonationBookingView: UIView {
     }
     
     @objc fileprivate func didPressAddress(_ sender: UIButton) {
-        
+        self.delegate?.donationBookingViewDidRequestViewAddress(self, donationBooking: donationBooking)
     }
     
     

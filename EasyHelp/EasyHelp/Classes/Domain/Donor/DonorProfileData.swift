@@ -43,7 +43,7 @@ class DonorProfileData: NSObject, NSCoding {
         lastName = aDecoder.decodeObject(forKey: Keys.lastName) as! String
         email = aDecoder.decodeObject(forKey: Keys.email) as! String
         dateOfBirth = aDecoder.decodeObject(forKey: Keys.dateOfBirth) as? Date
-        isMale = aDecoder.decodeBool(forKey: Keys.isMale)
+        isMale = aDecoder.decodeObject(forKey: Keys.isMale) as? Bool
         county = aDecoder.decodeObject(forKey: Keys.county) as? String
         ssn = aDecoder.decodeObject(forKey: Keys.ssn) as? String
         token = aDecoder.decodeObject(forKey: Keys.token) as! String
@@ -64,17 +64,16 @@ class DonorProfileData: NSObject, NSCoding {
     var bloodGroupLetter: String?
     var bloodRh: Bool?
     
-    var isMale: Bool
+    var isMale: Bool?
     
     var token: String
     
-    public init(id: Int, email: String, token: String, firstName: String, lastName: String, isMale: Bool) {
+    public init(id: Int, email: String, token: String, firstName: String, lastName: String) {
         self.id = id
         self.email = email
         self.token = token
         self.lastName = lastName
         self.firstName = firstName
-        self.isMale = isMale
     }
     
     public func shouldSeeOnboarding() -> Bool {

@@ -113,7 +113,7 @@ class DonationDetailsView: UIScrollView {
         
         self.addressLink.frame.origin = CGPoint(x: (frame.width - addressLink.frame.width) / 2, y: countyLabel.frame.maxY + 10)
         self.addressLink.addTarget(self, action: #selector(DonationDetailsView.didPressAddress(_:)), for: .touchUpInside)
-        self.addSubview(addressLink)
+//        self.addSubview(addressLink)
         
         resultsTitleLabel.frame.origin = CGPoint(x: 20, y: addressLink.frame.maxY + 20)
         self.addSubview(resultsTitleLabel)

@@ -95,7 +95,7 @@ class DefaultProfileService: ProfileService {
     
     func updateCountyAndSSN(newCounty: String, newSSN: String, callback: @escaping (NSError?) -> ()) {
         let request = ServerRequest(endpoint: "updateSsnCounty", controller: "donor")
-        request.addParameter(key: "donorId", value: getCurrentUser()!.id)
+        request.addParameter(key: "userId", value: getCurrentUser()!.id)
         request.addParameter(key: "ssn", value: newSSN)
         request.addParameter(key: "county", value: newCounty)
         
@@ -117,7 +117,7 @@ class DefaultProfileService: ProfileService {
     
     func updateBloodGroup(bloodGroup: String, rh: Bool, callback: @escaping (NSError?) -> ()) {
         let request = ServerRequest(endpoint: "updateBloodGroup", controller: "donor")
-        request.addParameter(key: "donorId", value: getCurrentUser()!.id)
+        request.addParameter(key: "userId", value: getCurrentUser()!.id)
         request.addParameter(key: "groupLetter", value: bloodGroup)
         request.addParameter(key: "rh", value: rh)
         

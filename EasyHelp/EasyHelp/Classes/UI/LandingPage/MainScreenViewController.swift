@@ -26,6 +26,10 @@ class MainScreenViewController: UIViewController {
             if let data = data {
                 self.innerView.syncView(profileData: self.profileData, donorSummary: data)
                 self.viewDidLoad()
+                
+                if let form = data.donationForm {
+                    AppServices.donorService.locallyPersistDonationForm(form)
+                }
             }
         }
     }

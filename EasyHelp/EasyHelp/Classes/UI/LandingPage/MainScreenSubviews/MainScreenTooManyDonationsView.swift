@@ -39,7 +39,7 @@ class MainScreenTooManyDonationsView: UIView {
         accessibilityIdentifier = AccIds.view
         
         let profileData = AppServices.profileService.getCurrentUser()!
-        let maxDonations = profileData.isMale ? 5 : 4
+        let maxDonations = profileData.isMale ?? false ? 5 : 4
         
         titleLabel.text = "You are not eligible for donating now"
         titleLabel.sizeToFit()
