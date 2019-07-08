@@ -20,7 +20,8 @@ class MockGlobalData: NSObject {
     
     
     func getUncompleteMockProfile() -> DonorProfileData {
-        let donor =  DonorProfileData(id: 1, email: "donor@mail.com", token: "mockToken", firstName: "a", lastName: "b", isMale: true)
+        let donor = DonorProfileData(id: 1, email: "donor@mail.com", token: "mockToken", firstName: "a", lastName: "b")
+        donor.isMale = true
         donor.county = "ALBA"
         
         return donor

@@ -96,6 +96,10 @@ class DefaultDonorService: DonorService {
         myUserDefaults.set(data, forKey: userDefaultsKey)
     }
     
+    func deleteLocallyPersistedDonationForm() {
+        myUserDefaults.set(nil, forKey: userDefaultsKey)
+    }
+    
     func getLocallyPersistedDonationForm() -> DonationForm? {
         let data = myUserDefaults.object(forKey: userDefaultsKey) as? Data
         return NSKeyedUnarchiver.unarchiveObject(with: data ?? Data()) as? DonationForm

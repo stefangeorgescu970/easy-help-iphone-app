@@ -42,7 +42,7 @@ class SignupView: UIView {
     
     private let firstNameLabel: UILabel = {
         let label = UILabel()
-        label.text = Strings.Signup.name()
+        label.text = Strings.Signup.firstName()
         label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()
@@ -66,7 +66,7 @@ class SignupView: UIView {
     
     private let lastNameLabel: UILabel = {
         let label = UILabel()
-        label.text = Strings.Signup.name()
+        label.text = Strings.Signup.lastName()
         label.textColor = AppColors.appRed
         label.font = AppFonts.boldFontWithSize(18)
         label.sizeToFit()

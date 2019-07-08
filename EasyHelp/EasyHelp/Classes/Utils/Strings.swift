@@ -46,8 +46,9 @@ struct Strings {
     
     struct Signup {
         static let title = { "Account Details" }
-        static let name = { "Name" }
+        static let firstName = { "First Name" }
         static let firstNamePlaceholder = { "Your first name" }
+        static let lastName = { "Last Name" }
         static let lastNamePlaceholder = { "Your last name" }
         static let email = { "Email" }
         static let emailPlaceholder = { "Your personal email" }

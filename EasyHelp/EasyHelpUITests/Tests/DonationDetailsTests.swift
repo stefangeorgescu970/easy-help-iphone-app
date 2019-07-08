@@ -52,7 +52,7 @@ class DonationDetailsTests: XCTestCase {
             XCTAssertEqual(donationDetailsPage.hospitalIconExists(), true)
             XCTAssertEqual(donationDetailsPage.getNameText(), "DC")
             XCTAssertEqual(donationDetailsPage.getCountyText(), "ALBA")
-            XCTAssertEqual(donationDetailsPage.getAddressText(), "some street")
+            XCTAssertEqual(donationDetailsPage.getAddressText(), nil)
             XCTAssertEqual(donationDetailsPage.getResultsTitleText(), "Test Results")
             XCTAssertEqual(donationDetailsPage.getResultsSubtitleText(), "Test results are not yet available.")
             
@@ -81,7 +81,7 @@ class DonationDetailsTests: XCTestCase {
             XCTAssertEqual(donationDetailsPage.hospitalIconExists(), true)
             XCTAssertEqual(donationDetailsPage.getNameText(), "DC")
             XCTAssertEqual(donationDetailsPage.getCountyText(), "ALBA")
-            XCTAssertEqual(donationDetailsPage.getAddressText(), "some street")
+            XCTAssertEqual(donationDetailsPage.getAddressText(), nil)
             XCTAssertEqual(donationDetailsPage.getResultsTitleText(), "Test Results")
             XCTAssertEqual(donationDetailsPage.getResultsSubtitleText(), nil)
             
@@ -134,7 +134,7 @@ class DonationDetailsTests: XCTestCase {
             XCTAssertEqual(donationDetailsPage.hospitalIconExists(), true)
             XCTAssertEqual(donationDetailsPage.getNameText(), "DC")
             XCTAssertEqual(donationDetailsPage.getCountyText(), "ALBA")
-            XCTAssertEqual(donationDetailsPage.getAddressText(), "some street")
+            XCTAssertEqual(donationDetailsPage.getAddressText(), nil)
             XCTAssertEqual(donationDetailsPage.getResultsTitleText(), "Test Results")
             XCTAssertEqual(donationDetailsPage.getResultsSubtitleText(), nil)
             

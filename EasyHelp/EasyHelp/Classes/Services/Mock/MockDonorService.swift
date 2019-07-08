@@ -9,6 +9,10 @@
 import Foundation
 
 class MockDonorService: DonorService {
+    func deleteLocallyPersistedDonationForm() {
+        
+    }
+    
     func bookDonation(_ donationBooking: DonationBooking, callback: @escaping (Int?, NSError?) -> ()) {
     
     }

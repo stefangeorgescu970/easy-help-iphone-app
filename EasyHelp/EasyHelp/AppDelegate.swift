@@ -61,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         LocationUtils.sharedInstance.startReceivingLocationChanges()
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
